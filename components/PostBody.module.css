@@ -6,11 +6,11 @@
 .portableText ul,
 .portableText ol,
 .portableText blockquote {
-  @apply my-6 text-3xl;
+  @apply my-6 text-3xl leading-loose;
 }
 
 .portableText h2 {
-  @apply mb-4 mt-12 text-6xl font-bold leading-snug;
+  @apply mb-4 mt-12 text-6xl font-bold leading-loose;
 }
 
 .portableText h3 {

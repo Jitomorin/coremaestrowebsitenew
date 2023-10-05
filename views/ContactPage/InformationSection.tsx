@@ -1,10 +1,10 @@
-import SectionTitle from 'components/SectionTitle';
-import styled from 'styled-components';
+import SectionTitle from "components/SectionTitle";
+import styled from "styled-components";
 
 export default function InformationSection() {
   return (
     <Wrapper>
-      <SectionTitle>Hello there!</SectionTitle>
+      <SectionTitle>Say Hello!</SectionTitle>
       <p>
         {/* <span>Email:</span> info@CoreMaestro.com */}
         Get in Touch
@@ -23,14 +23,19 @@ const Wrapper = styled.div`
   flex: 1;
   margin-right: 3rem;
   margin-bottom: 3rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
   h3 {
+    font-weight: 550;
     font-size: 3.5rem;
     margin-bottom: 0rem;
   }
 
   h5 {
     font-size: 1.4rem;
+    font-weight: 800;
     color: rgba(var(--text), 0.6);
     margin-bottom: 0;
     margin-top: 1rem;

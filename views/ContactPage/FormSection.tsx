@@ -5,6 +5,8 @@ import Button from "components/Button";
 import Input from "components/Input";
 import { media } from "utils/media";
 import MailSentState from "../../components/MailSentState";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperclip, faUpload } from "@fortawesome/free-solid-svg-icons";
 
 interface EmailPayload {
   name: string;
@@ -79,7 +81,6 @@ export default function FormSection() {
             />
           </InputStack>
           <InputStack>
-            {errors.email && <ErrorMessage>Email is required</ErrorMessage>}
             <Input
               placeholder="Subject"
               id="subject"
@@ -104,8 +105,13 @@ export default function FormSection() {
           {errors.description && (
             <ErrorMessage>Description is required</ErrorMessage>
           )}
-          <FileButton htmlFor="file-upload" className="custom-file-upload">
-            <i className="fa fa-cloud-upload"></i> Upload File
+
+          <FileButton htmlFor="file-upload">
+            {/* <FontAwesomeIcon
+              className=" hover:text-[#f2bd28] mx-auto"
+              icon={faPaperclip}
+            /> */}
+            <p className="text-2xl">Upload a file</p>
           </FileButton>
           <File id="file-upload" type="file" name="file" onChange={() => {}} />
         </InputStack>
@@ -118,7 +124,9 @@ export default function FormSection() {
 }
 
 const Wrapper = styled.div`
-  flex: 2;
+  justify-content: center;
+  margin: 0 4rem;
+  text-align: center;
 `;
 
 const Form = styled.form`
@@ -129,25 +137,12 @@ const Form = styled.form`
 
 const FileButton = styled.label`
   cursor: pointer;
-  font-size: x-large;
   font-weight: bold;
   display: inline-block;
   position: relative;
-  font-size: 1.4rem;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(var(--secondary));
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+  margin-top: 1rem;
+  &:hover {
+    color: #f2bd28;
   }
 `;
 const File = styled.input`
@@ -159,7 +154,7 @@ const InputGroup = styled.div`
   align-items: center;
 
   & > *:not(:first-child) {
-    margin-left: 2rem;
+    margin-left: 0.5rem;
   }
 
   & > * {
@@ -168,9 +163,8 @@ const InputGroup = styled.div`
 
   ${media("<=tablet")} {
     flex-direction: column;
-    & > *:first-child {
-      margin-right: 0rem;
-      margin-bottom: 2rem;
+    & > *:not(:first-child) {
+      margin-top: 2rem;
     }
   }
 `;
@@ -181,7 +175,6 @@ const InputStack = styled.div`
   width: 100%;
 
   & > *:not(:first-child) {
-    margin-top: 0.5rem;
   }
 `;
 

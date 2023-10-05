@@ -22,32 +22,22 @@ export default function BasicCard({
   istransparent,
 }: BasicCardProps) {
   return (
-    <Link
-      style={{ display: "flex", justifyContent: "center" }}
-      href={`/services/${generateSlug(title)}`}
-    >
-      <Card isTransparent={istransparent}>
-        {useImage ? (
-          <NextImage
-            src={imageUrl}
-            alt="header image"
-            width={100}
-            height={100}
-          />
-        ) : (
-          <FontAwesomeIcon icon={FaIcon} width={100} height={100} />
-        )}
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-      </Card>
-    </Link>
+    <Card isTransparent={istransparent}>
+      {useImage ? (
+        <NextImage src={imageUrl} alt="header image" width={100} height={100} />
+      ) : (
+        <FontAwesomeIcon icon={FaIcon} width={100} height={100} />
+      )}
+      <Title>{title}</Title>
+      <Description>{description}</Description>
+    </Card>
   );
 }
 const Title = styled.div`
   font-weight: bold;
   display: inline-block;
   position: relative;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 
@@ -90,9 +80,8 @@ const Card = styled.div<{ isTransparent: boolean }>`
   color: rgb(var(--text));
   font-size: 1.6rem;
   padding: 3 2rem;
-  cursor: pointer;
   /* increase scale on hover */
-  &:hover {
+  /* &:hover {
     scale: 1.07;
     ${Title} {
       &::after {
@@ -100,7 +89,7 @@ const Card = styled.div<{ isTransparent: boolean }>`
         transform-origin: bottom left;
       }
     }
-  }
+  } */
 
   & > *:not(:first-child) {
     margin-top: 1rem;
@@ -109,4 +98,5 @@ const Card = styled.div<{ isTransparent: boolean }>`
 
 const Description = styled.div`
   opacity: 0.6;
+  font-size: 1.7rem;
 `;

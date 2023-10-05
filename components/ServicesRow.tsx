@@ -2,44 +2,32 @@ import React from "react";
 import styled from "styled-components";
 import AutofitGrid from "components/AutofitGrid";
 import BasicCard from "components/BasicCard";
-import Container from "components/Container";
 import { media } from "utils/media";
 import SectionTitle from "./SectionTitle";
 import OverTitle from "./OverTitle";
 import NextImage from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Container from "./Container";
+import {
+  faAnglesRight,
+  faFileSignature,
+  faGavel,
+  faHandshake,
+  faMoneyBillWave,
+  faPoll,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { generateSlug } from "@/utils/formatString";
 
 const SERVICES = [
   {
-    title: "Recruitment",
-    description:
-      "Core Maestro Management links businesses with top global IT specialists, facilitating access to a diverse talent pool that can catalyze innovation and promote success. Come aboard to elevate your business with exceptional IT knowledge.",
-    imageUrl: "/recruitment.png",
-    baseColor: "21,35,62",
-    secondColor: "21,35,62",
-  },
-  {
-    title: "Interview Coaching",
-    description:
-      "At Core Maestro Management, our Interview Coaching service sharpens your interview skills, giving you the edge to confidently secure your dream job.",
-    imageUrl: "/coaching.png",
-    baseColor: "21,35,62",
-    secondColor: "21,35,62",
-  },
-  {
-    title: "CV Writing",
-    description:
-      "Core Maestro Management specializes in crafting standout CVs that boost your chances in the current competitive job market. Elevate your career with our tailored CVs.",
-    imageUrl: "/resume.png",
-    baseColor: "21,35,62",
-    secondColor: "21,35,62",
-  },
-  {
-    title: "Payrol Management",
+    title: "Payroll Management",
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
+    href: "/services/",
+    icon: faMoneyBillWave,
     baseColor: "21,35,62",
     secondColor: "21,35,62",
   },
@@ -48,38 +36,18 @@ const SERVICES = [
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
+    href: "/services/",
+    icon: faHandshake,
     baseColor: "21,35,62",
     secondColor: "21,35,62",
   },
   {
-    title: "HR Compliance and Legal Advisory",
+    title: "HR Compliance",
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
-    baseColor: "21,35,62",
-    secondColor: "21,35,62",
-  },
-  {
-    title: "Training and Development",
-    description:
-      "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
-    imageUrl: "/payroll.png",
-    baseColor: "21,35,62",
-    secondColor: "21,35,62",
-  },
-  {
-    title: "Compensation and Benefits Review",
-    description:
-      "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
-    imageUrl: "/payroll.png",
-    baseColor: "21,35,62",
-    secondColor: "21,35,62",
-  },
-  {
-    title: "Performance Management",
-    description:
-      "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
-    imageUrl: "/payroll.png",
+    href: "/services/",
+    icon: faGavel,
     baseColor: "21,35,62",
     secondColor: "21,35,62",
   },
@@ -88,6 +56,18 @@ const SERVICES = [
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
+    href: "/services/",
+    icon: faPoll,
+    baseColor: "21,35,62",
+    secondColor: "21,35,62",
+  },
+  {
+    title: "HR Policies Development",
+    description:
+      "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
+    imageUrl: "/payroll.png",
+    href: "/services/",
+    icon: faFileSignature,
     baseColor: "21,35,62",
     secondColor: "21,35,62",
   },
@@ -96,34 +76,22 @@ const SERVICES = [
 export default function ServicesRow() {
   return (
     <Wrapper>
-      <Container>
-        <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
-          grabCursor={true}
-          pagination={{
-            clickable: true,
-          }}
-          className="mySwiper"
-          style={{ width: "90%" }}
-        >
-          {SERVICES.map((singleFeature, idx) => (
-            <SwiperSlide key={singleFeature.title}>
-              <Card>
-                <NextImage
-                  src={singleFeature.imageUrl}
-                  width={90}
-                  height={90}
-                  alt={singleFeature.title}
-                />
-                <Link href="/services">
-                  <Title>{singleFeature.title}</Title>
-                </Link>
-              </Card>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Container>
+      <MainContainer>
+        {SERVICES.map((singleFeature, idx) => (
+          <Card>
+            <FontAwesomeIcon icon={singleFeature.icon} width={60} height={60} />
+            <Link href={singleFeature.href + generateSlug(singleFeature.title)}>
+              <Title>{singleFeature.title}</Title>
+            </Link>
+          </Card>
+        ))}
+        <Card>
+          <FontAwesomeIcon icon={faAnglesRight} width={60} height={60} />
+          <Link href="/services">
+            <Title>{"More"}</Title>
+          </Link>
+        </Card>
+      </MainContainer>
     </Wrapper>
   );
 }
@@ -131,10 +99,12 @@ export default function ServicesRow() {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  align-self: flex-end;
   height: 100%;
   width: 100%;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
 `;
 const Row = styled(AutofitGrid)`
   display: flex;
@@ -142,18 +112,29 @@ const Row = styled(AutofitGrid)`
   width: 100%;
   justify-content: space-between;
 `;
+const MainContainer = styled.div`
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-around;
+  align-items: center;
+  bottom: 0;
+  padding: 0;
+`;
 const Card = styled.div`
   display: flex;
-  background: rgb(var(--cardBackground));
+  /* background: rgb(var(--cardBackground)); */
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   width: 20rem;
   height: 15rem;
-  border: 1px solid rgb(var(--primary));
+  border: 4px solid rgb(var(--primary));
   border-radius: 0.6rem;
-  color: rgb(var(--text));
+  color: rgb(var(--secondary));
   font-size: 1.6rem;
   transition: transform 0.3s ease;
   a {
@@ -163,6 +144,7 @@ const Card = styled.div`
   }
 
   &:hover {
+    scale: 1.05;
   }
 
   & > *:not(:first-child) {
@@ -178,7 +160,7 @@ const Title = styled.div`
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 
-  &::after {
+  /* &::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -194,7 +176,7 @@ const Title = styled.div`
   &:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-  }
+  } */
 `;
 
 const Description = styled.div`

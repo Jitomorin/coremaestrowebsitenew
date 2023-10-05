@@ -10,6 +10,12 @@ import {
   employeesQuery,
   Employee,
   serviceBySlugQuery,
+  Category,
+  categoriesQuery,
+  postByCategoriesQuery,
+  categorySlugsQuery,
+  Service,
+  servicesQuery,
 } from "./queries";
 import { createClient, type SanityClient } from "next-sanity";
 
@@ -44,6 +50,14 @@ export async function getSettings(client: SanityClient): Promise<Settings> {
 export async function getAllPosts(client: SanityClient): Promise<Post[]> {
   return (await client.fetch(indexQuery)) || [];
 }
+export async function getAllServices(client: SanityClient): Promise<Service[]> {
+  return (await client.fetch(servicesQuery)) || [];
+}
+export async function getAllCategories(
+  client: SanityClient
+): Promise<Category[]> {
+  return (await client.fetch(categoriesQuery)) || [];
+}
 export async function getAllEmployees(
   client: SanityClient
 ): Promise<Employee[]> {
@@ -53,6 +67,11 @@ export async function getAllEmployees(
 export async function getAllPostsSlugs(): Promise<Pick<Post, "slug">[]> {
   const client = getClient();
   const slugs = (await client.fetch<string[]>(postSlugsQuery)) || [];
+  return slugs.map((slug) => ({ slug }));
+}
+export async function getAllCategorySlugs(): Promise<Pick<Post, "slug">[]> {
+  const client = getClient();
+  const slugs = (await client.fetch<string[]>(categorySlugsQuery)) || [];
   return slugs.map((slug) => ({ slug }));
 }
 export async function getAllServiceSlugs(): Promise<Pick<Post, "slug">[]> {
@@ -67,10 +86,18 @@ export async function getPostBySlug(
 ): Promise<Post> {
   return (await client.fetch(postBySlugQuery, { slug })) || ({} as any);
 }
-export async function getserviceBySlug(
+export async function getPostByCategory(
+  client: SanityClient,
+  categories: string
+): Promise<Post[]> {
+  return (
+    (await client.fetch(postByCategoriesQuery, { categories })) || ({} as any)
+  );
+}
+export async function getServiceBySlug(
   client: SanityClient,
   slug: string
-): Promise<Post> {
+): Promise<Service> {
   return (await client.fetch(serviceBySlugQuery, { slug })) || ({} as any);
 }
 

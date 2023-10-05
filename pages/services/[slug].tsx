@@ -9,34 +9,23 @@ import { Service } from "@/sanity/lib/queries";
 import {
   getAllServiceSlugs,
   getClient,
-  getserviceBySlug,
+  getServiceBySlug,
 } from "@/sanity/lib/client";
 import { readToken } from "@/sanity/env";
 import { useRouter } from "next/router";
+import service from "@/sanity/schemas/service";
+import ServicePage from "@/components/ServicePage";
 
 // interface pageProps extends SharedPageProps {
 //     service: Service;
 // }
-interface PageProps extends SharedPageProps {
+interface ServiceProps extends SharedPageProps {
   service: Service;
 }
 
 interface Query {
   [key: string]: string;
 }
-
-export default function ServiceSlugRoute() {
-  return (
-    <Page title={"Services"} imgURL="/services_stock.jpg">
-      <Wrapper>
-        <Container>
-          <Title>service title</Title>
-        </Container>
-      </Wrapper>
-    </Page>
-  );
-}
-
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -48,12 +37,33 @@ const Title = styled.div`
   font-size: xx-large;
   font-weight: bold;
 `;
-export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
+
+export default function ServiceSlugRoute(props: ServiceProps) {
+  const { service } = props;
+  return (
+    <ServicePage
+      service={service}
+      // morePosts={morePosts}
+      // settings={settings}
+      // categories={categories}
+    />
+  );
+}
+
+export const getStaticProps: GetStaticProps<ServiceProps, Query> = async (
+  ctx
+) => {
   const { draftMode = false, params = {} } = ctx;
   const client = getClient(draftMode ? { token: readToken } : undefined);
   console.log("params", params);
-  const service = await getserviceBySlug(client, params.slug);
+  const service = await getServiceBySlug(client, params.slug);
   console.log("service", service);
+
+  if (!service) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

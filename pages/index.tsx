@@ -19,8 +19,9 @@ import StyledTabs from "@/views/HomePage/StyledTabs";
 import { useEffect, useState } from "react";
 // import { getBlogs } from "@/sanity/lib/client";
 import BlogPostSlider from "@/views/HomePage/BlogPostSlider";
-import { getAllPosts, getClient } from "@/sanity/lib/client";
+import { getAllPosts, getClient, getPostByCategory } from "@/sanity/lib/client";
 import post from "@/sanity/schemas/post";
+import Button from "@/components/Button";
 
 const client = getClient();
 const tabsData = [
@@ -117,7 +118,17 @@ export default function Homepage({
             </ul>
           </BasicSection>
           <Divider />
-
+          {/* <Button
+            onClick={async () => {
+              var data = await getPostByCategory(
+                client,
+                "Recruitment and Talent Acquisition"
+              );
+              console.log(data);
+            }}
+          >
+            Subscribe
+          </Button> */}
           <Partners />
         </WhiteBackgroundContainer>
         <DarkerBackgroundContainer>

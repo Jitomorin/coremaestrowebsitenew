@@ -8,13 +8,23 @@ const postFields = groq`
   excerpt,
   coverImage,
   "slug": slug.current,
+  categories[]->{
+    title,
+    slug,
+    description
+  },
   "author": author->{name, picture},
 `;
 const serviceFields = groq`
   _id,
   title,
-  description
+  description,
   coverImage,
+  "slug": slug.current,
+`;
+const categoryFields = groq`
+  title,
+  description
   "slug": slug.current,
 `;
 
@@ -26,6 +36,10 @@ export const indexQuery = groq`
 }`;
 export const employeesQuery = groq`
 *[_type == "employee"]`;
+export const servicesQuery = groq`
+*[_type == "service"]`;
+export const categoriesQuery = groq`
+*[_type == "category"]`;
 
 export const postAndMoreStoriesQuery = groq`
 {
@@ -42,6 +56,9 @@ export const postAndMoreStoriesQuery = groq`
 export const postSlugsQuery = groq`
 *[_type == "post" && defined(slug.current)][].slug.current
 `;
+export const categorySlugsQuery = groq`
+*[_type == "category" && defined(slug.current)][].slug.current
+`;
 export const serviceSlugsQuery = groq`
 *[_type == "service" && defined(slug.current)][].slug.current
 `;
@@ -51,17 +68,31 @@ export const postBySlugQuery = groq`
   ${postFields}
 }
 `;
+export const postByCategoriesQuery = groq`
+*[_type == "post" && $categories in categories[]->slug.current] {
+  ${postFields}
+}
+`;
 export const serviceBySlugQuery = groq`
 *[_type == "service" && slug.current == $slug][0] {
   ${serviceFields}
 }
 `;
+interface Slug {
+  current: string;
+  _type: string;
+}
 
 export interface Author {
   name?: string;
   picture?: any;
 }
 
+export interface Category {
+  title: string;
+  slug?: Slug;
+  description: String;
+}
 export interface Post {
   _id: string;
   title?: string;
@@ -72,11 +103,12 @@ export interface Post {
   author?: Author;
   slug?: string;
   content?: any;
+  categories: Category[];
 }
 export interface Service {
   title: string;
   coverImage?: any;
-  slug?: string;
+  slug?: Slug;
   description?: any;
 }
 

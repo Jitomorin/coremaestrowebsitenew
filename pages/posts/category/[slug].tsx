@@ -3,19 +3,21 @@ import PreviewPostPage from "components/PreviewPostPage";
 import { readToken } from "@/sanity/env";
 import {
   getAllCategories,
+  getAllCategorySlugs,
   getAllPostsSlugs,
   getClient,
   getPostAndMoreStories,
+  getPostByCategory,
   getSettings,
 } from "@/sanity/lib/client";
 import { Category, Post, Settings } from "@/sanity/lib/queries";
 import { GetStaticProps } from "next";
 import type { SharedPageProps } from "pages/_app";
+import IndexPage from "@/components/IndexPage";
 
 interface PageProps extends SharedPageProps {
-  post: Post;
+  posts: Post[];
   categories: Category[];
-  morePosts: Post[];
   settings?: Settings;
 }
 
@@ -23,45 +25,38 @@ interface Query {
   [key: string]: string;
 }
 
-export default function ProjectSlugRoute(props: PageProps) {
-  const { settings, post, categories, morePosts, draftMode } = props;
+export default function CategorySlugRoute(props: PageProps) {
+  const { settings, posts, categories, draftMode } = props;
 
-  if (draftMode) {
-    return (
-      <PreviewPostPage
-        post={post}
-        morePosts={morePosts}
-        settings={settings}
-        categories={categories}
-      />
-    );
-  }
-  console.log("post", post);
-  console.log("morePosts", morePosts);
+  //   if (draftMode) {
+  //     return (
+  //       <PreviewPostPage
+  //         post={post}
+  //         morePosts={[]}
+  //         settings={settings}
+  //         categories={categories}
+  //       />
+  //     );
+  //   }
+  console.log("post", posts);
   console.log("categories", categories);
-  return (
-    <PostPage
-      post={post}
-      morePosts={morePosts}
-      settings={settings}
-      categories={categories}
-    />
-  );
+  posts.length > 0;
+  return <IndexPage posts={posts} settings={settings} />;
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false, params = {} } = ctx;
   const client = getClient(draftMode ? { token: readToken } : undefined);
 
-  const [settings, { post, morePosts }, categories] = await Promise.all([
+  const [settings, posts, categories] = await Promise.all([
     getSettings(client),
-    getPostAndMoreStories(client, params.slug),
+    getPostByCategory(client, params.slug),
     getAllCategories(client),
   ]);
 
   console.log(categories);
 
-  if (!post) {
+  if (!posts) {
     return {
       notFound: true,
     };
@@ -69,9 +64,8 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
 
   return {
     props: {
-      post,
+      posts,
       categories,
-      morePosts,
       settings,
       draftMode,
       token: draftMode ? readToken : "",
@@ -80,10 +74,10 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
 };
 
 export const getStaticPaths = async () => {
-  const slugs = await getAllPostsSlugs();
+  const slugs = await getAllCategorySlugs();
 
   return {
-    paths: slugs?.map(({ slug }) => `/posts/${slug}`) || [],
+    paths: slugs?.map(({ slug }) => `/posts/category/${slug}`) || [],
     fallback: "blocking",
   };
 };

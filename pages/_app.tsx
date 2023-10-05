@@ -33,10 +33,10 @@ export interface SharedPageProps {
 }
 const navItems: NavItems = [
   { title: "Home", href: "/" },
-  { title: "About Us", href: "/about" },
-  { title: "Our Services", href: "/services" },
-  { title: "Blog", href: "/posts" },
-  { title: "Contact Us", href: "/contact" },
+  { title: "About", href: "/about" },
+  { title: "Services", href: "/services" },
+  { title: "HR News", href: "/posts" },
+  { title: "Contact", href: "/contact" },
 ];
 
 function MyApp({ Component, pageProps }: AppProps) {

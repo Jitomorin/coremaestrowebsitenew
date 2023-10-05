@@ -37,13 +37,14 @@ export default function BlogPostSlider({ posts }: BlogPostProps) {
             key={idx}
           >
             <ArticleCard
-              title={singlePost.title}
-              description={singlePost.date}
+              title={singlePost.title!}
+              description={singlePost.date!}
               imageUrl={urlForImage(singlePost.coverImage)
                 .height(1000)
                 .width(2000)
                 .url()}
-              slug={singlePost.slug}
+              slug={singlePost.slug!}
+              categories={singlePost.categories!}
             />
           </SwiperSlide>
         ))}

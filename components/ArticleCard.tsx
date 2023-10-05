@@ -3,12 +3,15 @@ import NextLink from "next/link";
 import styled from "styled-components";
 import { media } from "utils/media";
 import Date from "components/PostDate";
+import { Category } from "@/sanity/lib/queries";
+import Link from "next/link";
 
 export interface ArticleCardProps {
   title: string;
   slug: string;
   imageUrl: string;
   description: string;
+  categories: Category[];
 }
 
 export default function ArticleCard({
@@ -16,6 +19,7 @@ export default function ArticleCard({
   slug,
   imageUrl,
   description,
+  categories,
 }: ArticleCardProps) {
   return (
     <NextLink href={"/posts/" + slug} passHref>
@@ -32,6 +36,19 @@ export default function ArticleCard({
           <Content>
             <Title>{title}</Title>
             <Date dateString={description} />
+            <div className="flex">
+              {categories.map((category) => (
+                <Link
+                  href={`/posts/category/${category.slug?.current}`}
+                  key={category.slug?.current}
+                  className="hover:text-[#f5bb28]"
+                >
+                  <p className=" text-[1rem] mr-1">
+                    {" " + category.title + ","}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </Content>
         </HoverEffectContainer>
       </ArticleCardWrapper>

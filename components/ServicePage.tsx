@@ -9,7 +9,7 @@ import PostPageHead from "components/PostPageHead";
 import PostTitle from "components/PostTitle";
 import SectionSeparator from "components/SectionSeparator";
 import * as demo from "lib/demo.data";
-import type { Category, Post, Settings } from "@/sanity/lib/queries";
+import type { Category, Post, Service, Settings } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import styled from "styled-components";
 import CategorySidebar from "./CategorySidebar";
@@ -17,15 +17,15 @@ import { useEffect, useState } from "react";
 import Button from "./Button";
 import { getPostByCategory } from "@/sanity/lib/client";
 import { useClient } from "sanity";
+import SectionTitle from "./SectionTitle";
+import RichText from "./RichText";
+import ServiceHeader from "./ServiceHeader";
 import { BackButton } from "./BackButton";
-import Link from "next/link";
 
 export interface PostPageProps {
   preview?: boolean;
   loading?: boolean;
-  post: Post;
-  categories: Category[];
-  morePosts: Post[];
+  service: Service;
   settings?: Settings;
 }
 
@@ -35,53 +35,50 @@ const Wrapper = styled.div`
   margin: 5rem 0;
 `;
 
-export default function PostPage(props: PostPageProps) {
-  const { preview, loading, morePosts = NO_POSTS, post, settings } = props;
+export default function ServicePage(props: PostPageProps) {
+  const { preview, loading, service, settings } = props;
   const { title = demo.title } = settings || {};
 
-  const slug = post?.slug;
-  console.log(props.categories);
+  const slug = service?.slug;
+  console.log(props.service?.slug);
   if (!slug && !preview) {
     notFound();
   }
 
   return (
     <>
-      <PostPageHead settings={settings} post={post} />
+      {/* <PostPageHead settings={settings} post={post} /> */}
 
       <Layout preview={preview} loading={loading}>
-        <Container>
+        <div
+          className="container justify-start
+         mx-auto pr-60"
+        >
           {/* <BlogHeader title={title} level={2} /> */}
-          {preview && !post ? (
+          {preview && !service ? (
             <PostTitle>Loading…</PostTitle>
           ) : (
             <Wrapper>
-              <Link
-                href="/posts"
-                className="hover:text-[#f3bb2a] text-3xl font-bold"
-              >
-                Back to blogs
-              </Link>
+              <BackButton
+                size={50}
+                text="Back to services"
+                href={"/services"}
+              />
               <ArticleWrapper>
-                <PostContainer>
-                  <PostHeader
-                    title={post.title}
-                    coverImage={post.coverImage}
-                    date={post.date}
-                    author={post.author}
-                    categories={post.categories}
+                <ServiceContainer>
+                  {/* <SectionTitle>{service.title}</SectionTitle> */}
+                  {/* <RichText>{service?.description}</RichText> */}
+                  <ServiceHeader
+                    title={service.title}
+                    coverImage={service.coverImage}
                   />
-                  <PostBody content={post.content} />
-                </PostContainer>
-
-                <CategorySidebar categories={props.categories} />
+                  <PostBody content={service?.description} />
+                </ServiceContainer>
               </ArticleWrapper>
-              {/* <BackButton size={100} text="Back to blogs" href="/posts" /> */}
               <SectionSeparator />
-              {morePosts?.length > 0 && <MoreBlogs posts={morePosts} />}
             </Wrapper>
           )}
-        </Container>
+        </div>
       </Layout>
     </>
   );
@@ -95,7 +92,7 @@ const ArticleWrapper = styled.article`
     flex-direction: column;
   }
 `;
-const PostContainer = styled.div`
+const ServiceContainer = styled.div`
   display: flex;
   border: 2px solid rgb(var(--border));
   flex-direction: column;

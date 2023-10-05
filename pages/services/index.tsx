@@ -20,6 +20,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import FadeAnimationComponent from "@/components/FadeInAnimation";
 import AboutSection from "../../components/AboutSection";
+import { getAllServices, getClient } from "@/sanity/lib/client";
+import { useClient } from "sanity";
+import { GetStaticProps } from "next";
+import { Service } from "@/sanity/lib/queries";
+import { SharedPageProps } from "../_app";
+import { readToken } from "@/sanity/env";
+import ServiceCard from "@/components/ServiceCard";
+
+export interface ServiceProps extends SharedPageProps {
+  services: Service[];
+}
 
 const SERVICES = [
   {
@@ -177,8 +188,11 @@ const SERVICES = [
     icon: faPoll,
   },
 ];
-export function getServiceDetails(slug: string) {}
-export default function ServicesPage() {
+
+export default function ServicesPage(props: ServiceProps) {
+  const { services } = props;
+
+  console.log(services);
   return (
     <Page
       imgURL="/services_stock.jpg"
@@ -196,14 +210,12 @@ export default function ServicesPage() {
           challenges are our opportunities for success.
         </AboutSection>
         <CustomAutofitGrid>
-          {SERVICES.map((singleFeature, idx) => (
-            <FadeAnimationComponent>
-              <BasicCard
-                useImage={false}
-                FaIcon={singleFeature.icon}
-                key={singleFeature.title}
-                istransparent={true}
-                {...singleFeature}
+          {services.map((singleFeature, idx) => (
+            <FadeAnimationComponent key={singleFeature.slug?.current!}>
+              <ServiceCard
+                title={singleFeature.title}
+                imageUrl={singleFeature.coverImage}
+                slug={singleFeature.slug?.current!}
               />
             </FadeAnimationComponent>
           ))}
@@ -219,12 +231,26 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   & > *:not(:first-child) {
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
 `;
 
-const CustomAutofitGrid = styled(AutofitGrid)`
-  --autofit-grid-item-size: 60rem;
+const CustomAutofitGrid = styled.div`
+  --autofit-grid-item-size: 30rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--autofit-grid-item-size), var(--autofit-grid-item-size))
+  );
+  grid-template-rows: repeat(
+    auto-fit,
+    minmax(var(--autofit-grid-item-size), var(--autofit-grid-item-size))
+  );
+  grid-gap: 4rem;
 
   ${media("<=tablet")} {
     --autofit-grid-item-size: 30rem;
@@ -234,3 +260,24 @@ const CustomAutofitGrid = styled(AutofitGrid)`
     --autofit-grid-item-size: 100%;
   }
 `;
+export const getStaticProps: GetStaticProps<ServiceProps> = async (ctx) => {
+  const { draftMode = false, params = {} } = ctx;
+  const client = getClient(draftMode ? { token: readToken } : undefined);
+  console.log("params", params);
+  const services = await getAllServices(client);
+  console.log("services", services);
+
+  if (!services) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      services,
+      draftMode,
+      token: draftMode ? readToken : "",
+    },
+  };
+};

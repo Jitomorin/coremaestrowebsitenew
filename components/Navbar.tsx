@@ -32,7 +32,6 @@ export default function Navbar({ items }: NavbarProps) {
   const lastRoute = useRef("");
   const stepSize = useRef(50);
   const currentPage = router.pathname;
-  console.log(currentPage);
 
   useScrollPosition(
     scrollPositionCallback,
