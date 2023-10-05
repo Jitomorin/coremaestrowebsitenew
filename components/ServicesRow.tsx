@@ -79,14 +79,24 @@ export default function ServicesRow() {
       <MainContainer>
         {SERVICES.map((singleFeature, idx) => (
           <Card>
-            <FontAwesomeIcon icon={singleFeature.icon} width={60} height={60} />
+            <FontAwesomeIcon
+              className="text-white"
+              icon={singleFeature.icon}
+              width={60}
+              height={60}
+            />
             <Link href={singleFeature.href + generateSlug(singleFeature.title)}>
               <Title>{singleFeature.title}</Title>
             </Link>
           </Card>
         ))}
         <Card>
-          <FontAwesomeIcon icon={faAnglesRight} width={60} height={60} />
+          <FontAwesomeIcon
+            className="text-white"
+            icon={faAnglesRight}
+            width={60}
+            height={60}
+          />
           <Link href="/services">
             <Title>{"More"}</Title>
           </Link>
@@ -105,6 +115,9 @@ const Wrapper = styled.div`
   width: 100%;
   justify-content: flex-end;
   margin-bottom: 2rem;
+  ${media("<tablet")} {
+    display: none;
+  }
 `;
 const Row = styled(AutofitGrid)`
   display: flex;
@@ -132,7 +145,7 @@ const Card = styled.div`
   text-align: center;
   width: 20rem;
   height: 15rem;
-  border: 4px solid rgb(var(--primary));
+  border: 4px solid white;
   border-radius: 0.6rem;
   color: rgb(var(--secondary));
   font-size: 1.6rem;
@@ -159,6 +172,7 @@ const Title = styled.div`
   font-size: 1.4rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  color: white;
 
   /* &::after {
     content: "";

@@ -80,8 +80,9 @@ export default function OurTeam({ employees }: OurteamProps) {
                     <NextImage
                       src={urlForImage(employee.image?.asset?._ref).url()}
                       alt={"Author's photo"}
-                      width={120}
-                      height={120}
+                      width={200}
+                      height={200}
+                      objectFit="cover"
                     />
                   </AuthorImageContainer>
                   <AuthorContent>
@@ -170,22 +171,26 @@ const AuthorContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 `;
 
 const AuthorTitle = styled.p`
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 2rem;
 `;
 
 const AuthorName = styled.p`
   font-weight: normal;
-  font-size: 2.6rem;
+  font-size: 3rem;
 `;
 
 const AuthorImageContainer = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10rem;
   margin-right: 4rem;
   overflow: hidden;
+  height: 15rem;
+  width: 15rem;
 `;

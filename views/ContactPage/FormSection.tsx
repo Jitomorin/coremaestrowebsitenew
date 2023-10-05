@@ -80,15 +80,25 @@ export default function FormSection() {
               {...register("email", { required: true })}
             />
           </InputStack>
+          {/* phone number */}
           <InputStack>
             <Input
-              placeholder="Subject"
-              id="subject"
+              placeholder="Your Phone Number"
+              id="phone"
               disabled={isDisabled}
-              {...register("subject", { required: true })}
+              {...register("phone", { required: true })}
             />
           </InputStack>
+          {errors.phone && <ErrorMessage>Phone is required</ErrorMessage>}
         </InputGroup>
+        <InputStack>
+          <Input
+            placeholder="Subject"
+            id="subject"
+            disabled={isDisabled}
+            {...register("subject", { required: true })}
+          />
+        </InputStack>
         <InputStack>
           {errors.description && (
             <ErrorMessage>Description is required</ErrorMessage>
@@ -125,7 +135,7 @@ export default function FormSection() {
 
 const Wrapper = styled.div`
   justify-content: center;
-  margin: 0 4rem;
+  margin: 0 10rem;
   text-align: center;
 `;
 

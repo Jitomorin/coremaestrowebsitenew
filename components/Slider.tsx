@@ -2,6 +2,7 @@ import { useState } from "react";
 import NextImage from "next/image";
 import styled from "styled-components";
 import ServicesRow from "./ServicesRow";
+import { media } from "@/utils/media";
 
 export default function Slider() {
   const ServicesWrapper = styled.div`
@@ -37,10 +38,11 @@ export default function Slider() {
     margin-top: 26rem;
 
     /* when teblet */
-    @media (max-width: 768px) {
-      font-size: 4rem;
+    ${media("<tablet")} {
       margin-left: 2rem;
       margin-right: 2rem;
+      align-self: center;
+      justify-self: center;
     }
   `;
 

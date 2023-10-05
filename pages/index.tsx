@@ -64,6 +64,7 @@ export default function Homepage({
         <WhiteBackgroundContainer>
           <Slider />
           <BasicSection
+            styledImage={false}
             imageUrl="/why-choose-us.jpg"
             title="Why Choose Us:"
             reversed

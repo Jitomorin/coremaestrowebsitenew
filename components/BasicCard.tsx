@@ -26,7 +26,7 @@ export default function BasicCard({
       {useImage ? (
         <NextImage src={imageUrl} alt="header image" width={100} height={100} />
       ) : (
-        <FontAwesomeIcon icon={FaIcon} width={100} height={100} />
+        <FontAwesomeIcon icon={FaIcon} width={90} height={90} />
       )}
       <Title>{title}</Title>
       <Description>{description}</Description>

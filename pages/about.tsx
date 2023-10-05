@@ -46,11 +46,7 @@ export default function AboutPage() {
           their full potential by harnessing the power of their people.
         </AboutSection>
 
-        <BasicSection
-          imageUrl="/mission.jpg"
-          title="Our Mission"
-          overTitle="mission"
-        >
+        <BasicSection styledImage imageUrl="/mission.jpg" title="Our Mission">
           <p>
             At <strong>Core Maestro Management</strong>, our mission is crystal
             clear: We empower organizations within Kenya and beyond through
@@ -61,9 +57,9 @@ export default function AboutPage() {
           </p>
         </BasicSection>
         <BasicSection
+          styledImage
           imageUrl="/vision.jpg"
           title="Our Vision"
-          overTitle="vision"
           reversed
         >
           <p>

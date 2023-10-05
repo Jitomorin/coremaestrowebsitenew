@@ -122,8 +122,9 @@ export default function ServicesGallery() {
           <h2>Any content 2</h2>
         </TabPanel>
       </Tabs> */}
+      <SectionTitle className="mb-20">Our Approach</SectionTitle>
       <Tabs>
-        <TabList className="text-2xl mb-4 flex font-bold justify-center active:text-[#ffaf01] hover:text-[#ffaf01]">
+        <TabList className="text-3xl text-center mb-4 flex font-bold justify-center active:text-[#ffaf01] hover:text-[#ffaf01]">
           {TABS.map((singleTab, idx) => {
             return <Tab key={idx}>{singleTab.title}</Tab>;
           })}
@@ -140,7 +141,7 @@ export default function ServicesGallery() {
                   priority={true}
                 />
                 <TabContent>
-                  <h2>{singleTab.title}</h2>
+                  {/* <h2>{singleTab.title}</h2> */}
 
                   <p>{singleTab.description}</p>
                 </TabContent>
