@@ -11,7 +11,7 @@ export default function ServiceHeader(
   return (
     <div className="mx-72">
       <div className="mb-8 sm:mx-0 md:mb-16 h-auto">
-        <CoverImage title={title} image={coverImage} priority slug={slug} />
+        <CoverImage title={title!} image={coverImage} priority slug={slug} />
       </div>
       <h1 className="mb-12 text-center text-5xl font-bold leading-tight tracking-tighter md:text-left md:text-6xl md:leading-none lg:text-7xl">
         {title}

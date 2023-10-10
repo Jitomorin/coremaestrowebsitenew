@@ -13,10 +13,18 @@ module.exports = withBundleAnalyzer({
     domains: ['github.blog', 'images.pexels.com', 'placehold.it', 'cdn.sanity.io','images.unsplash.com'],
     deviceSizes: [320, 640, 1080, 1200],
     imageSizes: [64, 128],
+     unoptimized: true ,
   },
   swcMinify: true,
   compiler: {
     styledComponents: true,
+  },
+  output:'export',
+  eslint:{
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push({

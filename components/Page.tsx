@@ -27,7 +27,7 @@ export default function Page({
         <meta name="description" content={description} />
       </Head>
       <Wrapper>
-        <HeaderContainer imgURL={imgURL}>
+        <HeaderContainer imgURL={imgURL!}>
           {/* <NextImage src={imgURL} alt="header image" layout="fill" /> */}
           <Container>
             <Title>{title}</Title>

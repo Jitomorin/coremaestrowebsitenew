@@ -40,7 +40,6 @@ export default function ServicePage(props: PostPageProps) {
   const { title = demo.title } = settings || {};
 
   const slug = service?.slug;
-  console.log(props.service?.slug);
   if (!slug && !preview) {
     notFound();
   }

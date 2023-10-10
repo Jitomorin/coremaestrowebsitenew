@@ -40,7 +40,6 @@ export default function PostPage(props: PostPageProps) {
   const { title = demo.title } = settings || {};
 
   const slug = post?.slug;
-  console.log(props.categories);
   if (!slug && !preview) {
     notFound();
   }

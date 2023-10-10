@@ -22,7 +22,7 @@ export default function BasicCard({
   istransparent,
 }: BasicCardProps) {
   return (
-    <Card isTransparent={istransparent}>
+    <Card isTransparent={istransparent!}>
       {useImage ? (
         <NextImage src={imageUrl} alt="header image" width={100} height={100} />
       ) : (

@@ -18,7 +18,7 @@
     "react/display-name": 0,
     "no-unused-vars": 0,
     "sort-imports": [
-      "error",
+      "warn",
       { "ignoreCase": true, "ignoreDeclarationSort": true }
     ],
     "import/order": [

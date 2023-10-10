@@ -11,6 +11,7 @@ import {
 import { Category, Post, Settings } from "@/sanity/lib/queries";
 import { GetStaticProps } from "next";
 import type { SharedPageProps } from "pages/_app";
+import { useRouter } from "next/router";
 
 interface PageProps extends SharedPageProps {
   post: Post;
@@ -24,8 +25,12 @@ interface Query {
 }
 
 export default function ProjectSlugRoute(props: PageProps) {
+  const router = useRouter();
   const { settings, post, categories, morePosts, draftMode } = props;
 
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
   if (draftMode) {
     return (
       <PreviewPostPage
@@ -36,9 +41,6 @@ export default function ProjectSlugRoute(props: PageProps) {
       />
     );
   }
-  console.log("post", post);
-  console.log("morePosts", morePosts);
-  console.log("categories", categories);
   return (
     <PostPage
       post={post}
@@ -58,8 +60,6 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
     getPostAndMoreStories(client, params.slug),
     getAllCategories(client),
   ]);
-
-  console.log(categories);
 
   if (!post) {
     return {
@@ -84,6 +84,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths: slugs?.map(({ slug }) => `/posts/${slug}`) || [],
-    fallback: "blocking",
+    fallback: true,
   };
 };

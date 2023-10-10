@@ -16,6 +16,7 @@ import {
   categorySlugsQuery,
   Service,
   servicesQuery,
+  serviceSlugsQuery,
 } from "./queries";
 import { createClient, type SanityClient } from "next-sanity";
 
@@ -69,14 +70,14 @@ export async function getAllPostsSlugs(): Promise<Pick<Post, "slug">[]> {
   const slugs = (await client.fetch<string[]>(postSlugsQuery)) || [];
   return slugs.map((slug) => ({ slug }));
 }
-export async function getAllCategorySlugs(): Promise<Pick<Post, "slug">[]> {
+export async function getAllCategorySlugs(): Promise<Pick<Category, "slug">[]> {
   const client = getClient();
   const slugs = (await client.fetch<string[]>(categorySlugsQuery)) || [];
   return slugs.map((slug) => ({ slug }));
 }
-export async function getAllServiceSlugs(): Promise<Pick<Post, "slug">[]> {
+export async function getAllServiceSlugs(): Promise<Pick<Service, "slug">[]> {
   const client = getClient();
-  const slugs = (await client.fetch<string[]>(postSlugsQuery)) || [];
+  const slugs = (await client.fetch<string[]>(serviceSlugsQuery)) || [];
   return slugs.map((slug) => ({ slug }));
 }
 

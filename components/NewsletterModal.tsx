@@ -1,26 +1,31 @@
-import React, { useState } from 'react';
-import MailchimpSubscribe, { DefaultFormFields } from 'react-mailchimp-subscribe';
-import styled from 'styled-components';
-import { EnvVars } from 'env';
-import useEscClose from 'hooks/useEscKey';
-import { media } from 'utils/media';
-import Button from './Button';
-import CloseIcon from './CloseIcon';
-import Container from './Container';
-import Input from './Input';
-import MailSentState from './MailSentState';
-import Overlay from './Overlay';
+import React, { useState } from "react";
+import MailchimpSubscribe, {
+  DefaultFormFields,
+} from "react-mailchimp-subscribe";
+import { EnvVars } from "env";
+import useEscClose from "hooks/useEscKey";
+import { media } from "utils/media";
+import Button from "./Button";
+import CloseIcon from "./CloseIcon";
+import Container from "./Container";
+import Input from "./Input";
+import MailSentState from "./MailSentState";
+import Overlay from "./Overlay";
+import styled from "styled-components";
 
 export interface NewsletterModalProps {
   onClose: () => void;
 }
 
 export default function NewsletterModal({ onClose }: NewsletterModalProps) {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   useEscClose({ onClose });
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>, enrollNewsletter: (props: DefaultFormFields) => void) {
+  function onSubmit(
+    event: React.FormEvent<HTMLFormElement>,
+    enrollNewsletter: (props: DefaultFormFields) => void
+  ) {
     event.preventDefault();
     console.log({ email });
     if (email) {
@@ -31,31 +36,47 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
   return (
     <MailchimpSubscribe
       url={EnvVars.MAILCHIMP_SUBSCRIBE_URL}
-      render={({ subscribe, status, message }) => {
-        const hasSignedUp = status === 'success';
+      render={({ subscribe, status, message }: any) => {
+        const hasSignedUp = status === "success";
         return (
           <Overlay>
             <Container>
-              <Card onSubmit={(event: React.FormEvent<HTMLFormElement>) => onSubmit(event, subscribe)}>
+              <Card
+                onSubmit={(event: React.FormEvent<HTMLFormElement>) =>
+                  onSubmit(event, subscribe)
+                }
+              >
                 <CloseIconContainer>
                   <CloseIcon onClick={onClose} />
                 </CloseIconContainer>
                 {hasSignedUp && <MailSentState />}
                 {!hasSignedUp && (
                   <>
-                    <Title>Are you ready to enroll to the best newsletter ever?</Title>
+                    <Title>
+                      Are you ready to enroll to the best newsletter ever?
+                    </Title>
                     <Row>
                       <CustomInput
                         value={email}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                          setEmail(e.target.value)
+                        }
                         placeholder="Enter your email..."
                         required
                       />
-                      <CustomButton as="button" type="submit" disabled={hasSignedUp}>
+                      <CustomButton
+                        as="button"
+                        type="submit"
+                        disabled={hasSignedUp}
+                      >
                         Submit
                       </CustomButton>
                     </Row>
-                    {message && <ErrorMessage dangerouslySetInnerHTML={{ __html: message as string }} />}
+                    {message && (
+                      <ErrorMessage
+                        dangerouslySetInnerHTML={{ __html: message as string }}
+                      />
+                    )}
                   </>
                 )}
               </Card>
@@ -79,7 +100,7 @@ const Card = styled.form`
   overflow: hidden;
   color: rgb(var(--text));
 
-  ${media('<=tablet')} {
+  ${media("<=tablet")} {
     padding: 7.5rem 2.5rem;
   }
 `;
@@ -103,7 +124,7 @@ const Title = styled.div`
   text-align: center;
   color: rgb(var(--text));
 
-  ${media('<=tablet')} {
+  ${media("<=tablet")} {
     font-size: 2.6rem;
   }
 `;
@@ -123,7 +144,7 @@ const Row = styled.div`
   width: 100%;
   margin-top: 3rem;
 
-  ${media('<=tablet')} {
+  ${media("<=tablet")} {
     flex-direction: column;
   }
 `;
@@ -134,7 +155,7 @@ const CustomButton = styled(Button)`
   margin-left: 1.5rem;
   box-shadow: var(--shadow-lg);
 
-  ${media('<=tablet')} {
+  ${media("<=tablet")} {
     width: 100%;
     margin-left: 0;
     margin-top: 1rem;
@@ -144,7 +165,7 @@ const CustomButton = styled(Button)`
 const CustomInput = styled(Input)`
   width: 60%;
 
-  ${media('<=tablet')} {
+  ${media("<=tablet")} {
     width: 100%;
   }
 `;

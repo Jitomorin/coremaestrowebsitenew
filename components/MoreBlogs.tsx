@@ -2,7 +2,6 @@ import PostPreview from "components/PostPreview";
 import type { Post } from "@/sanity/lib/queries";
 
 export default function MoreBlogs({ posts }: { posts: Post[] }) {
-  console.log(posts);
   return (
     <section>
       <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">

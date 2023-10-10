@@ -4,7 +4,7 @@ import type { NextRequest, NextResponse } from "next/server";
 import type { PageConfig } from "next/types";
 import { createClient } from "next-sanity";
 
-export const config: PageConfig = { runtime: "edge" };
+export const config: PageConfig = { runtime: "nodejs" };
 
 import { height, OpenGraphImage, width } from "components/OpenGraphImage";
 import * as demo from "lib/demo.data";
@@ -25,7 +25,7 @@ export default async function og(req: NextRequest, res: NextResponse) {
       useCdn: false,
     });
     const settings = (await client.fetch<Settings>(settingsQuery)) || {};
-    title = settings?.ogImage?.title;
+    title = settings?.ogImage?.title!;
   }
 
   return new ImageResponse(

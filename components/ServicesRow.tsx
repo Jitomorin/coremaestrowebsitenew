@@ -42,7 +42,7 @@ const SERVICES = [
     secondColor: "21,35,62",
   },
   {
-    title: "HR Compliance",
+    title: "HR Compliance and Legal Advisory",
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",

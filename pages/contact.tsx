@@ -3,7 +3,6 @@ import Page from "components/Page";
 import { media } from "utils/media";
 import FormSection from "views/ContactPage/FormSection";
 import InformationSection from "views/ContactPage/InformationSection";
-import Map from "components/Map";
 import MapSection from "views/ContactPage/MapSection";
 import Divider from "components/Divider";
 

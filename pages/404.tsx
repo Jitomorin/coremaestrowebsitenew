@@ -8,9 +8,7 @@ export default function NotFoundPage() {
       <Container>
         <ImageContainer>{/* <NotFoundIllustration /> */}</ImageContainer>
         <Title>404</Title>
-        <Description>
-          Oh, that&apos;s unfortunate! Page not found 😔
-        </Description>
+        <Description>Page not found</Description>
       </Container>
     </Wrapper>
   );

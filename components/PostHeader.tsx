@@ -19,7 +19,7 @@ export default function PostHeader(
         {author && <Avatar name={author.name} picture={author.picture} />}
       </div>
       <div className="hidden md:mb-2 md:block text-lg">
-        <Date dateString={date} />
+        <Date dateString={date!} />
       </div>
       <div className="md:flex hidden md:mb-12">
         {categories.map((category) => (
@@ -35,14 +35,14 @@ export default function PostHeader(
         ))}
       </div>
       <div className="mb-8 sm:mx-0 md:mb-16 rounded-lg">
-        <CoverImage title={title} image={coverImage} priority slug={slug} />
+        <CoverImage title={title!} image={coverImage} priority slug={slug} />
       </div>
       <div className=" max-w-2xl">
         <div className="mb-6 block md:hidden">
           {author && <Avatar name={author.name} picture={author.picture} />}
         </div>
         <div className="mb-6 block md:hidden">
-          <Date dateString={date} />
+          <Date dateString={date!} />
         </div>
         <div className="flex md:hidden">
           {categories.map((category) => (

@@ -17,16 +17,16 @@ import { SanityImage } from "./SanityImage";
 
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   types: {
-    image: ({ value }) => {
+    image: ({ value }: any) => {
       return <SanityImage {...value} />;
     },
-    span: ({ value }) => {
+    span: ({ value }: any) => {
       return <span className={"text-5xl"}>{value}</span>;
     },
   },
 };
 
-export default function PostBody({ content }) {
+export default function PostBody({ content }: any) {
   return (
     <div className={`mx-72  ${styles.portableText}`}>
       <PortableText value={content} components={myPortableTextComponents} />

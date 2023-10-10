@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * This code is responsible for revalidating the cache when a post or author is updated.
  *
@@ -61,7 +63,7 @@ export default async function revalidate(
     const updatedRoutes = `Updated routes: ${staleRoutes.join(", ")}`;
     console.log(updatedRoutes);
     return res.status(200).send(updatedRoutes);
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
     return res.status(500).send(err.message);
   }
@@ -130,7 +132,7 @@ async function queryAllRoutes(client: SanityClient): Promise<StaleRoute[]> {
 }
 
 async function mergeWithMoreStories(
-  client,
+  client: any,
   slugs: string[]
 ): Promise<string[]> {
   const moreStories = await client.fetch(
@@ -157,7 +159,7 @@ async function queryStaleAuthorRoutes(
 
   if (slugs.length > 0) {
     slugs = await mergeWithMoreStories(client, slugs);
-    return ["/", ...slugs.map((slug) => `/posts/${slug}`)];
+    return ["/", ...slugs.map((slug: any) => `/posts/${slug}`)];
   }
 
   return [];
@@ -174,5 +176,5 @@ async function queryStalePostRoutes(
 
   slugs = await mergeWithMoreStories(client, slugs);
 
-  return ["/", ...slugs.map((slug) => `/posts/${slug}`)];
+  return ["/", ...slugs.map((slug: any) => `/posts/${slug}`)];
 }

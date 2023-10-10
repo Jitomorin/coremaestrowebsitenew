@@ -90,8 +90,8 @@ export interface Author {
 
 export interface Category {
   title: string;
-  slug?: Slug;
-  description: String;
+  slug?: string;
+  description: string;
 }
 export interface Post {
   _id: string;
@@ -108,7 +108,7 @@ export interface Post {
 export interface Service {
   title: string;
   coverImage?: any;
-  slug?: Slug;
+  slug?: string;
   description?: any;
 }
 
@@ -126,7 +126,7 @@ export interface Employee {
   linkedin?: string;
   github?: string;
   facebook?: string;
-  instagram?: string;
+  twitter?: string;
 }
 
 export interface Settings {

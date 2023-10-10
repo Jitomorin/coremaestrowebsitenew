@@ -36,6 +36,7 @@ export default function Slider() {
     margin-right: 5rem;
     margin-left: 5rem;
     margin-top: 26rem;
+    color: white;
 
     /* when teblet */
     ${media("<tablet")} {

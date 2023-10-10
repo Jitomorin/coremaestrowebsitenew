@@ -11,7 +11,11 @@ import { SharedPageProps } from "./_app";
 import { Employee } from "@/sanity/lib/queries";
 import { GetStaticProps } from "next";
 import { readToken } from "@/sanity/env";
-import { getAllEmployees, getClient } from "@/sanity/lib/client";
+import {
+  getAllEmployees,
+  getAllServiceSlugs,
+  getClient,
+} from "@/sanity/lib/client";
 import { useEffect, useState } from "react";
 
 interface AboutProps extends SharedPageProps {
@@ -26,8 +30,9 @@ export default function AboutPage() {
   useEffect(() => {
     const client = getClient();
     const fetchEmployees = async () => {
+      const slugs = await getAllServiceSlugs();
+      console.log(slugs);
       const employees = await getAllEmployees(client);
-      console.log(employees);
       setEmployeeList(employees);
     };
     fetchEmployees();
@@ -106,7 +111,6 @@ export const getStaticProps: GetStaticProps<AboutProps, Query> = async (
   const client = getClient(draftMode ? { token: readToken } : undefined);
 
   const employees = await getAllEmployees(client);
-  console.log(employees);
 
   return {
     props: {

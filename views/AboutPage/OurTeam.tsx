@@ -11,36 +11,13 @@ import RichText from "components/RichText";
 import { type } from "os";
 import { Employee } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/image";
-
-// const TESTIMONIALS = [
-//   {
-//     companyLogoUrl: "/testimonials/company-logo-1.svg",
-//     content: `Really good. I am so pleased with this product. I didn't even need training.`,
-//     author: {
-//       name: "Clyde Edwards",
-//       title: "Very Serious Man",
-//       avatarUrl: "/testimonials/author-photo-1.jpeg",
-//     },
-//   },
-//   {
-//     companyLogoUrl: "/testimonials/company-logo-2.svg",
-//     content: `It's really wonderful. I use saas product often. Thank You! Saas product has really helped our business.`,
-//     author: {
-//       name: "Jimmy Hunter",
-//       title: "Sigma Male University Graduate",
-//       avatarUrl: "/testimonials/author-photo-2.jpeg",
-//     },
-//   },
-//   {
-//     companyLogoUrl: "/testimonials/company-logo-3.svg",
-//     content: `Since I invested in saas product I made over 100,000 dollars profits. It really saves me time and effort. saas product is exactly what our business has been lacking.`,
-//     author: {
-//       name: "Marjorie Morgan",
-//       title: "Chief Chad Officer",
-//       avatarUrl: "/testimonials/author-photo-3.jpeg",
-//     },
-//   },
-// ];
+import NextLink from "next/link";
+import {
+  FacebookIcon,
+  InstapaperIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "react-share";
 
 type OurteamProps = { employees: Employee[] };
 
@@ -88,6 +65,29 @@ export default function OurTeam({ employees }: OurteamProps) {
                   <AuthorContent>
                     <AuthorName>{employee.fullName}</AuthorName>
                     <AuthorTitle>{employee.position}</AuthorTitle>
+                    <AuthorSocials>
+                      {!employee.linkedin && (
+                        <SocialmediaLink>
+                          <NextLink href={"employee.linkedin"} passHref>
+                            <LinkedinIcon size={40} round={true} />
+                          </NextLink>
+                        </SocialmediaLink>
+                      )}
+                      {!employee.facebook && (
+                        <SocialmediaLink>
+                          <NextLink href={"employee.facebook"} passHref>
+                            <FacebookIcon size={40} round={true} />
+                          </NextLink>
+                        </SocialmediaLink>
+                      )}
+                      {!employee.twitter && (
+                        <SocialmediaLink>
+                          <NextLink href={"employee.instagram"} passHref>
+                            <TwitterIcon size={40} round={true} />
+                          </NextLink>
+                        </SocialmediaLink>
+                      )}
+                    </AuthorSocials>
                   </AuthorContent>
                 </AuthorContainer>
               </OurteamCard>
@@ -178,6 +178,10 @@ const AuthorTitle = styled.p`
   font-weight: bold;
   font-size: 2rem;
 `;
+const AuthorSocials = styled.div`
+  display: flex;
+  margin: 1rem 0;
+`;
 
 const AuthorName = styled.p`
   font-weight: normal;
@@ -193,4 +197,12 @@ const AuthorImageContainer = styled.div`
   overflow: hidden;
   height: 15rem;
   width: 15rem;
+`;
+const SocialmediaLink = styled.div`
+  cursor: pointer;
+  margin-right: 1rem;
+  padding: 0, 0.5rem;
+  &:hover {
+    scale: 1.07;
+  }
 `;

@@ -1,7 +1,6 @@
 import NextImage from "next/image";
 import React, { useState } from "react";
 import styled from "styled-components";
-import Collapse from "components/Collapse";
 import Container from "components/Container";
 import OverTitle from "components/OverTitle";
 import SectionTitle from "components/SectionTitle";
@@ -13,7 +12,7 @@ const TABS = [
   {
     title: "In-Depth Discovery",
     description:
-      "We kick off our journey by engaging in an in-depth discovery process. We take the time to understand your organization's history, culture, challenges, and aspirations. Your story becomes ourstory.",
+      "We kick off our journey by engaging in an in-depth discovery process. We take the time to understand your organization's history, culture, challenges, and aspirations. Your story becomes our story.",
     imageUrl: "/discovery.jpg",
     baseColor: "21,35,62",
     secondColor: "21,35,62",
@@ -21,7 +20,7 @@ const TABS = [
   {
     title: "Open Dialogue",
     description:
-      "Communication is at the core of our approach. We believe in open and honest conversations. We actively listen to your concerns, ideas, and goals, ensuring that every decision we make alignswith your vision",
+      "Communication is at the core of our approach. We believe in open and honest conversations. We actively listen to your concerns, ideas, and goals, ensuring that every decision we make aligns with your vision",
     imageUrl: "/dialog.jpg",
     baseColor: "21,35,62",
     secondColor: "21,35,62",
@@ -141,8 +140,6 @@ export default function ServicesGallery() {
                   priority={true}
                 />
                 <TabContent>
-                  {/* <h2>{singleTab.title}</h2> */}
-
                   <p>{singleTab.description}</p>
                 </TabContent>
               </ImageContainer>

@@ -19,7 +19,7 @@ export default function PreviewPostPage(props: PostPageProps) {
     }
   );
   const [settings, loadingSettings] = useLiveQuery<Settings>(
-    props.settings,
+    props.settings!,
     settingsQuery
   );
 
@@ -30,6 +30,7 @@ export default function PreviewPostPage(props: PostPageProps) {
       post={postPreview}
       morePosts={morePosts}
       settings={settings}
+      categories={postPreview.categories}
     />
   );
 }

@@ -14,6 +14,7 @@ import { Category, Post, Settings } from "@/sanity/lib/queries";
 import { GetStaticProps } from "next";
 import type { SharedPageProps } from "pages/_app";
 import IndexPage from "@/components/IndexPage";
+import { useRouter } from "next/router";
 
 interface PageProps extends SharedPageProps {
   posts: Post[];
@@ -26,6 +27,7 @@ interface Query {
 }
 
 export default function CategorySlugRoute(props: PageProps) {
+  const router = useRouter();
   const { settings, posts, categories, draftMode } = props;
 
   //   if (draftMode) {
@@ -38,10 +40,11 @@ export default function CategorySlugRoute(props: PageProps) {
   //       />
   //     );
   //   }
-  console.log("post", posts);
-  console.log("categories", categories);
-  posts.length > 0;
-  return <IndexPage posts={posts} settings={settings} />;
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+  return <IndexPage posts={posts} settings={settings!} />;
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
@@ -53,8 +56,6 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
     getPostByCategory(client, params.slug),
     getAllCategories(client),
   ]);
-
-  console.log(categories);
 
   if (!posts) {
     return {
@@ -78,6 +79,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths: slugs?.map(({ slug }) => `/posts/category/${slug}`) || [],
-    fallback: "blocking",
+    fallback: true,
   };
 };

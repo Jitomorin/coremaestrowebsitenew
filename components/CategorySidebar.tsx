@@ -28,7 +28,6 @@ export default function CategorySidebar({
     };
   }, []);
 
-  console.log(categories);
   return (
     <Wrapper isSticky={isSticky}>
       <Heading>Categories</Heading>

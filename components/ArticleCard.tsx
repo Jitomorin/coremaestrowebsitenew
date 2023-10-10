@@ -38,15 +38,16 @@ export default function ArticleCard({
             <Date dateString={description} />
             <div className="flex">
               {categories.map((category) => (
-                <Link
-                  href={`/posts/category/${category.slug?.current}`}
-                  key={category.slug?.current}
-                  className="hover:text-[#f5bb28]"
-                >
-                  <p className=" text-[1rem] mr-1">
-                    {" " + category.title + ","}
-                  </p>
-                </Link>
+                // <button
+                //   href={`/posts/category/${category.slug?.current}`}
+                //   key={category.slug?.current}
+                //   className="hover:text-[#f5bb28]"
+                // >
+
+                // </button>
+                <p className=" text-[1rem] mr-1">
+                  {" " + category.title + ","}
+                </p>
               ))}
             </div>
           </Content>

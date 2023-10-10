@@ -1,10 +1,7 @@
 import React from "react";
 import { SharedPageProps } from "../_app";
 import styled from "styled-components";
-import Container from "@/components/Container";
-import SectionTitle from "components/SectionTitle";
-import Page from "@/components/Page";
-import { GetStaticProps } from "next";
+import { GetStaticPathsResult, GetStaticProps } from "next";
 import { Service } from "@/sanity/lib/queries";
 import {
   getAllServiceSlugs,
@@ -39,7 +36,11 @@ const Title = styled.div`
 `;
 
 export default function ServiceSlugRoute(props: ServiceProps) {
+  const router = useRouter();
   const { service } = props;
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
   return (
     <ServicePage
       service={service}
@@ -55,9 +56,7 @@ export const getStaticProps: GetStaticProps<ServiceProps, Query> = async (
 ) => {
   const { draftMode = false, params = {} } = ctx;
   const client = getClient(draftMode ? { token: readToken } : undefined);
-  console.log("params", params);
-  const service = await getServiceBySlug(client, params.slug);
-  console.log("service", service);
+  const [service] = await Promise.all([getServiceBySlug(client, params.slug)]);
 
   if (!service) {
     return {
@@ -78,6 +77,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths: slugs?.map(({ slug }) => `/services/${slug}`) || [],
-    fallback: "blocking",
+    fallback: true,
   };
 };
