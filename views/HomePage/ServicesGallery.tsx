@@ -227,7 +227,7 @@ const TabTitleContainer = styled.div`
   align-self: center;
   align-items: center;
   z-index: 1000;
-  background-color: rgb(var(--primary));
+  background-color: rgb(21, 35, 62);
   width: 40%;
   padding: 1rem;
   color: white;
@@ -245,7 +245,7 @@ const TabContent = styled.div`
   width: 40%;
   height: 100%;
   justify-content: center;
-  background-color: rgb(var(--primary), 0.85);
+  background-color: rgb(21, 35, 62, 0.85);
 
   padding-left: calc(1rem + 1.5rem);
   padding-right: calc(4rem + 1.5rem);
@@ -270,7 +270,7 @@ const TabContent = styled.div`
 
   p {
     font-weight: normal;
-    border-left: 2px solid rgb(var(--secondary));
+    border-left: 2px solid rgb(255, 175, 1);
     padding-left: 1rem;
   }
 `;

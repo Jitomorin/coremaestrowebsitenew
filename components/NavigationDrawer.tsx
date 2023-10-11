@@ -103,7 +103,7 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     z-index: var(--z-drawer);
-    background: rgb(var(--background));
+    background: rgb(251, 251, 253);
     transition: margin-left 0.3s cubic-bezier(0.82, 0.085, 0.395, 0.895);
     overflow: hidden;
   }
@@ -162,7 +162,7 @@ const HoverUnderlineAnimation = styled.div<Partial<SingleNavItem>>`
             height: 3px;
             bottom: 0;
             left: 0;
-            background-color: rgb(var(--secondary));
+            background-color: rgb(255, 175, 1);
           }
         `
       : css`
@@ -174,7 +174,7 @@ const HoverUnderlineAnimation = styled.div<Partial<SingleNavItem>>`
             height: 3px;
             bottom: 0;
             left: 0;
-            background-color: rgb(var(--secondary));
+            background-color: rgb(255, 175, 1);
             transform-origin: bottom right;
             transition: transform 0.25s ease-out;
           }

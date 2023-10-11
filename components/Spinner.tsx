@@ -1,10 +1,10 @@
 // Spinner.tsx
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const spinBeforeAnimation = keyframes`
   from {
-    box-shadow: 0 0 0 -5.6px rgb(var(--secondary));
+    box-shadow: 0 0 0 -5.6px rgb(255,175,1);
   }
 `;
 
@@ -30,10 +30,11 @@ const SpinnerContainer = styled.div`
 const SpinnerElement = styled.div`
   width: 80px; /* Adjust the size as needed */
   height: 80px; /* Adjust the size as needed */
-  animation: ${spinBeforeAnimation} 0.5s backwards, ${spinAnimation} 1.25s 0.5s infinite ease;
-  border: 10px solid rgb(var(--secondary));
+  animation: ${spinBeforeAnimation} 0.5s backwards,
+    ${spinAnimation} 1.25s 0.5s infinite ease;
+  border: 10px solid rgb(255, 175, 1);
   border-radius: 50%;
-  box-shadow: 0 -60px 0 -10px rgb(var(--secondary));
+  box-shadow: 0 -60px 0 -10px rgb(255, 175, 1);
 `;
 
 const Spinner: React.FC = () => {

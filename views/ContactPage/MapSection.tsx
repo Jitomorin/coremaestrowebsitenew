@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
-import Button from 'components/Button';
-import Input from 'components/Input';
-import { media } from 'utils/media';
-import MailSentState from '../../components/MailSentState';
-import Map from 'components/Map';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import styled from "styled-components";
+import Button from "components/Button";
+import Input from "components/Input";
+import { media } from "utils/media";
+import MailSentState from "../../components/MailSentState";
+import Map from "components/Map";
 
 export default function MapSection() {
   return (
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 
   h3 {
     font-size: 3.5rem;
-    color: rgba(var(--text));
+    color: rgba(10, 18, 30);
     margin-top: 3rem;
     margin-bottom: 3rem;
   }

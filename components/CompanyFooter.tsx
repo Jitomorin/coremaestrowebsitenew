@@ -27,7 +27,7 @@ export default function CompanyFooter() {
 }
 
 const Wrapper = styled.div`
-  background: rgb(var(--primary));
+  background: rgb(21, 35, 62);
   margin-top: -1rem;
   padding-bottom: 6rem;
 
@@ -37,7 +37,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled(SectionTitle)`
-  color: rgb(var(--textSecondary));
+  color: rgb(255, 255, 255);
   padding-top: 4rem;
   margin-bottom: 4rem;
 `;
@@ -51,7 +51,7 @@ const RichText = styled.div`
   font-size: 1.9rem;
   opacity: 0.8;
   line-height: 1.6;
-  color: rgb(var(--textSecondary));
+  color: rgb(255, 255, 255);
   text-align: center;
 
   ${media("<=desktop")} {
@@ -74,8 +74,8 @@ const Icon = styled.div`
 // end subscribe button
 
 const OutlinedButton = styled(Button)`
-  border: 1px solid rgb(var(--secondary));
-  color: rgb(var(--secondary));
+  border: 1px solid rgb(255, 175, 1);
+  color: rgb(255, 175, 1);
 `;
 
 const CustomButtonGroup = styled(ButtonGroup)`

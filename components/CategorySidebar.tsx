@@ -59,7 +59,7 @@ const Wrapper = styled.div<{
   width: 70%;
   align-items: center;
   padding: 2rem;
-  /* border: 2px solid rgb(var(--secondary)); */
+  /* border: 2px solid rgb(255,175,1); */
   background-color: white;
   ${media("<tablet")} {
     display: none;
@@ -87,6 +87,6 @@ const CategoryLink = styled.div`
   font-size: 1.5rem;
   &:hover {
     scale: 1.03;
-    color: rgb(var(--secondary));
+    color: rgb(255, 175, 1);
   }
 `;

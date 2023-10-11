@@ -52,7 +52,7 @@ const Title = styled.div`
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: rgb(var(--secondary));
+    background-color: rgb(255,175,1);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   } */
@@ -98,7 +98,7 @@ const Card = styled.div<{ backgroundURL: string }>`
 `;
 
 const Container = styled.div`
-  background: rgb(var(--primary), 0.8);
+  background: rgb(21, 35, 62, 0.8);
   height: 100%;
   width: 100%;
   align-items: flex-end;
@@ -108,6 +108,6 @@ const Container = styled.div`
 
   transition: background 2s ease; /* Add a transition for the background property */
   &:hover {
-    background: rgb(var(--primary), 0);
+    background: rgb(21, 35, 62, 0);
   }
 `;

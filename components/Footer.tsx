@@ -128,8 +128,8 @@ function ListItem({ title, href }: SingleFooterListItem) {
 const FooterWrapper = styled.div`
   padding-top: 10rem;
   padding-bottom: 4rem;
-  background: rgb(var(--primary));
-  color: rgb(var(--textSecondary));
+  background: rgb(21, 35, 62);
+  color: rgb(255, 255, 255);
 `;
 
 const LogoContainer = styled.div`
@@ -195,9 +195,9 @@ const ListItemWrapper = styled.p`
 
   a {
     text-decoration: none;
-    color: rgba(var(--textSecondary), 0.75);
+    color: rgba(255, 255, 255, 0.75);
     &:hover {
-      color: rgba(var(--secondary));
+      color: rgba(255, 175, 1);
     }
   }
 `;

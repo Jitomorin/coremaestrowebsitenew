@@ -158,7 +158,7 @@ const LogoWrapper = styled.div`
   margin-right: auto;
   text-decoration: none;
 
-  color: rgb(var(--logoColor));
+  color: rgb(36, 58, 90);
 `;
 
 const HoverUnderlineAnimation = styled.div<Partial<SingleNavItem>>`
@@ -177,7 +177,7 @@ const HoverUnderlineAnimation = styled.div<Partial<SingleNavItem>>`
             height: 3px;
             bottom: 0;
             left: 0;
-            background-color: rgb(var(--secondary));
+            background-color: rgb(255, 175, 1);
           }
         `
       : css`
@@ -189,7 +189,7 @@ const HoverUnderlineAnimation = styled.div<Partial<SingleNavItem>>`
             height: 3px;
             bottom: 0;
             left: 0;
-            background-color: rgb(var(--secondary));
+            background-color: rgb(255, 175, 1);
             transform-origin: bottom right;
             transition: transform 0.25s ease-out;
           }
@@ -214,7 +214,7 @@ const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
 
   div {
     display: flex;
-    color: rgb(var(--text), 0.75);
+    color: rgb(10, 18, 30, 0.75);
     letter-spacing: 0.025em;
     text-decoration: none;
     padding: 0.75rem 1.5rem;

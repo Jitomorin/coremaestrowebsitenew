@@ -137,7 +137,7 @@ const MainContainer = styled.div`
 `;
 const Card = styled.div`
   display: flex;
-  /* background: rgb(var(--cardBackground)); */
+  /* background: rgb(255,255,255); */
   cursor: pointer;
   flex-direction: column;
   justify-content: center;
@@ -147,12 +147,12 @@ const Card = styled.div`
   height: 15rem;
   border: 4px solid white;
   border-radius: 0.6rem;
-  color: rgb(var(--secondary));
+  color: rgb(255, 175, 1);
   font-size: 1.6rem;
   transition: transform 0.3s ease;
   a {
     text-decoration: none;
-    color: rgb(var(--text));
+    color: rgb(10, 18, 30);
     cursor: pointer;
   }
 
@@ -182,7 +182,7 @@ const Title = styled.div`
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: rgb(var(--secondary));
+    background-color: rgb(255,175,1);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }

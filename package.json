@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "export": "next export",
     "start": "NODE_ENV=production node server.js",
     "sanity": "cd studio && sanity start",

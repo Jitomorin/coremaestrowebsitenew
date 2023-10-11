@@ -46,7 +46,7 @@ const Wrapper = styled.div`
 `;
 
 // const Container = styled.div`
-//   background: rgb(var(--primary), 0.8);
+//   background: rgb(21,35,62, 0.8);
 //   width: 100%;
 //   height: 100%;
 //   margin: 0 auto;
@@ -60,7 +60,7 @@ const HeaderContainer = styled.div<{ imgURL: string }>`
   align-items: center;
   justify-content: center;
   min-height: 30rem;
-  background: rgb(var(--primary), 0.8);
+  background: rgb(21, 35, 62, 0.8);
   margin: 0 auto;
   padding: 0 2rem;
   background: url(${(p) => p.imgURL}) no-repeat center center fixed;
@@ -74,13 +74,13 @@ const Container = styled.div`
   padding: 0 2rem;
 `;
 const Title = styled(SectionTitle)`
-  color: rgb(var(--textSecondary));
+  color: rgb(255, 255, 255);
   margin-bottom: 2rem;
 `;
 
 const Description = styled.div`
   font-size: 1.8rem;
-  color: rgba(var(--textSecondary), 0.8);
+  color: rgba(255, 255, 255, 0.8);
   text-align: center;
   max-width: 60%;
   margin: auto;

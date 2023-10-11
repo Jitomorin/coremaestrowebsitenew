@@ -49,7 +49,7 @@ const Title = styled.div`
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: rgb(var(--secondary));
+    background-color: rgb(255, 175, 1);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
@@ -68,7 +68,7 @@ const Card = styled.div<{ isTransparent: boolean }>`
   ${(props) =>
     props.isTransparent
       ? "background: transparent;"
-      : "background: rgb(var(--cardBackground));"}
+      : "background: rgb(255,255,255);"}
 
   /* box-shadow: var(--shadow-md); */
   flex-direction: column;
@@ -77,7 +77,7 @@ const Card = styled.div<{ isTransparent: boolean }>`
   text-align: center;
   width: 80%;
   border-radius: 0.6rem;
-  color: rgb(var(--text));
+  color: rgb(10, 18, 30);
   font-size: 1.6rem;
   padding: 3 2rem;
   /* increase scale on hover */

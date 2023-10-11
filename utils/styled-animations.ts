@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // underline on hover animation
 export const HoverUnderlineAnimation = styled.div`
@@ -8,14 +8,14 @@ export const HoverUnderlineAnimation = styled.div`
   margin-right: 1.5rem;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     transform: scaleX(0);
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: rgb(var(--secondary));
+    background-color: rgb(255, 175, 1);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }

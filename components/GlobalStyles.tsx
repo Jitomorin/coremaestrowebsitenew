@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
   --navbarBackground: 255,255,255;
   --modalBackground: 251,251,253;
   --errorColor: 207,34,46;
-  --logoColor: #243A5A;
+  --logoColor: 36,58,90;
 }
 
 
@@ -99,13 +99,13 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: var(--font);
-  color: rgb(var(--text));
-  background: rgb(var(--background));
+  color: rgb(10,18,30);
+  background: rgb(251,251,253);
   font-feature-settings: "kern";
 }
 
 svg {
-  color: rgb(var(--text));
+  color: rgb(10,18,30);
 }
 
 /* A elements that don't have a class get default styles */

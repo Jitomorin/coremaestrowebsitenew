@@ -94,11 +94,11 @@ const Card = styled.form`
   flex-direction: column;
   margin: auto;
   padding: 10rem 5rem;
-  background: rgb(var(--modalBackground));
+  background: rgb(251, 251, 253);
   border-radius: 0.6rem;
   max-width: 70rem;
   overflow: hidden;
-  color: rgb(var(--text));
+  color: rgb(10, 18, 30);
 
   ${media("<=tablet")} {
     padding: 7.5rem 2.5rem;
@@ -122,7 +122,7 @@ const Title = styled.div`
   line-height: 1.1;
   letter-spacing: -0.03em;
   text-align: center;
-  color: rgb(var(--text));
+  color: rgb(10, 18, 30);
 
   ${media("<=tablet")} {
     font-size: 2.6rem;
@@ -130,7 +130,7 @@ const Title = styled.div`
 `;
 
 const ErrorMessage = styled.p`
-  color: rgb(var(--errorColor));
+  color: rgb(207, 34, 46);
   font-size: 1.5rem;
   margin: 1rem 0;
   text-align: center;

@@ -31,7 +31,7 @@ export default function WaveCta() {
 }
 
 const CtaWrapper = styled.div`
-  background: rgb(var(--primary));
+  background: rgb(21, 35, 62);
   margin-top: -1rem;
   padding-bottom: 16rem;
 
@@ -42,7 +42,7 @@ const CtaWrapper = styled.div`
 
 const Title = styled(SectionTitle)`
   font-size: 2.3rem;
-  color: rgb(var(--textSecondary));
+  color: rgb(255, 255, 255);
   padding-top: 4rem;
   margin-bottom: 4rem;
 `;
@@ -63,7 +63,7 @@ const Link = styled.button`
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 4px;
-  border: 3px solid rgb(var(--textSecondary));
+  border: 3px solid rgb(255, 255, 255);
   transition: all 0.35s;
   cursor: pointer;
   border-radius: 1rem;
@@ -71,9 +71,9 @@ const Link = styled.button`
   &:hover {
     width: 200px;
     letter-spacing: 2px;
-    border: 3px solid rgb(var(--secondary));
-    background: rgb(var(--secondary));
-    color: rgb(var(--textSecondary));
+    border: 3px solid rgb(255, 175, 1);
+    background: rgb(255, 175, 1);
+    color: rgb(255, 255, 255);
   }
 `;
 

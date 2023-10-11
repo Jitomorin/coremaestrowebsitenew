@@ -34,7 +34,7 @@ export default function Cta() {
 
 const Description = styled.div`
   font-size: 1.8rem;
-  color: rgba(var(--textSecondary), 1);
+  color: rgba(255, 255, 255, 1);
 `;
 
 const SectionTitle = styled.div`
@@ -43,7 +43,7 @@ const SectionTitle = styled.div`
   line-height: 1.1;
   letter-spacing: -0.03em;
   text-align: center;
-  color: rgb(var(--textSecondary));
+  color: rgb(255, 255, 255);
 
   ${media("<=tablet")} {
     font-size: 4.6rem;
@@ -51,7 +51,7 @@ const SectionTitle = styled.div`
 `;
 
 const Container = styled.div`
-  background: rgb(var(--primary), 0.8);
+  background: rgb(21, 35, 62, 0.8);
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -73,7 +73,7 @@ const Link = styled.button`
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 4px;
-  border: 3px solid rgb(var(--textSecondary));
+  border: 3px solid rgb(255, 255, 255);
   transition: all 0.35s;
   border-radius: 1rem;
   cursor: pointer;
@@ -81,9 +81,9 @@ const Link = styled.button`
   &:hover {
     width: 200px;
     letter-spacing: 2px;
-    border: 3px solid rgb(var(--secondary));
-    background: rgb(var(--secondary));
-    color: rgb(var(--textSecondary));
+    border: 3px solid rgb(255, 175, 1);
+    background: rgb(255, 175, 1);
+    color: rgb(255, 255, 255);
   }
 `;
 
@@ -91,7 +91,7 @@ const Stack = styled.div`
   display: flex;
   flex-direction: column;
   padding: 12.5rem 0;
-  color: rgb(var(--textSecondary));
+  color: rgb(255, 255, 255);
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -112,8 +112,8 @@ const Stack = styled.div`
 `;
 
 // const OutlinedButton = styled(Button)`
-//   border: 1px solid rgb(var(--textSecondary));
-//   color: rgb(var(--textSecondary));
+//   border: 1px solid rgb(255,255,255);
+//   color: rgb(255,255,255);
 // `;
 
 const CtaWrapper = styled.div`

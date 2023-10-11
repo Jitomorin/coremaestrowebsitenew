@@ -153,7 +153,7 @@ const HomepageWrapper = styled.div`
 `;
 
 const DarkerBackgroundContainer = styled.div`
-  background: rgb(var(--background));
+  background: rgb(251, 251, 253);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,7 +163,7 @@ const DarkerBackgroundContainer = styled.div`
 `;
 
 const WhiteBackgroundContainer = styled.div`
-  background: rgb(var(--secondBackground));
+  background: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: center;

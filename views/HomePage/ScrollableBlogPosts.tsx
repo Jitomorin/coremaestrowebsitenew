@@ -138,7 +138,7 @@ const SwiperContainer = styled(Container)`
 
   .swiper-button-prev,
   .swiper-button-next {
-    color: rgb(var(--secondary));
+    color: rgb(255, 175, 1);
 
     ${media("<=desktop")} {
       display: none;

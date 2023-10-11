@@ -19,7 +19,6 @@ module.exports = withBundleAnalyzer({
   compiler: {
     styledComponents: true,
   },
-  output:'export',
   eslint:{
     ignoreDuringBuilds: true,
   },

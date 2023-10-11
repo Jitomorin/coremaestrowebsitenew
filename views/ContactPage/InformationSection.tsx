@@ -36,20 +36,20 @@ const Wrapper = styled.div`
   h5 {
     font-size: 2rem;
     font-weight: 800;
-    color: rgba(var(--text), 0.6);
+    color: rgba(10, 18, 30, 0.6);
     margin-top: 2rem;
   }
 
   p {
     font-weight: bold;
     font-size: 2rem;
-    color: rgba(var(--text), 0.5);
+    color: rgba(10, 18, 30, 0.5);
     text-transform: uppercase;
     margin-top: 4rem;
   }
 
   span {
     opacity: 1;
-    color: rgba(var(--text), 1);
+    color: rgba(10, 18, 30, 1);
   }
 `;
