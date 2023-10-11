@@ -6,7 +6,6 @@ import Divider from "components/Divider";
 import CoreValues from "components/CoreValues";
 import OurTeam from "views/AboutPage/OurTeam";
 import AboutSection from "components/AboutSection";
-import FadeAnimationComponent from "@/components/FadeInAnimation";
 import { SharedPageProps } from "./_app";
 import { Employee } from "@/sanity/lib/queries";
 import { GetStaticProps } from "next";
@@ -77,13 +76,11 @@ export default function AboutPage() {
           </p>
         </BasicSection>
         <Divider />
-        <FadeAnimationComponent>
-          <CoreValues />
-        </FadeAnimationComponent>
+
+        <CoreValues />
+
         <OurteamSection>
-          <FadeAnimationComponent>
-            <OurTeam employees={EmployeeList} />
-          </FadeAnimationComponent>
+          <OurTeam employees={EmployeeList} />
         </OurteamSection>
       </AboutContainer>
     </Page>
