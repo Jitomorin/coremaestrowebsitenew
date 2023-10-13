@@ -108,7 +108,7 @@ export interface Post {
 export interface Service {
   title: string;
   coverImage?: any;
-  slug?: string;
+  slug?: Slug;
   description?: any;
 }
 

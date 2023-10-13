@@ -35,10 +35,10 @@ export default function ServicesPage(props: ServiceProps) {
         <CustomAutofitGrid>
           {services.map((singleFeature, idx) => (
             <ServiceCard
-              key={singleFeature.slug}
+              key={singleFeature.slug?.current!}
               title={singleFeature.title}
               imageUrl={singleFeature.coverImage}
-              slug={singleFeature.slug!}
+              slug={singleFeature.slug?.current!}
             />
           ))}
         </CustomAutofitGrid>
@@ -63,6 +63,9 @@ const CustomAutofitGrid = styled.div`
   width: 100%;
   display: grid;
   justify-content: center;
+  ${media("<largeDesktop")} {
+    max-width: 90%;
+  }
 
   grid-template-columns: repeat(
     auto-fit,

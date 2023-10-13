@@ -101,13 +101,15 @@ const BasicSectionWrapper = styled(Container)`
   align-self: center;
   flex-direction: ${(p: Props) => (p.reversed ? "row-reverse" : "row")};
   margin-top: 2rem;
-  margin-bottom: 20rem;
+  margin-bottom: 10rem;
 
   ${ImageContainer} {
     margin: ${(p: Props) => (p.reversed ? "0 0 0 5rem" : "0 5rem 0 0")};
   }
-
-  ${media("<=desktop")} {
+  ${media("<largeDesktop")} {
+    max-width: 90%;
+  }
+  ${media("<=tablet")} {
     flex-direction: column;
 
     ${ImageContainer} {

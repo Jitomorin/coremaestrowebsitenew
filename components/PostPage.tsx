@@ -33,6 +33,9 @@ const NO_POSTS: Post[] = [];
 
 const Wrapper = styled.div`
   margin: 5rem 0;
+  ${media("<largeDesktop")} {
+    max-width: 90%;
+  }
 `;
 
 export default function PostPage(props: PostPageProps) {
@@ -54,14 +57,14 @@ export default function PostPage(props: PostPageProps) {
           {preview && !post ? (
             <PostTitle>Loading…</PostTitle>
           ) : (
-            <Wrapper>
+            <Wrapper className="mx-auto">
               <Link
                 href="/posts"
-                className="hover:text-[#f3bb2a] text-3xl font-bold"
+                className="hover:text-[#f3bb2a] text-3xl font-bold ml-10"
               >
                 Back to blogs
               </Link>
-              <ArticleWrapper>
+              <ArticleWrapper className="">
                 <PostContainer>
                   <PostHeader
                     title={post.title}
@@ -90,8 +93,10 @@ const ArticleWrapper = styled.article`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+
   ${media("<tablet")} {
     flex-direction: column;
+    margin-left: 5rem;
   }
 `;
 const PostContainer = styled.div`

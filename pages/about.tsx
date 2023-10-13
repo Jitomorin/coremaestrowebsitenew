@@ -99,6 +99,9 @@ const AboutContainer = styled.div`
 const OurteamSection = styled.div`
   display: flex;
   flex-direction: column;
+  ${media("<largeDesktop")} {
+    max-width: 90%;
+  }
 `;
 
 export const getStaticProps: GetStaticProps<AboutProps, Query> = async (

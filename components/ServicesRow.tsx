@@ -23,6 +23,7 @@ import { generateSlug } from "@/utils/formatString";
 const SERVICES = [
   {
     title: "Payroll Management",
+    slug: generateSlug("Payroll Management"),
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
@@ -33,6 +34,7 @@ const SERVICES = [
   },
   {
     title: "HR Outsourcing",
+    slug: generateSlug("HR Outsourcing"),
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
@@ -42,7 +44,8 @@ const SERVICES = [
     secondColor: "21,35,62",
   },
   {
-    title: "HR Compliance and Legal Advisory",
+    title: "HR Compliance",
+    slug: generateSlug("HR Compliance and Legal Advisory"),
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
@@ -52,7 +55,8 @@ const SERVICES = [
     secondColor: "21,35,62",
   },
   {
-    title: "Employee Engagement Survey",
+    title: "Employee Engagement",
+    slug: generateSlug("Employee Engagement Survey"),
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
@@ -63,6 +67,7 @@ const SERVICES = [
   },
   {
     title: "HR Policies Development",
+    slug: generateSlug("HR Policies Development"),
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
@@ -82,10 +87,10 @@ export default function ServicesRow() {
             <FontAwesomeIcon
               className="text-white"
               icon={singleFeature.icon}
-              width={60}
-              height={60}
+              width={media("<largeDesktop") ? 40 : 60}
+              height={media("<largeDesktop") ? 40 : 60}
             />
-            <Link href={singleFeature.href + generateSlug(singleFeature.title)}>
+            <Link href={singleFeature.href + singleFeature.slug}>
               <Title>{singleFeature.title}</Title>
             </Link>
           </Card>
@@ -94,8 +99,8 @@ export default function ServicesRow() {
           <FontAwesomeIcon
             className="text-white"
             icon={faAnglesRight}
-            width={60}
-            height={60}
+            width={media("<largeDesktop") ? 40 : 60}
+            height={media("<largeDesktop") ? 40 : 60}
           />
           <Link href="/services">
             <Title>{"More"}</Title>
@@ -145,11 +150,15 @@ const Card = styled.div`
   text-align: center;
   width: 20rem;
   height: 15rem;
-  border: 4px solid white;
+  border: 3px solid white;
   border-radius: 0.6rem;
   color: rgb(255, 175, 1);
   font-size: 1.6rem;
   transition: transform 0.3s ease;
+  ${media("<largeDesktop")} {
+    width: 10rem;
+    height: 10rem;
+  }
   a {
     text-decoration: none;
     color: rgb(10, 18, 30);
@@ -173,6 +182,11 @@ const Title = styled.div`
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   color: white;
+  ${media("<largeDesktop")} {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 
   /* &::after {
     content: "";

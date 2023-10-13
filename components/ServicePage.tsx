@@ -49,35 +49,37 @@ export default function ServicePage(props: PostPageProps) {
       {/* <PostPageHead settings={settings} post={post} /> */}
 
       <Layout preview={preview} loading={loading}>
-        <div
-          className="container justify-start
-         mx-auto pr-60"
-        >
-          {/* <BlogHeader title={title} level={2} /> */}
-          {preview && !service ? (
-            <PostTitle>Loading…</PostTitle>
-          ) : (
-            <Wrapper>
-              <BackButton
-                size={50}
-                text="Back to services"
-                href={"/services"}
-              />
-              <ArticleWrapper>
-                <ServiceContainer>
-                  {/* <SectionTitle>{service.title}</SectionTitle> */}
-                  {/* <RichText>{service?.description}</RichText> */}
-                  <ServiceHeader
-                    title={service.title}
-                    coverImage={service.coverImage}
-                  />
-                  <PostBody content={service?.description} />
-                </ServiceContainer>
-              </ArticleWrapper>
-              <SectionSeparator />
-            </Wrapper>
-          )}
-        </div>
+        <ServicePageWrapper>
+          <div
+            className="container justify-start
+         mx-auto px-16 md:px-10"
+          >
+            {/* <BlogHeader title={title} level={2} /> */}
+            {preview && !service ? (
+              <PostTitle>Loading…</PostTitle>
+            ) : (
+              <Wrapper>
+                <BackButton
+                  size={50}
+                  text="Back to services"
+                  href={"/services"}
+                />
+                <ArticleWrapper>
+                  <ServiceContainer>
+                    {/* <SectionTitle>{service.title}</SectionTitle> */}
+                    {/* <RichText>{service?.description}</RichText> */}
+                    <ServiceHeader
+                      title={service.title}
+                      coverImage={service.coverImage}
+                    />
+                    <PostBody content={service?.description} />
+                  </ServiceContainer>
+                </ArticleWrapper>
+                <SectionSeparator />
+              </Wrapper>
+            )}
+          </div>
+        </ServicePageWrapper>
       </Layout>
     </>
   );
@@ -100,3 +102,4 @@ const ServiceContainer = styled.div`
     flex-direction: column;
   }
 `;
+const ServicePageWrapper = styled(Container)``;

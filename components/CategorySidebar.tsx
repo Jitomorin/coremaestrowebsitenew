@@ -47,13 +47,6 @@ export default function CategorySidebar({
 const Wrapper = styled.div<{
   isSticky: boolean;
 }>`
-  /* ${(props) =>
-    css`
-      position: ${props.isSticky ? "fixed" : "absolute"};
-      top: ${props.isSticky ? "50%" : "50%"};
-      right: ${props.isSticky ? "0%" : "0%"};
-      transform: ${props.isSticky ? "translateY(-50%)" : "translateY(-50%)"};
-    `} */
   display: flex;
   flex-direction: column;
   width: 70%;

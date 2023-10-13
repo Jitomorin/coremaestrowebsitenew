@@ -56,14 +56,13 @@ export default function BlogPostSlider({ posts }: BlogPostProps) {
 const Wrapper = styled(Container)`
   position: relative;
   width: 100%;
+  ${media("<largeDesktop")} {
+    max-width: 90%;
+  }
 
   .swiper-button-prev,
   .swiper-button-next {
     color: rgb(255, 175, 1);
-
-    ${media("<=desktop")} {
-      display: none;
-    }
   }
 
   .swiper-button-prev {
