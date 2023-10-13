@@ -5,15 +5,6 @@ import ServicesRow from "./ServicesRow";
 import { media } from "@/utils/media";
 
 export default function Slider() {
-  const ServicesWrapper = styled.div`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    padding: 0 0rem;
-    height: 20%;
-  `;
   const ImageWrapper = styled.div`
     position: relative;
     display: flex;
@@ -32,13 +23,18 @@ export default function Slider() {
     max-width: 14em;
     position: relative;
     font-size: 6rem;
-    margin-left: 5rem;
+    margin-bottom: 2rem;
     margin-right: 5rem;
     margin-left: 5rem;
-    margin-top: 26rem;
+    margin-top: 20rem;
     color: white;
 
-    /* when teblet */
+    /* When screen is less or equal to desktop */
+    ${media("<largeDesktop")} {
+      font-size: 4.6rem;
+      margin-top: 20rem;
+    }
+    /* when screen is less than tablet */
     ${media("<tablet")} {
       margin-left: 2rem;
       margin-right: 2rem;

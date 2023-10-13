@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Page from "components/Page";
 import { media } from "utils/media";
-import FadeAnimationComponent from "@/components/FadeInAnimation";
 import AboutSection from "../../components/AboutSection";
 import { getAllServices, getClient } from "@/sanity/lib/client";
 import { GetStaticProps } from "next";
@@ -35,13 +34,12 @@ export default function ServicesPage(props: ServiceProps) {
         </AboutSection>
         <CustomAutofitGrid>
           {services.map((singleFeature, idx) => (
-            <FadeAnimationComponent key={singleFeature.slug?.current!}>
-              <ServiceCard
-                title={singleFeature.title}
-                imageUrl={singleFeature.coverImage}
-                slug={singleFeature.slug?.current!}
-              />
-            </FadeAnimationComponent>
+            <ServiceCard
+              key={singleFeature.slug?.current!}
+              title={singleFeature.title}
+              imageUrl={singleFeature.coverImage}
+              slug={singleFeature.slug?.current!}
+            />
           ))}
         </CustomAutofitGrid>
       </Wrapper>
@@ -65,6 +63,9 @@ const CustomAutofitGrid = styled.div`
   width: 100%;
   display: grid;
   justify-content: center;
+  ${media("<largeDesktop")} {
+    max-width: 90%;
+  }
 
   grid-template-columns: repeat(
     auto-fit,

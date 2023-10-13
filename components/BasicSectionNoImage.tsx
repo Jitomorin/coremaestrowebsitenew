@@ -7,7 +7,6 @@ import OverTitle from "./OverTitle";
 import RichText from "./RichText";
 import Lottie from "lottie-react";
 import AboutAnimation from "../public/lottie/about.json";
-import FadeAnimationComponent from "./FadeInAnimation";
 
 export interface BasicSectionProps {
   title: string;
@@ -22,18 +21,16 @@ export default function BasicSectionNoImage({
   children,
 }: PropsWithChildren<BasicSectionProps>) {
   return (
-    <FadeAnimationComponent>
-      <BasicSectionWrapper reversed={reversed}>
-        <ContentContainer>
-          <CustomOverTitle>{overTitle}</CustomOverTitle>
-          <Title>{title}</Title>
-          <RichText>{children}</RichText>
-        </ContentContainer>
-        <ImageContainer>
-          <Lottie animationData={AboutAnimation} />
-        </ImageContainer>
-      </BasicSectionWrapper>
-    </FadeAnimationComponent>
+    <BasicSectionWrapper reversed={reversed}>
+      <ContentContainer>
+        <CustomOverTitle>{overTitle}</CustomOverTitle>
+        <Title>{title}</Title>
+        <RichText>{children}</RichText>
+      </ContentContainer>
+      <ImageContainer>
+        <Lottie animationData={AboutAnimation} />
+      </ImageContainer>
+    </BasicSectionWrapper>
   );
 }
 

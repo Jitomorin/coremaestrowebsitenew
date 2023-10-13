@@ -6,7 +6,6 @@ import Container from "./Container";
 import OverTitle from "./OverTitle";
 import RichText from "./RichText";
 import StyledImage from "./StyledImage";
-import FadeAnimationComponent from "./FadeInAnimation";
 
 export interface BasicSectionProps {
   imageUrl: string;
@@ -28,26 +27,24 @@ export default function BasicSection({
     return str.trim() === "";
   }
   return (
-    <FadeAnimationComponent>
-      <BasicSectionWrapper reversed={reversed}>
-        <ImageContainer>
-          {/* <NextImage src={imageUrl} alt={title} layout="fill" objectFit="cover" /> */}
-          {styledImage ? (
-            <StyledImage imageURL={imageUrl} />
-          ) : (
-            <NextImage src={imageUrl} alt={title} layout="fill" />
-          )}
-        </ImageContainer>
+    <BasicSectionWrapper reversed={reversed}>
+      <ImageContainer>
+        {/* <NextImage src={imageUrl} alt={title} layout="fill" objectFit="cover" /> */}
+        {styledImage ? (
+          <StyledImage imageURL={imageUrl} />
+        ) : (
+          <NextImage src={imageUrl} alt={title} layout="fill" />
+        )}
+      </ImageContainer>
 
-        <ContentContainer>
-          {overTitle == null ? null : (
-            <CustomOverTitle>{overTitle}</CustomOverTitle>
-          )}
-          <Title>{title}</Title>
-          <RichText>{children}</RichText>
-        </ContentContainer>
-      </BasicSectionWrapper>
-    </FadeAnimationComponent>
+      <ContentContainer>
+        {overTitle == null ? null : (
+          <CustomOverTitle>{overTitle}</CustomOverTitle>
+        )}
+        <Title>{title}</Title>
+        <RichText>{children}</RichText>
+      </ContentContainer>
+    </BasicSectionWrapper>
   );
 }
 
@@ -104,13 +101,15 @@ const BasicSectionWrapper = styled(Container)`
   align-self: center;
   flex-direction: ${(p: Props) => (p.reversed ? "row-reverse" : "row")};
   margin-top: 2rem;
-  margin-bottom: 20rem;
+  margin-bottom: 10rem;
 
   ${ImageContainer} {
     margin: ${(p: Props) => (p.reversed ? "0 0 0 5rem" : "0 5rem 0 0")};
   }
-
-  ${media("<=desktop")} {
+  ${media("<largeDesktop")} {
+    max-width: 90%;
+  }
+  ${media("<=tablet")} {
     flex-direction: column;
 
     ${ImageContainer} {

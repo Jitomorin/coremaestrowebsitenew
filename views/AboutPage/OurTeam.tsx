@@ -108,7 +108,6 @@ const OurteamWrapper = styled(Container)`
     color: rgb(255, 175, 1);
 
     ${media("<=desktop")} {
-      display: none;
     }
   }
 

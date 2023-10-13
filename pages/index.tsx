@@ -42,15 +42,6 @@ const tabsData = [
 export default function Homepage({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  // const blogList = useState([]);
-  // useEffect(() => {
-  //   getBlogs().then((doc) => {
-  //     var data = doc;
-  //     console.log(data);
-  //     blogList.push(data);
-  //   });
-  // }, []);
-
   return (
     <>
       <Head>

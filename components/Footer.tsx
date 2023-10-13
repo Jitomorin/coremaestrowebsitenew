@@ -38,7 +38,7 @@ const footerItems: FooterItems = [
 export default function Footer() {
   return (
     <FooterWrapper>
-      <Container>
+      <FooterContainer>
         <ListContainer>
           {/* <FooterListCompany
             title="Core Maestro Management"
@@ -91,7 +91,7 @@ export default function Footer() {
             </Link>
           </div>
         </BottomBar>
-      </Container>
+      </FooterContainer>
     </FooterWrapper>
   );
 }
@@ -130,6 +130,12 @@ const FooterWrapper = styled.div`
   padding-bottom: 4rem;
   background: rgb(21, 35, 62);
   color: rgb(255, 255, 255);
+`;
+
+const FooterContainer = styled(Container)`
+  ${media("<=largeDesktop")} {
+    max-width: 90%;
+  }
 `;
 
 const LogoContainer = styled.div`

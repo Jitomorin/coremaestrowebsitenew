@@ -60,8 +60,6 @@ const TABS = [
 ];
 
 export default function ServicesGallery() {
-  const [currentTab, setCurrentTab] = useState(TABS[0]);
-
   // const imagesMarkup = TABS.map((singleTab, idx) => {
   //   const isActive = singleTab.title === currentTab.title;
   //   const isFirst = idx === 0;
@@ -157,6 +155,9 @@ const ServicesGalleryWrapper = styled(Container)`
   flex-direction: column;
   justify-content: center;
   border-radius: 5rem;
+  ${media("<largeDesktop")} {
+    max-width: 90%;
+  }
 `;
 
 const GalleryWrapper = styled.div`
@@ -251,6 +252,9 @@ const TabContent = styled.div`
   padding-right: calc(4rem + 1.5rem);
   p {
     font-size: 3rem;
+    ${media("<largeDesktop")} {
+      font-size: 2.4rem;
+    }
   }
   h2 {
     font-size: 4rem;

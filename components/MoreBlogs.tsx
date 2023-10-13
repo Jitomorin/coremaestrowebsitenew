@@ -1,9 +1,11 @@
 import PostPreview from "components/PostPreview";
 import type { Post } from "@/sanity/lib/queries";
+import styled from "styled-components";
+import { media } from "@/utils/media";
 
 export default function MoreBlogs({ posts }: { posts: Post[] }) {
   return (
-    <section>
+    <Wrapper className="mx-auto">
       <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
         HR News
       </h2>
@@ -21,6 +23,12 @@ export default function MoreBlogs({ posts }: { posts: Post[] }) {
           />
         ))}
       </div>
-    </section>
+    </Wrapper>
   );
 }
+const Wrapper = styled.div`
+  align-self: center;
+  ${media("<largeDesktop")} {
+    max-width: 90%;
+  }
+`;

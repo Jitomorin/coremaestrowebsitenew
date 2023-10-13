@@ -9,7 +9,7 @@ import Map from "components/Map";
 
 export default function MapSection() {
   return (
-    <Wrapper>
+    <Wrapper className="">
       <h3>Where We Are Located</h3>
       <Map />
     </Wrapper>
@@ -18,11 +18,16 @@ export default function MapSection() {
 
 const Wrapper = styled.div`
   flex: 2;
+  margin: 0 10rem;
 
   h3 {
     font-size: 3.5rem;
+    font-weight: bold;
     color: rgba(10, 18, 30);
     margin-top: 3rem;
     margin-bottom: 3rem;
+  }
+  ${media("<=largeDesktop")} {
+    max-width: 90%;
   }
 `;

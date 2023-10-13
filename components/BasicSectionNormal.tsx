@@ -6,7 +6,6 @@ import Container from "./Container";
 import OverTitle from "./OverTitle";
 import RichText from "./RichText";
 import StyledImage from "./StyledImage";
-import FadeAnimationComponent from "./FadeInAnimation";
 
 export interface BasicSectionProps {
   imageUrl: string;
@@ -26,22 +25,20 @@ export default function BasicSectionNormal({
     return str.trim() === "";
   }
   return (
-    <FadeAnimationComponent>
-      <BasicSectionWrapper reversed={reversed}>
-        <ImageContainer>
-          {/* <NextImage src={imageUrl} alt={title} layout="fill" objectFit="cover" /> */}
-          <StyledImage imageURL={imageUrl} />
-        </ImageContainer>
+    <BasicSectionWrapper reversed={reversed}>
+      <ImageContainer>
+        {/* <NextImage src={imageUrl} alt={title} layout="fill" objectFit="cover" /> */}
+        <StyledImage imageURL={imageUrl} />
+      </ImageContainer>
 
-        <ContentContainer>
-          {overTitle == null ? null : (
-            <CustomOverTitle>{overTitle}</CustomOverTitle>
-          )}
-          <Title>{title}</Title>
-          <RichText>{children}</RichText>
-        </ContentContainer>
-      </BasicSectionWrapper>
-    </FadeAnimationComponent>
+      <ContentContainer>
+        {overTitle == null ? null : (
+          <CustomOverTitle>{overTitle}</CustomOverTitle>
+        )}
+        <Title>{title}</Title>
+        <RichText>{children}</RichText>
+      </ContentContainer>
+    </BasicSectionWrapper>
   );
 }
 
