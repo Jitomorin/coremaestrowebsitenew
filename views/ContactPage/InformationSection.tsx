@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function InformationSection() {
   return (
     <Wrapper>
-      <SectionTitle>Say Hellos!</SectionTitle>
+      <SectionTitle>Say Hello!</SectionTitle>
       <h5>
         We would love to hear from you and discuss how we can support your
         business needs. Whether you have questions, inquiries, or want to
