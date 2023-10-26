@@ -6,9 +6,9 @@ import { media } from "@/utils/media";
 export default function MoreBlogs({ posts }: { posts: Post[] }) {
   return (
     <Wrapper className="mx-auto">
-      <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
+      {/* <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
         HR News
-      </h2>
+      </h2> */}
       <div className="mb-32 grid grid-cols-1 gap-y-20 md:grid-cols-3 md:gap-x-16 md:gap-y-32 lg:gap-x-32">
         {posts.map((post) => (
           <PostPreview

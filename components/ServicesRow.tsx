@@ -23,7 +23,7 @@ import { generateSlug } from "@/utils/formatString";
 const SERVICES = [
   {
     title: "Payroll Management",
-    slug: generateSlug("Payroll Management"),
+    slug: generateSlug("Payroll Management Including Payroll Software"),
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
@@ -67,7 +67,7 @@ const SERVICES = [
   },
   {
     title: "HR Policies Development",
-    slug: generateSlug("HR Policies Development"),
+    slug: generateSlug("HR Policy and Procedure Development"),
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
@@ -143,7 +143,6 @@ const MainContainer = styled.div`
 const Card = styled.div`
   display: flex;
   /* background: rgb(255,255,255); */
-  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;

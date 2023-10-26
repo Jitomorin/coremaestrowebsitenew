@@ -7,6 +7,7 @@ import RichText from "./RichText";
 import Logo from "./Logo";
 import Link from "next/link";
 import WaveCta from "./WaveCta";
+import NextImage from "next/image";
 
 type SingleFooterListItem = { title: string; href: string };
 type FooterListItems = SingleFooterListItem[];
@@ -53,29 +54,41 @@ export default function Footer() {
         <BottomBar>
           <ShareBar>
             <SocialmediaLink>
-              <NextLink
+              <Link
                 href="https://www.linkedin.com/company/core-maestro-management/"
                 passHref
+                target="_blank"
               >
                 <LinkedinIcon size={50} round={true} />
-              </NextLink>
+              </Link>
             </SocialmediaLink>{" "}
             <SocialmediaLink>
-              <NextLink href="https://www.twitter.com/JitomorinT" passHref>
-                <TwitterIcon size={50} round={true} />
-              </NextLink>
-            </SocialmediaLink>{" "}
-            <SocialmediaLink>
-              <NextLink
-                href="https://www.facebook.com/coremaestromanagement/"
+              <Link
+                target="_blank"
+                href="https://www.twitter.com/JitomorinT"
                 passHref
               >
+                {/* <TwitterIcon size={50} round={true} /> */}
+                <NextImage
+                  src="/instagram_logo.png"
+                  alt="instagram_link"
+                  width={65}
+                  height={65}
+                />
+              </Link>
+            </SocialmediaLink>{" "}
+            <SocialmediaLink>
+              <Link
+                href="https://www.facebook.com/coremaestromanagement/"
+                passHref
+                target="_blank"
+              >
                 <FacebookIcon size={50} round={true} />
-              </NextLink>
+              </Link>
             </SocialmediaLink>
           </ShareBar>
           <div>
-            <Copyright>&copy; Copyright 2023 MoCapital</Copyright>
+            {/* <Copyright>&copy; Copyright 2023 MoCapital</Copyright> */}
             <Copyright>&copy; Copyright Core Maestro Management</Copyright>
           </div>
 
@@ -181,7 +194,7 @@ const ListDescription = styled.p`
 const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 5rem;
+  margin-bottom: 0rem;
   margin-right: 0rem;
   max-width: 30%;
 
