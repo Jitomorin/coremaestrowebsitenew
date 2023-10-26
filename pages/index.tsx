@@ -48,7 +48,7 @@ export default function Homepage({
         <title>{EnvVars.SITE_NAME}</title>
         <meta
           name="description"
-          content="Minim sint aliquip nostrud excepteur cupidatat amet do laborum exercitation cupidatat ea proident."
+          content="We empower organizations through strategic HR solutions. We bridge skill gaps, foster diversity, and optimize workforce potential, delivering comprehensive HR consultancy services that ensure compliance, boost engagement, and drive sustainable growth."
         />
       </Head>
       <HomepageWrapper>

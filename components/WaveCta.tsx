@@ -14,6 +14,11 @@ export default function WaveCta() {
     <>
       <CtaWrapper>
         <Container>
+          <List>
+            <p>Saku Business park Embakasi</p>
+            <p>Mobile: +254 702 127417 / +254 718 820586</p>
+            <p>whatsapp: +254 702 127417</p>
+          </List>
           <Title>Subscribe to Our Newsletter</Title>
           <CustomButtonGroup>
             <Link onClick={() => setIsModalOpened(true)}>Subscribe</Link>
@@ -24,11 +29,6 @@ export default function WaveCta() {
               </OutlinedButton>
             </NextLink> */}
           </CustomButtonGroup>
-          <List>
-            <p>Saku Business park Embakasi</p>
-            <p>Mobile: 254 702 127417 / 7188 20586</p>
-            <p>whatsapp: +254702127417</p>
-          </List>
         </Container>
       </CtaWrapper>
     </>
@@ -38,7 +38,7 @@ export default function WaveCta() {
 const CtaWrapper = styled.div`
   background: rgb(21, 35, 62);
   margin-top: -1rem;
-  padding-bottom: 16rem;
+  padding-bottom: 6rem;
 
   ${media("<=tablet")} {
     padding-top: 8rem;
@@ -59,7 +59,7 @@ const List = styled.div`
 const Title = styled(SectionTitle)`
   font-size: 2.3rem;
   color: rgb(255, 255, 255);
-  padding-top: 4rem;
+  padding-top: 2rem;
   margin-bottom: 4rem;
 `;
 // subscribe button

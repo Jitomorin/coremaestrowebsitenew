@@ -12,6 +12,7 @@ import { readToken } from "@/sanity/env";
 import { useRouter } from "next/router";
 import service from "@/sanity/schemas/service";
 import ServicePage from "@/components/ServicePage";
+import Page from "@/components/Page";
 
 // interface pageProps extends SharedPageProps {
 //     service: Service;
@@ -42,12 +43,13 @@ export default function ServiceSlugRoute(props: ServiceProps) {
     return <div>Loading...</div>;
   }
   return (
-    <ServicePage
-      service={service}
-      // morePosts={morePosts}
-      // settings={settings}
-      // categories={categories}
-    />
+    <Page
+      title={"Services"}
+      description={service.description}
+      imgURL="/services_stock.jpg"
+    >
+      <ServicePage service={service} />
+    </Page>
   );
 }
 

@@ -106,19 +106,6 @@ export default function ServicesGallery() {
 
   return (
     <ServicesGalleryWrapper>
-      {/* <Tabs>
-        <TabList>
-          <Tab>Title 1</Tab>
-          <Tab>Title 2</Tab>
-        </TabList>
-
-        <TabPanel>
-          <h2>Any content 1</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 2</h2>
-        </TabPanel>
-      </Tabs> */}
       <SectionTitle className="mb-20">Our Approach</SectionTitle>
       <Tabs>
         <TabList className="text-3xl text-center mb-4 flex font-bold justify-center active:text-[#ffaf01] hover:text-[#ffaf01]">
@@ -202,6 +189,9 @@ const ImageContainer = styled.div`
   box-shadow: var(--shadow-md);
   max-width: 100%;
   max-height: 100%;
+  ${media("<=desktop")} {
+    max-height: 70%;
+  }
 
   &:before {
     display: block;

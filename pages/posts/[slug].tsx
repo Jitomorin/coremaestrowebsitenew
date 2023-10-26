@@ -12,6 +12,7 @@ import { Category, Post, Settings } from "@/sanity/lib/queries";
 import { GetStaticProps } from "next";
 import type { SharedPageProps } from "pages/_app";
 import { useRouter } from "next/router";
+import Page from "@/components/Page";
 
 interface PageProps extends SharedPageProps {
   post: Post;
@@ -42,12 +43,14 @@ export default function ProjectSlugRoute(props: PageProps) {
     );
   }
   return (
-    <PostPage
-      post={post}
-      morePosts={morePosts}
-      settings={settings}
-      categories={categories}
-    />
+    <Page imgURL="/resume_image.jpg" title="HR News">
+      <PostPage
+        post={post}
+        morePosts={morePosts}
+        settings={settings}
+        categories={categories}
+      />
+    </Page>
   );
 }
 
