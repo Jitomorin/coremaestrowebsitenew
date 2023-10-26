@@ -29,7 +29,7 @@ const footerItems: FooterItems = [
       { title: "Home", href: "/" },
       { title: "About Us", href: "/about" },
       { title: "Our Services", href: "/services" },
-      { title: "Blog", href: "/blog" },
+      { title: "HR News", href: "/blog" },
       { title: "Contact", href: "/contact" },
     ],
   },
@@ -74,8 +74,12 @@ export default function Footer() {
               </NextLink>
             </SocialmediaLink>
           </ShareBar>
-          <Copyright>&copy; Copyright 2023 MoCapital</Copyright>
           <div>
+            <Copyright>&copy; Copyright 2023 MoCapital</Copyright>
+            <Copyright>&copy; Copyright Core Maestro Management</Copyright>
+          </div>
+
+          {/* <div>
             {" "}
             Icons made by{" "}
             <Link
@@ -89,7 +93,7 @@ export default function Footer() {
             <Link href="https://www.flaticon.com/" title="Flaticon">
               www.flaticon.com
             </Link>
-          </div>
+          </div> */}
         </BottomBar>
       </FooterContainer>
     </FooterWrapper>
@@ -126,7 +130,7 @@ function ListItem({ title, href }: SingleFooterListItem) {
 }
 
 const FooterWrapper = styled.div`
-  padding-top: 10rem;
+  padding-top: 7rem;
   padding-bottom: 4rem;
   background: rgb(21, 35, 62);
   color: rgb(255, 255, 255);
@@ -178,7 +182,7 @@ const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 5rem;
-  margin-right: 5rem;
+  margin-right: 0rem;
   max-width: 30%;
 
   & > *:not(:first-child) {
@@ -230,7 +234,7 @@ const Copyright = styled.p`
 `;
 
 const BottomBar = styled.div`
-  margin-top: 4rem;
+  margin-top: 0rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

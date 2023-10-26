@@ -29,7 +29,7 @@ export default function CompanyFooter() {
 const Wrapper = styled.div`
   background: rgb(21, 35, 62);
   margin-top: -1rem;
-  padding-bottom: 6rem;
+  padding-bottom: 0rem;
 
   ${media("<=tablet")} {
     padding-top: 8rem;
@@ -38,6 +38,7 @@ const Wrapper = styled.div`
 
 const Title = styled(SectionTitle)`
   color: rgb(255, 255, 255);
+  font-size: 4rem;
   padding-top: 4rem;
   margin-bottom: 4rem;
 `;
@@ -48,7 +49,7 @@ const CompanyContainer = styled(Container)`
 `;
 const TextContainer = styled.div``;
 const RichText = styled.div`
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   opacity: 0.8;
   line-height: 1.6;
   color: rgb(255, 255, 255);
