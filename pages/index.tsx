@@ -48,7 +48,7 @@ export default function Homepage({
         <title>{EnvVars.SITE_NAME}</title>
         <meta
           name="description"
-          content="Tempor nostrud velit fugiat nostrud duis incididunt Lorem deserunt est tempor aute dolor ad elit."
+          content="Minim sint aliquip nostrud excepteur cupidatat amet do laborum exercitation cupidatat ea proident."
         />
       </Head>
       <HomepageWrapper>
