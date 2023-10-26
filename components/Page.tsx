@@ -24,7 +24,12 @@ export default function Page({
         <title>
           {title} | {EnvVars.SITE_NAME}
         </title>
-        <meta name="description" content={description} />
+        <meta
+          name="description"
+          content={
+            "We empower organizations through strategic HR solutions. We bridge skill gaps, foster diversity, and optimize workforce potential, delivering comprehensive HR consultancy services that ensure compliance, boost engagement, and drive sustainable growth."
+          }
+        />
       </Head>
       <Wrapper>
         <HeaderContainer imgURL={imgURL!}>

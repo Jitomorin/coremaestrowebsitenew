@@ -95,13 +95,14 @@ export default function OurTeam({ employees }: OurteamProps) {
           ))}
         </Swiper>
       </OurteamWrapper>
-      <Separator />
+      {/* <Separator /> */}
     </div>
   );
 }
 
 const OurteamWrapper = styled(Container)`
   position: relative;
+  margin-bottom: 3rem;
 
   .swiper-button-prev,
   .swiper-button-next {
@@ -147,6 +148,8 @@ const Title = styled.h1`
 const TitleContent = styled.div`
   margin-top: 1rem;
   margin-bottom: 10rem;
+  margin-left: 25rem;
+  margin-right: 25rem;
   text-align: center;
 `;
 const Content = styled.blockquote`

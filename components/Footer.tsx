@@ -89,7 +89,9 @@ export default function Footer() {
           </ShareBar>
           <div>
             {/* <Copyright>&copy; Copyright 2023 MoCapital</Copyright> */}
-            <Copyright>&copy; Copyright Core Maestro Management</Copyright>
+            <Copyright>
+              &copy; Copyright Core Maestro Management Powered by MoCapital
+            </Copyright>
           </div>
 
           {/* <div>

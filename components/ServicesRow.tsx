@@ -19,6 +19,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { generateSlug } from "@/utils/formatString";
+import { useRouter } from "next/router";
 
 const SERVICES = [
   {
@@ -79,11 +80,16 @@ const SERVICES = [
 ];
 
 export default function ServicesRow() {
+  const router = useRouter();
   return (
     <Wrapper>
       <MainContainer>
         {SERVICES.map((singleFeature, idx) => (
-          <Card>
+          <Card
+            onClick={() => {
+              router.push(singleFeature.href + singleFeature.slug);
+            }}
+          >
             <FontAwesomeIcon
               className="text-white"
               icon={singleFeature.icon}
@@ -95,7 +101,11 @@ export default function ServicesRow() {
             </Link>
           </Card>
         ))}
-        <Card>
+        <Card
+          onClick={() => {
+            router.push("/services");
+          }}
+        >
           <FontAwesomeIcon
             className="text-white"
             icon={faAnglesRight}
@@ -143,6 +153,7 @@ const MainContainer = styled.div`
 const Card = styled.div`
   display: flex;
   /* background: rgb(255,255,255); */
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;

@@ -15,6 +15,7 @@ import { GetStaticProps } from "next";
 import type { SharedPageProps } from "pages/_app";
 import IndexPage from "@/components/IndexPage";
 import { useRouter } from "next/router";
+import Page from "@/components/Page";
 
 interface PageProps extends SharedPageProps {
   posts: Post[];
@@ -44,7 +45,11 @@ export default function CategorySlugRoute(props: PageProps) {
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
-  return <IndexPage posts={posts} settings={settings!} />;
+  return (
+    <Page imgURL="/resume_image.jpg" title="HR News">
+      <IndexPage posts={posts} settings={settings!} />
+    </Page>
+  );
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
