@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
   --modalBackground: 251,251,253;
   --errorColor: 207,34,46;
   --logoColor: 36,58,90;
+  width: 100vw;
 }
 
 

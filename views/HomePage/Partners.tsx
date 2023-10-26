@@ -1,7 +1,6 @@
 import NextImage from "next/image";
 import React from "react";
 import styled from "styled-components";
-import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Container from "components/Container";
 import { media } from "utils/media";
@@ -65,9 +64,10 @@ const Title = styled.h3`
   letter-spacing: 0.02em;
   line-height: 0;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   text-align: center;
   opacity: 0.8;
+  font-size: bold;
 
   ${media("<=desktop")} {
     line-height: 1.5;
@@ -75,6 +75,9 @@ const Title = styled.h3`
 `;
 
 const PartnersWrapper = styled(Container)`
+  \ ${media("<=largeDesktop")} {
+    max-width: 90%;
+  }
   .swiper-wrapper {
     will-change: transform;
     transition-timing-function: linear;

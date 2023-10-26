@@ -76,22 +76,7 @@ export default function Homepage({
                 your budget. Our services are cost-effective, offering a high
                 return on investment for your HR needs.
               </li>
-              <li>
-                <strong>Building Relationships:</strong>
-                <br />
-                We don&apos;t just provide solutions; we cultivate lasting
-                relationships. At Core Maestro Management, we prioritize
-                long-term partnerships. Your success is our success, and
-                we&apos;re committed to walking this journey with you
-              </li>
-              <li>
-                <strong>Listening with Humility:</strong>
-                <br />
-                We recognize that every organization is unique, and we
-                don&apos;t claim to have all the answers. Our approach is rooted
-                in humility. We listen attentively to your needs, concerns, and
-                aspirations before tailoring HR solutions.
-              </li>
+
               <li>
                 <strong>Customized Solutions:</strong>
                 <br />
@@ -99,13 +84,6 @@ export default function Homepage({
                 personalized approach to address your specific challenges,
                 ensuring our HR strategies align seamlessly with your
                 organization&apos;s objectives.
-              </li>
-              <li>
-                <strong>Continuous Improvement:</strong>
-                <br />
-                We&apos;re always learning and evolving. Our commitment to
-                ongoing improvement means you benefit from the latest HR
-                innovations and best practices.
               </li>
             </ul>
           </BasicSection>

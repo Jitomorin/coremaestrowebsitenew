@@ -14,7 +14,7 @@ export default function Cta() {
       <Container>
         <Stack>
           {/* <OverTitle>Lorem ipsum dolor sit amet</OverTitle> */}
-          <SectionTitle>Ready to Boost Employee Engagement?</SectionTitle>
+          <SectionTitle>Let's Build Your Thriving Workplace Today</SectionTitle>
           <Description> Contact Us Today to Get Started!</Description>
           <ButtonGroup>
             <NextLink href="contact" passHref>

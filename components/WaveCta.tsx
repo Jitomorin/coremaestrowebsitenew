@@ -24,6 +24,11 @@ export default function WaveCta() {
               </OutlinedButton>
             </NextLink> */}
           </CustomButtonGroup>
+          <List>
+            <p>Saku Business park Embakasi</p>
+            <p>Mobile: 254 702 127417 / 7188 20586</p>
+            <p>whatsapp: +254702127417</p>
+          </List>
         </Container>
       </CtaWrapper>
     </>
@@ -40,6 +45,17 @@ const CtaWrapper = styled.div`
   }
 `;
 
+const List = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 2.7rem;
+  p {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 0.2rem 0;
+  }
+`;
 const Title = styled(SectionTitle)`
   font-size: 2.3rem;
   color: rgb(255, 255, 255);

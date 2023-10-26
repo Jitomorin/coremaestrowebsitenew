@@ -17,8 +17,8 @@ export default function InformationSection() {
 
 const Wrapper = styled.div`
   flex: 1;
-  margin-right: 25rem;
-  margin-left: 25rem;
+  margin-right: 50rem;
+  margin-left: 50rem;
   margin-bottom: 5rem;
   justify-content: center;
   align-items: center;

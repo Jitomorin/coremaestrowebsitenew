@@ -45,13 +45,6 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-// const Container = styled.div`
-//   background: rgb(21,35,62, 0.8);
-//   width: 100%;
-//   height: 100%;
-//   margin: 0 auto;
-//   padding: 0 2rem;
-// `;
 interface props {
   imgURL: string;
 }
@@ -59,7 +52,7 @@ const HeaderContainer = styled.div<{ imgURL: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 30rem;
+  min-height: 20rem;
   background: rgb(21, 35, 62, 0.8);
   margin: 0 auto;
   padding: 0 2rem;

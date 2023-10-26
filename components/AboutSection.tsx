@@ -27,7 +27,7 @@ export default function AboutSection({
 }
 
 const RichText = styled.div`
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   opacity: 0.8;
   line-height: 1.6;
   text-align: center;
@@ -94,6 +94,7 @@ const CustomOverTitle = styled(OverTitle)`
 
 const ContentContainer = styled.div`
   flex: 1;
+  margin: 0 4.5rem;
 `;
 
 type Props = Pick<AboutSectionProps, "reversed">;
