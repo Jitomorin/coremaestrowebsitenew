@@ -34,6 +34,8 @@ export const indexQuery = groq`
 *[_type == "post"] | order(date desc, _updatedAt desc) {
   ${postFields}
 }`;
+export const partnersQuery = groq`
+*[_type == "partners"]`;
 export const employeesQuery = groq`
 *[_type == "employee"]`;
 export const servicesQuery = groq`
@@ -127,6 +129,16 @@ export interface Employee {
   github?: string;
   facebook?: string;
   twitter?: string;
+}
+export interface Partner {
+  company: string;
+  website: string;
+  logo: {
+    _type: "image";
+    asset: {
+      _ref: string;
+    };
+  };
 }
 
 export interface Settings {

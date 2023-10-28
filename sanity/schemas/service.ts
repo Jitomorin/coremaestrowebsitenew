@@ -1,4 +1,3 @@
-import FontAwesomeIconInput from "@/components/FortAwsomeIconInput";
 import { defineField, defineType } from "sanity";
 
 export default defineType({

@@ -33,8 +33,8 @@ export default defineType({
       type: "url",
     }),
     defineField({
-      name: "twitter",
-      title: "Twitter Profile",
+      name: "instagram",
+      title: "Instagram Profile",
       type: "url",
     }),
     defineField({

@@ -14,6 +14,7 @@ import postType from "./sanity/schemas/post";
 import employeeType from "./sanity/schemas/employee";
 import settingsType from "./sanity/schemas/settings";
 import serviceType from "./sanity/schemas/service";
+import partnerType from "./sanity/schemas/partner";
 import categorytype from "./sanity/schemas/category";
 import { settingsStructure } from "./plugins/settings";
 import { previewDocumentNode } from "./plugins/previewPane";
@@ -35,6 +36,7 @@ export default defineConfig({
       employeeType,
       serviceType,
       categorytype,
+      partnerType,
     ],
   },
   plugins: [

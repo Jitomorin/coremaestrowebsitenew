@@ -23,9 +23,13 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  ${media("<=tablet")} {
-    margin-right: 0rem;
-    margin-left: 0rem;
+  ${media("<largeDesktop")} {
+    margin-right: 5rem;
+    margin-left: 5rem;
+  }
+  ${media(">=largeDesktop")} {
+    margin-right: 30rem;
+    margin-left: 30rem;
   }
   h3 {
     font-weight: 550;

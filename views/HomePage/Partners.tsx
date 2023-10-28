@@ -4,6 +4,13 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Container from "components/Container";
 import { media } from "utils/media";
+import { Partner } from "@/sanity/lib/queries";
+import { urlForImage } from "@/sanity/lib/image";
+import Link from "next/link";
+
+interface PartnersProps {
+  partners: Partner[];
+}
 
 const PARTNER_LOGOS = [
   "logoipsum-logo-1.svg",
@@ -22,7 +29,8 @@ const PARTNER_LOGOS = [
   "logoipsum-logo-7.svg",
 ];
 
-export default function Partners() {
+export default function Partners({ partners }: PartnersProps) {
+  console.log(partners);
   return (
     <PartnersWrapper>
       <Title>official partners</Title>
@@ -40,14 +48,16 @@ export default function Partners() {
         }}
         className="swiper-wrapper"
       >
-        {PARTNER_LOGOS.map((logo) => (
-          <SwiperSlide key={logo}>
-            <NextImage
-              src={"/partners/" + logo}
-              alt={normalizePartnerLogoName(logo)}
-              width={128}
-              height={128}
-            />
+        {partners.map((partner) => (
+          <SwiperSlide key={partner.company}>
+            <Link href={partner.website} target="_blank">
+              <NextImage
+                src={urlForImage(partner.logo?.asset?._ref).url()}
+                alt={partner.company}
+                width={200}
+                height={200}
+              />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -83,10 +93,13 @@ const PartnersWrapper = styled(Container)`
     transition-timing-function: linear;
     margin-top: 0.5rem;
     user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .swiper-slide {
-    opacity: 0.8;
+    opacity: 0.6;
     transition: opacity 0.2s;
 
     &:hover {

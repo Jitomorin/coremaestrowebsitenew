@@ -44,10 +44,17 @@ export default function AboutPage() {
       description="Minim sint aliquip nostrud excepteur cupidatat amet do laborum exercitation cupidatat ea proident."
     >
       <AboutContainer>
-        <AboutSection title="Core Maestro Management">
-          At Core Maestro Management, we are the architects of thriving
+        <AboutSection title="Who We Are">
+          {/* At Core Maestro Management, we are the architects of thriving
           workplaces. Our passion lies in empowering organizations to reach
-          their full potential by harnessing the power of their people.
+          their full potential by harnessing the power of their people. */}
+          Core Maestro Management is more than an HR consultancy firm; we are
+          your partners in progress. Our passion lies in empowering
+          organizations to reach their full potential by harnessing the power of
+          their people. We recognize the power of HR in shaping the future of
+          organizations and communities and so, Core Maestro Management was
+          founded with the mission to empower organizations across Kenya through
+          strategic HR solutions. We are the architects of thriving workplaces.
         </AboutSection>
 
         <BasicSection styledImage imageUrl="/mission.jpg" title="Our Mission">

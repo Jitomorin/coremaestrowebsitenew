@@ -108,7 +108,7 @@ export default function ServicesGallery() {
     <ServicesGalleryWrapper>
       <SectionTitle className="mb-20">Our Approach</SectionTitle>
       <Tabs>
-        <TabList className="text-3xl text-center mb-4 flex font-bold justify-center active:text-[#ffaf01] hover:text-[#ffaf01]">
+        <TabList className="text-3xl text-center mb-4 flex font-bold justify-center active:text-[#ffaf01] ">
           {TABS.map((singleTab, idx) => {
             return <Tab key={idx}>{singleTab.title}</Tab>;
           })}
