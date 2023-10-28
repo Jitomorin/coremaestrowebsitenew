@@ -17,6 +17,8 @@ import {
   Service,
   servicesQuery,
   serviceSlugsQuery,
+  partnersQuery,
+  Partner,
 } from "./queries";
 import { createClient, type SanityClient } from "next-sanity";
 
@@ -50,6 +52,9 @@ export async function getSettings(client: SanityClient): Promise<Settings> {
 
 export async function getAllPosts(client: SanityClient): Promise<Post[]> {
   return (await client.fetch(indexQuery)) || [];
+}
+export async function getAllPartners(client: SanityClient): Promise<Partner[]> {
+  return (await client.fetch(partnersQuery)) || [];
 }
 export async function getAllServices(client: SanityClient): Promise<Service[]> {
   return (await client.fetch(servicesQuery)) || [];

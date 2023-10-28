@@ -19,7 +19,12 @@ import StyledTabs from "@/views/HomePage/StyledTabs";
 import { useEffect, useState } from "react";
 // import { getBlogs } from "@/sanity/lib/client";
 import BlogPostSlider from "@/views/HomePage/BlogPostSlider";
-import { getAllPosts, getClient, getPostByCategory } from "@/sanity/lib/client";
+import {
+  getAllPartners,
+  getAllPosts,
+  getClient,
+  getPostByCategory,
+} from "@/sanity/lib/client";
 import post from "@/sanity/schemas/post";
 import Button from "@/components/Button";
 
@@ -41,6 +46,7 @@ const tabsData = [
 ];
 export default function Homepage({
   posts,
+  partners,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -99,7 +105,7 @@ export default function Homepage({
           >
             Subscribe
           </Button> */}
-          <Partners />
+          <Partners partners={partners} />
         </WhiteBackgroundContainer>
         <DarkerBackgroundContainer>
           <ServicesGallery />
@@ -153,6 +159,7 @@ export async function getStaticProps() {
   return {
     props: {
       posts: await getAllPosts(client),
+      partners: await getAllPartners(client),
     },
   };
 }

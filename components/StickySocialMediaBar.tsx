@@ -22,7 +22,7 @@ export default function StickySocialMediaBar() {
         <SocialmediaLink>
           <Link
             target="_blank"
-            href="https://www.twitter.com/JitomorinT"
+            href="https://www.instagram.com/core.maestro.management/"
             passHref
           >
             {/* <TwitterIcon size={50} round={true} /> */}

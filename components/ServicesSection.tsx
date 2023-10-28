@@ -1,4 +1,3 @@
-import NextImage from "next/image";
 import React, { PropsWithChildren } from "react";
 import styled from "styled-components";
 import { media } from "utils/media";
@@ -6,20 +5,20 @@ import Container from "./Container";
 import OverTitle from "./OverTitle";
 import SectionTitle from "./SectionTitle";
 
-export interface AboutSectionProps {
+export interface ServicesSectionProps {
   title: string;
   reversed?: boolean;
 }
 
-export default function AboutSection({
+export default function ServicesSection({
   title,
   reversed,
   children,
-}: PropsWithChildren<AboutSectionProps>) {
+}: PropsWithChildren<ServicesSectionProps>) {
   return (
     <AboutSectionWrapper reversed={reversed}>
       <ContentContainer>
-        <ServiceSectionTitle>{title}</ServiceSectionTitle>
+        <SectionTitle>{title}</SectionTitle>
         <RichText>{children}</RichText>
       </ContentContainer>
     </AboutSectionWrapper>
@@ -30,7 +29,7 @@ const RichText = styled.div`
   font-size: 2.1rem;
   opacity: 0.8;
   line-height: 1.6;
-  text-align: left;
+  text-align: center;
   margin-bottom: 4rem;
   margin-top: 2rem;
 
@@ -88,19 +87,20 @@ const RichText = styled.div`
   }
 `;
 
-const ServiceSectionTitle = styled(SectionTitle)`
-  text-align: left;
+const CustomOverTitle = styled(OverTitle)`
+  margin-bottom: 2rem;
 `;
 
 const ContentContainer = styled.div`
   flex: 1;
+  margin: 0 4.5rem;
 `;
 
-type Props = Pick<AboutSectionProps, "reversed">;
+type Props = Pick<ServicesSectionProps, "reversed">;
 const AboutSectionWrapper = styled(Container)`
   display: flex;
-  align-items: flex-start;
-  width: 100%;
+  align-items: center;
+  padding: 0 24rem;
   flex-direction: ${(p: Props) => (p.reversed ? "row-reverse" : "row")};
   margin: 2rem 0;
 

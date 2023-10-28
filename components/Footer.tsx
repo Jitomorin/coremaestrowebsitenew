@@ -45,7 +45,6 @@ export default function Footer() {
             title="Core Maestro Management"
             items={[{ title: "Privacy Policy", href: "/" }]}
           /> */}
-
           {footerItems.map((singleItem) => (
             <FooterList key={singleItem.title} {...singleItem} />
           ))}
@@ -65,7 +64,7 @@ export default function Footer() {
             <SocialmediaLink>
               <Link
                 target="_blank"
-                href="https://www.twitter.com/JitomorinT"
+                href="https://www.instagram.com/core.maestro.management/"
                 passHref
               >
                 {/* <TwitterIcon size={50} round={true} /> */}
@@ -90,7 +89,14 @@ export default function Footer() {
           <div>
             {/* <Copyright>&copy; Copyright 2023 MoCapital</Copyright> */}
             <Copyright>
-              &copy; Copyright Core Maestro Management Powered by MoCapital
+              &copy; 2023 Copyright Core Maestro Management | Powered by{" "}
+              <Link
+                target="_blank"
+                className="hover:text-[#ffaf01]"
+                href="https://mocapital.co.ke/"
+              >
+                Mo Capital Limited
+              </Link>
             </Copyright>
           </div>
 

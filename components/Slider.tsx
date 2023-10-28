@@ -47,7 +47,7 @@ export default function Slider() {
     <>
       <ImageWrapper>
         {/* <NextImage src="/stock-image-1.jpg" alt="image 1" layout="fill" /> */}
-        <Title>We are the architects of the thriving workplace</Title>
+        <Title>We are the architects of thriving workplaces</Title>
         <ServicesRow />
       </ImageWrapper>
       {/* <ServicesWrapper>
