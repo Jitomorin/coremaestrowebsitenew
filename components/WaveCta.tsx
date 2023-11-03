@@ -6,6 +6,10 @@ import Container from "components/Container";
 import SectionTitle from "components/SectionTitle";
 import { useNewsletterModalContext } from "contexts/newsletter-modal.context";
 import { media } from "utils/media";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { height } from "./OpenGraphImage";
+import Link from "next/link";
 
 export default function WaveCta() {
   const { setIsModalOpened } = useNewsletterModalContext();
@@ -17,11 +21,27 @@ export default function WaveCta() {
           <List>
             <p>Saku Business park Embakasi</p>
             <p>Mobile: +254 702 127417 / +254 718 820586</p>
-            <p>whatsapp: +254 702 127417</p>
+            <Link
+              className="mt-4 mr-auto"
+              href={"https://wa.me/message/ODRQQDIW57LEN1"}
+              passHref
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                className="hover:text-[#f5bb28] text-white cursor-pointer"
+                icon={faWhatsapp}
+                width={30}
+                height={30}
+              />
+            </Link>
+
+            {/* <p>whatsapp: +254 702 127417</p> */}
           </List>
           <Title>Subscribe to Our Newsletter</Title>
           <CustomButtonGroup>
-            <Link onClick={() => setIsModalOpened(true)}>Subscribe</Link>
+            <SubscribeButton onClick={() => setIsModalOpened(true)}>
+              Subscribe
+            </SubscribeButton>
 
             {/* <NextLink href="/features" passHref>
               <OutlinedButton transparent>
@@ -49,6 +69,7 @@ const List = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2rem 2.7rem;
+  color: #fff;
   p {
     color: #fff;
     font-size: 1.5rem;
@@ -64,7 +85,7 @@ const Title = styled(SectionTitle)`
 `;
 // subscribe button
 
-const Link = styled.button`
+const SubscribeButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
