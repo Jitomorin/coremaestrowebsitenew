@@ -8,7 +8,7 @@ import OurTeam from "views/AboutPage/OurTeam";
 import AboutSection from "components/AboutSection";
 import { SharedPageProps } from "./_app";
 import { Employee } from "@/sanity/lib/queries";
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { readToken } from "@/sanity/env";
 import {
   getAllEmployees,
@@ -111,7 +111,7 @@ const OurteamSection = styled.div`
   }
 `;
 
-export const getStaticProps: GetStaticProps<AboutProps, Query> = async (
+export const getServerSideProps: GetServerSideProps<AboutProps, Query> = async (
   ctx
 ) => {
   const { draftMode = false } = ctx;

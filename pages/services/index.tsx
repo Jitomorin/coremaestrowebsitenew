@@ -3,7 +3,7 @@ import Page from "components/Page";
 import { media } from "utils/media";
 import AboutSection from "../../components/AboutSection";
 import { getAllServices, getClient } from "@/sanity/lib/client";
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { Service } from "@/sanity/lib/queries";
 import { SharedPageProps } from "../_app";
 import { readToken } from "@/sanity/env";
@@ -86,7 +86,9 @@ const CustomAutofitGrid = styled.div`
     --autofit-grid-item-size: 100%;
   }
 `;
-export const getStaticProps: GetStaticProps<ServiceProps> = async (ctx) => {
+export const getServerSideProps: GetServerSideProps<ServiceProps> = async (
+  ctx
+) => {
   const { draftMode = false, params = {} } = ctx;
   const client = getClient(draftMode ? { token: readToken } : undefined);
   const services = await getAllServices(client);

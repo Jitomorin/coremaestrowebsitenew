@@ -9,7 +9,7 @@ import {
   getSettings,
 } from "@/sanity/lib/client";
 import { Category, Post, Settings } from "@/sanity/lib/queries";
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import type { SharedPageProps } from "pages/_app";
 import { useRouter } from "next/router";
 import Page from "@/components/Page";
@@ -54,7 +54,9 @@ export default function ProjectSlugRoute(props: PageProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
+export const getServerSideProps: GetServerSideProps<PageProps, Query> = async (
+  ctx
+) => {
   const { draftMode = false, params = {} } = ctx;
   const client = getClient(draftMode ? { token: readToken } : undefined);
 
@@ -82,11 +84,11 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   };
 };
 
-export const getStaticPaths = async () => {
-  const slugs = await getAllPostsSlugs();
+// export const getStaticPaths = async () => {
+//   const slugs = await getAllPostsSlugs();
 
-  return {
-    paths: slugs?.map(({ slug }) => `/posts/${slug}`) || [],
-    fallback: true,
-  };
-};
+//   return {
+//     paths: slugs?.map(({ slug }) => `/posts/${slug}`) || [],
+//     fallback: true,
+//   };
+// };

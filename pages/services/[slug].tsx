@@ -1,7 +1,7 @@
 import React from "react";
 import { SharedPageProps } from "../_app";
 import styled from "styled-components";
-import { GetStaticPathsResult, GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticPathsResult, GetStaticProps } from "next";
 import { Service } from "@/sanity/lib/queries";
 import {
   getAllServiceSlugs,
@@ -53,9 +53,10 @@ export default function ServiceSlugRoute(props: ServiceProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps<ServiceProps, Query> = async (
-  ctx
-) => {
+export const getServerSideProps: GetServerSideProps<
+  ServiceProps,
+  Query
+> = async (ctx) => {
   const { draftMode = false, params = {} } = ctx;
   const client = getClient(draftMode ? { token: readToken } : undefined);
   const [service] = await Promise.all([getServiceBySlug(client, params.slug)]);
@@ -74,11 +75,11 @@ export const getStaticProps: GetStaticProps<ServiceProps, Query> = async (
     },
   };
 };
-export const getStaticPaths = async () => {
-  const slugs = await getAllServiceSlugs();
+// export const getStaticPaths = async () => {
+//   const slugs = await getAllServiceSlugs();
 
-  return {
-    paths: slugs?.map(({ slug }) => `/services/${slug}`) || [],
-    fallback: true,
-  };
-};
+//   return {
+//     paths: slugs?.map(({ slug }) => `/services/${slug}`) || [],
+//     fallback: true,
+//   };
+// };

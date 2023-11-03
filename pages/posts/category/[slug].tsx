@@ -11,11 +11,12 @@ import {
   getSettings,
 } from "@/sanity/lib/client";
 import { Category, Post, Settings } from "@/sanity/lib/queries";
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import type { SharedPageProps } from "pages/_app";
 import IndexPage from "@/components/IndexPage";
 import { useRouter } from "next/router";
 import Page from "@/components/Page";
+import CategoryIndexPage from "@/components/CategoryIndexPage";
 
 interface PageProps extends SharedPageProps {
   posts: Post[];
@@ -47,12 +48,14 @@ export default function CategorySlugRoute(props: PageProps) {
   }
   return (
     <Page imgURL="/resume_image.jpg" title="HR News">
-      <IndexPage posts={posts} settings={settings!} />
+      <CategoryIndexPage posts={posts} settings={settings!} />
     </Page>
   );
 }
 
-export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
+export const getServerSideProps: GetServerSideProps<PageProps, Query> = async (
+  ctx
+) => {
   const { draftMode = false, params = {} } = ctx;
   const client = getClient(draftMode ? { token: readToken } : undefined);
 
@@ -79,11 +82,11 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   };
 };
 
-export const getStaticPaths = async () => {
-  const slugs = await getAllCategorySlugs();
+// export const getStaticPaths = async () => {
+//   const slugs = await getAllCategorySlugs();
 
-  return {
-    paths: slugs?.map(({ slug }) => `/posts/category/${slug}`) || [],
-    fallback: true,
-  };
-};
+//   return {
+//     paths: slugs?.map(({ slug }) => `/posts/category/${slug}`) || [],
+//     fallback: true,
+//   };
+// };
