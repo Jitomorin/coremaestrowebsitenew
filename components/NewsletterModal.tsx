@@ -52,9 +52,7 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                 {hasSignedUp && <MailSentState />}
                 {!hasSignedUp && (
                   <>
-                    <Title>
-                      Are you ready to enroll to the best newsletter ever?
-                    </Title>
+                    <Title>Are you ready to our newsletter?</Title>
                     <Row>
                       <CustomInput
                         value={email}
