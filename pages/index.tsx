@@ -1,4 +1,4 @@
-import { InferGetStaticPropsType } from "next";
+import { InferGetServerSidePropsType, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import BasicSection from "components/BasicSection";
@@ -47,7 +47,7 @@ const tabsData = [
 export default function Homepage({
   posts,
   partners,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <Head>
@@ -155,7 +155,7 @@ const WhiteBackgroundContainer = styled.div`
   }
 `;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   return {
     props: {
       posts: await getAllPosts(client),
