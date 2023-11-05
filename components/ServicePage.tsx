@@ -21,6 +21,8 @@ import SectionTitle from "./SectionTitle";
 import RichText from "./RichText";
 import ServiceHeader from "./ServiceHeader";
 import { BackButton } from "./BackButton";
+import Link from "next/link";
+import { BackIcon } from "./BackIcon";
 
 export interface PostPageProps {
   preview?: boolean;
@@ -33,6 +35,8 @@ const NO_POSTS: Post[] = [];
 
 const Wrapper = styled.div`
   margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default function ServicePage(props: PostPageProps) {
@@ -59,11 +63,9 @@ export default function ServicePage(props: PostPageProps) {
               <PostTitle>Loading…</PostTitle>
             ) : (
               <Wrapper>
-                <BackButton
-                  size={50}
-                  text="Back to services"
-                  href={"/services"}
-                />
+                <Link href="/services" className="mr-auto">
+                  <BackIcon />
+                </Link>
                 <ArticleWrapper>
                   <ServiceContainer>
                     {/* <SectionTitle>{service.title}</SectionTitle> */}

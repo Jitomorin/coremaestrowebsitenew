@@ -69,21 +69,35 @@ export default function OurTeam({ employees }: OurteamProps) {
                       {!employee.linkedin && (
                         <SocialmediaLink>
                           <NextLink href={"employee.linkedin"} passHref>
-                            <LinkedinIcon size={40} round={true} />
+                            <LinkedinIcon
+                              className="pl-6"
+                              size={40}
+                              round={true}
+                            />
                           </NextLink>
                         </SocialmediaLink>
                       )}
                       {!employee.facebook && (
                         <SocialmediaLink>
                           <NextLink href={"employee.facebook"} passHref>
-                            <FacebookIcon size={40} round={true} />
+                            <FacebookIcon
+                              className="pl-6"
+                              size={40}
+                              round={true}
+                            />
                           </NextLink>
                         </SocialmediaLink>
                       )}
                       {!employee.twitter && (
                         <SocialmediaLink>
                           <NextLink href={"employee.instagram"} passHref>
-                            <TwitterIcon size={40} round={true} />
+                            {/* <TwitterIcon size={40} round={true} /> */}
+                            <NextImage
+                              src="/instagram_logo.png"
+                              alt="instagram_link"
+                              width={50}
+                              height={50}
+                            />
                           </NextLink>
                         </SocialmediaLink>
                       )}
@@ -148,9 +162,12 @@ const Title = styled.h1`
 const TitleContent = styled.div`
   margin-top: 1rem;
   margin-bottom: 10rem;
-  margin-left: 25rem;
-  margin-right: 25rem;
+  margin: 0 25rem;
   text-align: center;
+  ${media("<=tablet")} {
+    max-width: 100%;
+    margin: 5rem 0;
+  }
 `;
 const Content = styled.blockquote`
   text-align: center;
@@ -201,6 +218,9 @@ const AuthorImageContainer = styled.div`
   width: 15rem;
 `;
 const SocialmediaLink = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   margin-right: 1rem;
   padding: 0, 0.5rem;

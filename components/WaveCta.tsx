@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { height } from "./OpenGraphImage";
 import Link from "next/link";
+import { WhatsappIcon } from "./WhatsappIcon";
 
 export default function WaveCta() {
   const { setIsModalOpened } = useNewsletterModalContext();
@@ -27,12 +28,13 @@ export default function WaveCta() {
               passHref
               target="_blank"
             >
-              <FontAwesomeIcon
+              <WhatsappIcon />
+              {/* <FontAwesomeIcon
                 className="hover:text-[#f5bb28] text-white cursor-pointer"
                 icon={faWhatsapp}
                 width={30}
                 height={30}
-              />
+              /> */}
             </Link>
 
             {/* <p>whatsapp: +254 702 127417</p> */}
@@ -61,7 +63,7 @@ const CtaWrapper = styled.div`
   padding-bottom: 6rem;
 
   ${media("<=tablet")} {
-    padding-top: 8rem;
+    margin-top: 5rem;
   }
 `;
 

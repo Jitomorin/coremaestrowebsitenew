@@ -14,6 +14,8 @@ import {
 
 import styles from "./PostBody.module.css";
 import { SanityImage } from "./SanityImage";
+import styled from "styled-components";
+import { media } from "@/utils/media";
 
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   types: {
@@ -28,8 +30,14 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
 
 export default function PostBody({ content }: any) {
   return (
-    <div className={`mx-72  ${styles.portableText}`}>
+    <Wrapper className={`${styles.portableText}`}>
       <PortableText value={content} components={myPortableTextComponents} />
-    </div>
+    </Wrapper>
   );
 }
+const Wrapper = styled.div`
+  margin: 0 18rem;
+  ${media("<tablet")} {
+    margin: 0 0;
+  }
+`;
