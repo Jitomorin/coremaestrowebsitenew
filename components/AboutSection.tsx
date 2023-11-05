@@ -33,6 +33,7 @@ const RichText = styled.div`
   text-align: left;
   margin-bottom: 4rem;
   margin-top: 2rem;
+  width: 75%;
 
   ol,
   ul {

@@ -12,12 +12,7 @@ import { type } from "os";
 import { Employee } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/image";
 import NextLink from "next/link";
-import {
-  FacebookIcon,
-  InstapaperIcon,
-  LinkedinIcon,
-  TwitterIcon,
-} from "react-share";
+import { FacebookIcon, LinkedinIcon } from "react-share";
 
 type OurteamProps = { employees: Employee[] };
 
@@ -66,7 +61,7 @@ export default function OurTeam({ employees }: OurteamProps) {
                     <AuthorName>{employee.fullName}</AuthorName>
                     <AuthorTitle>{employee.position}</AuthorTitle>
                     <AuthorSocials>
-                      {!employee.linkedin && (
+                      {employee.linkedin && (
                         <SocialmediaLink>
                           <NextLink href={"employee.linkedin"} passHref>
                             <LinkedinIcon
@@ -77,7 +72,7 @@ export default function OurTeam({ employees }: OurteamProps) {
                           </NextLink>
                         </SocialmediaLink>
                       )}
-                      {!employee.facebook && (
+                      {employee.facebook && (
                         <SocialmediaLink>
                           <NextLink href={"employee.facebook"} passHref>
                             <FacebookIcon
@@ -88,7 +83,7 @@ export default function OurTeam({ employees }: OurteamProps) {
                           </NextLink>
                         </SocialmediaLink>
                       )}
-                      {!employee.twitter && (
+                      {employee.instagram && (
                         <SocialmediaLink>
                           <NextLink href={"employee.instagram"} passHref>
                             {/* <TwitterIcon size={40} round={true} /> */}

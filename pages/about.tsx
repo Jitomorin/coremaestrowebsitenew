@@ -51,10 +51,13 @@ export default function AboutPage() {
           Core Maestro Management is more than an HR consultancy firm; we are
           your partners in progress. Our passion lies in empowering
           organizations to reach their full potential by harnessing the power of
-          their people. We recognize the power of HR in shaping the future of
-          organizations and communities and so, Core Maestro Management was
-          founded with the mission to empower organizations across Kenya through
-          strategic HR solutions. We are the architects of thriving workplaces.
+          their people.
+          <div className="my-6" /> We recognize the power of HR in shaping the
+          future of organizations and communities and so, Core Maestro
+          Management was founded with the mission to empower organizations
+          across Kenya through strategic HR solutions.
+          <div className="my-6" />
+          We are the architects of thriving workplaces.
         </AboutSection>
 
         <BasicSection styledImage imageUrl="/mission.jpg" title="Our Mission">

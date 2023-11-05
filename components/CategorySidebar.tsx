@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import NextImage from "next/image";
 import styled, { css } from "styled-components";
-import { FacebookIcon, LinkedinIcon, TwitterIcon } from "react-share";
 import NextLink from "next/link";
 import { media } from "../utils/media";
 import { Category } from "@/sanity/lib/queries";

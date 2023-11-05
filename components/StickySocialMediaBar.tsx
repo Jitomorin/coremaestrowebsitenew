@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NextImage from "next/image";
 import styled from "styled-components";
-import { FacebookIcon, LinkedinIcon, TwitterIcon } from "react-share";
+import { FacebookIcon, LinkedinIcon } from "react-share";
 import NextLink from "next/link";
 import { media } from "../utils/media";
 import Link from "next/link";

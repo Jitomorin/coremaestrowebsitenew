@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Page from "components/Page";
 import { media } from "utils/media";
-import AboutSection from "../../components/AboutSection";
 import { getAllServices, getClient } from "@/sanity/lib/client";
 import { GetServerSideProps, GetStaticProps } from "next";
 import { Service } from "@/sanity/lib/queries";
