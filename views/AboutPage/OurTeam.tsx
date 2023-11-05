@@ -63,7 +63,7 @@ export default function OurTeam({ employees }: OurteamProps) {
                     <AuthorSocials>
                       {employee.linkedin && (
                         <SocialmediaLink>
-                          <NextLink href={"employee.linkedin"} passHref>
+                          <NextLink href={employee.linkedin} passHref>
                             <LinkedinIcon
                               className="pl-6"
                               size={40}
@@ -74,24 +74,24 @@ export default function OurTeam({ employees }: OurteamProps) {
                       )}
                       {employee.facebook && (
                         <SocialmediaLink>
-                          <NextLink href={"employee.facebook"} passHref>
-                            <FacebookIcon
-                              className="pl-6"
-                              size={40}
-                              round={true}
-                            />
+                          <NextLink
+                            href={employee.facebook}
+                            passHref
+                            className="pl-6"
+                          >
+                            <FacebookIcon size={40} round={true} />
                           </NextLink>
                         </SocialmediaLink>
                       )}
                       {employee.instagram && (
                         <SocialmediaLink>
-                          <NextLink href={"employee.instagram"} passHref>
+                          <NextLink href={employee.instagram} passHref>
                             {/* <TwitterIcon size={40} round={true} /> */}
                             <NextImage
                               src="/instagram_logo.png"
                               alt="instagram_link"
-                              width={50}
-                              height={50}
+                              width={55}
+                              height={55}
                             />
                           </NextLink>
                         </SocialmediaLink>
@@ -219,7 +219,12 @@ const SocialmediaLink = styled.div`
   cursor: pointer;
   margin-right: 1rem;
   padding: 0, 0.5rem;
+
+  &:not(:last-child) {
+    margin-left: 1rem;
+  }
+
   &:hover {
-    scale: 1.07;
+    transform: scale(1.07);
   }
 `;
