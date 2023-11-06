@@ -95,7 +95,7 @@ export default function Footer() {
                 className="hover:text-[#ffaf01]"
                 href="https://mocapital.co.ke/"
               >
-                Mo Capital Limited Company
+                Mo Capital Company Limited
               </Link>
             </Copyright>
           </div>
