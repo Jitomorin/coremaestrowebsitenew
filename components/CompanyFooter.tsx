@@ -46,6 +46,9 @@ const Title = styled(SectionTitle)`
 
 const CompanyContainer = styled(Container)`
   padding: 0 30rem;
+  ${media("<tablet")} {
+    padding: 0 0;
+  }
 `;
 const TextContainer = styled.div``;
 const RichText = styled.div`

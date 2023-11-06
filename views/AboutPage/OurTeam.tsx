@@ -12,12 +12,7 @@ import { type } from "os";
 import { Employee } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/image";
 import NextLink from "next/link";
-import {
-  FacebookIcon,
-  InstapaperIcon,
-  LinkedinIcon,
-  TwitterIcon,
-} from "react-share";
+import { FacebookIcon, LinkedinIcon } from "react-share";
 
 type OurteamProps = { employees: Employee[] };
 
@@ -66,24 +61,38 @@ export default function OurTeam({ employees }: OurteamProps) {
                     <AuthorName>{employee.fullName}</AuthorName>
                     <AuthorTitle>{employee.position}</AuthorTitle>
                     <AuthorSocials>
-                      {!employee.linkedin && (
+                      {employee.linkedin && (
                         <SocialmediaLink>
-                          <NextLink href={"employee.linkedin"} passHref>
-                            <LinkedinIcon size={40} round={true} />
+                          <NextLink href={employee.linkedin} passHref>
+                            <LinkedinIcon
+                              className="pl-6"
+                              size={40}
+                              round={true}
+                            />
                           </NextLink>
                         </SocialmediaLink>
                       )}
-                      {!employee.facebook && (
+                      {employee.facebook && (
                         <SocialmediaLink>
-                          <NextLink href={"employee.facebook"} passHref>
+                          <NextLink
+                            href={employee.facebook}
+                            passHref
+                            className="pl-6"
+                          >
                             <FacebookIcon size={40} round={true} />
                           </NextLink>
                         </SocialmediaLink>
                       )}
-                      {!employee.twitter && (
+                      {employee.instagram && (
                         <SocialmediaLink>
-                          <NextLink href={"employee.instagram"} passHref>
-                            <TwitterIcon size={40} round={true} />
+                          <NextLink href={employee.instagram} passHref>
+                            {/* <TwitterIcon size={40} round={true} /> */}
+                            <NextImage
+                              src="/instagram_logo.png"
+                              alt="instagram_link"
+                              width={55}
+                              height={55}
+                            />
                           </NextLink>
                         </SocialmediaLink>
                       )}
@@ -148,9 +157,12 @@ const Title = styled.h1`
 const TitleContent = styled.div`
   margin-top: 1rem;
   margin-bottom: 10rem;
-  margin-left: 25rem;
-  margin-right: 25rem;
+  margin: 0 25rem;
   text-align: center;
+  ${media("<=tablet")} {
+    max-width: 100%;
+    margin: 5rem 0;
+  }
 `;
 const Content = styled.blockquote`
   text-align: center;
@@ -201,10 +213,18 @@ const AuthorImageContainer = styled.div`
   width: 15rem;
 `;
 const SocialmediaLink = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   margin-right: 1rem;
   padding: 0, 0.5rem;
+
+  &:not(:last-child) {
+    margin-left: 1rem;
+  }
+
   &:hover {
-    scale: 1.07;
+    transform: scale(1.07);
   }
 `;

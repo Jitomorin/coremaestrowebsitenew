@@ -128,7 +128,7 @@ export interface Employee {
   linkedin?: string;
   github?: string;
   facebook?: string;
-  twitter?: string;
+  instagram?: string;
 }
 export interface Partner {
   company: string;

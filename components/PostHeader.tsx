@@ -4,6 +4,8 @@ import Date from "components/PostDate";
 import PostTitle from "components/PostTitle";
 import type { Post } from "@/sanity/lib/queries";
 import Link from "next/link";
+import styled from "styled-components";
+import { media } from "@/utils/media";
 
 export default function PostHeader(
   props: Pick<
@@ -13,7 +15,7 @@ export default function PostHeader(
 ) {
   const { title, coverImage, date, author, slug, categories } = props;
   return (
-    <div className="mx-72">
+    <Wrapper>
       <PostTitle>{title}</PostTitle>
       <div className="hidden md:mb-12 md:block">
         {author && <Avatar name={author.name} picture={author.picture} />}
@@ -61,6 +63,13 @@ export default function PostHeader(
           <Date dateString={date} />
         </div> */}
       </div>
-    </div>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  margin: 0 18rem;
+  ${media("<tablet")} {
+    margin: 0 0;
+  }
+`;

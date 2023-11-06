@@ -102,6 +102,8 @@ const CustomAutofitGrid = styled(AutofitGrid)`
   ${media("<=tablet")} {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   justify-items: center; /* Horizontally center-align grid items */

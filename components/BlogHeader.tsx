@@ -1,16 +1,16 @@
-import { PortableText } from '@portabletext/react'
-import Link from 'next/link'
+import { PortableText } from "@portabletext/react";
+import Link from "next/link";
 
-import styles from './BlogHeader.module.css'
+import styles from "./BlogHeader.module.css";
 
 export default function BlogHeader({
   title,
   description,
   level,
 }: {
-  title: string
-  description?: any[]
-  level: 1 | 2
+  title: string;
+  description?: any[];
+  level: 1 | 2;
 }) {
   switch (level) {
     case 1:
@@ -25,7 +25,7 @@ export default function BlogHeader({
             <PortableText value={description} />
           </h4>
         </header>
-      )
+      );
 
     case 2:
       return (
@@ -36,13 +36,13 @@ export default function BlogHeader({
             </Link>
           </h2>
         </header>
-      )
+      );
 
     default:
       throw new Error(
         `Invalid level: ${
           JSON.stringify(level) || typeof level
-        }, only 1 or 2 are allowed`,
-      )
+        }, only 1 or 2 are allowed`
+      );
   }
 }

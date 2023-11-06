@@ -9,7 +9,9 @@ export default function InformationSection() {
       <h5>
         We would love to hear from you and discuss how we can support your
         business needs. Whether you have questions, inquiries, or want to
-        explore our services further. please reach out to us.
+        explore our services further.
+        <br />
+        Please reach out to us.
       </h5>
     </Wrapper>
   );

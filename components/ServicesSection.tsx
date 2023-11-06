@@ -107,4 +107,7 @@ const AboutSectionWrapper = styled(Container)`
   ${media("<=desktop")} {
     flex-direction: column;
   }
+  ${media("<tablet")} {
+    padding: 0 0;
+  }
 `;

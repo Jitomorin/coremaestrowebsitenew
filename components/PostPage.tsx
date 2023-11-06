@@ -19,6 +19,7 @@ import { getPostByCategory } from "@/sanity/lib/client";
 import { useClient } from "sanity";
 import { BackButton } from "./BackButton";
 import Link from "next/link";
+import { BackIcon } from "./BackIcon";
 
 export interface PostPageProps {
   preview?: boolean;
@@ -33,6 +34,8 @@ const NO_POSTS: Post[] = [];
 
 const Wrapper = styled.div`
   margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
   ${media("<largeDesktop")} {
     max-width: 90%;
   }
@@ -58,11 +61,8 @@ export default function PostPage(props: PostPageProps) {
             <PostTitle>Loading…</PostTitle>
           ) : (
             <Wrapper className="mx-auto">
-              <Link
-                href="/posts"
-                className="hover:text-[#f3bb2a] text-3xl font-bold ml-10"
-              >
-                Back to blogs
+              <Link href="/posts" className="hover:text-[#f3bb2a] mr-auto">
+                <BackIcon />
               </Link>
               <ArticleWrapper className="">
                 <PostContainer>
