@@ -6,7 +6,6 @@ import BasicSection from "components/BasicSection";
 import { EnvVars } from "env";
 // import { getAllPosts } from "utils/postsFetcher";
 import Cta from "views/HomePage/Cta";
-import Services from "views/HomePage/Services";
 import ServicesGallery from "views/HomePage/ServicesGallery";
 import Hero from "views/HomePage/Hero";
 import Partners from "views/HomePage/Partners";
@@ -27,6 +26,7 @@ import {
 } from "@/sanity/lib/client";
 import post from "@/sanity/schemas/post";
 import Button from "@/components/Button";
+import HomeBasicSection from "@/components/HomeBasicSection";
 
 const client = getClient();
 const tabsData = [
@@ -60,7 +60,7 @@ export default function Homepage({
       <HomepageWrapper>
         <WhiteBackgroundContainer>
           <Slider />
-          <BasicSection
+          <HomeBasicSection
             styledImage={false}
             imageUrl="/why-choose-us.jpg"
             title="Why Choose Us:"
@@ -92,7 +92,7 @@ export default function Homepage({
                 organization&apos;s objectives.
               </li>
             </ul>
-          </BasicSection>
+          </HomeBasicSection>
           <Divider />
           {/* <Button
             onClick={async () => {

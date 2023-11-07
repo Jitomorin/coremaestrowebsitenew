@@ -15,7 +15,7 @@ export interface BasicSectionProps {
   styledImage: boolean;
 }
 
-export default function BasicSection({
+export default function HomeBasicSection({
   imageUrl,
   title,
   overTitle,
@@ -66,9 +66,9 @@ const Title = styled.h1`
   }
 `;
 const BasicRichText = styled(RichText)`
-  ${media("<=tablet")} {
+  /* ${media("<=tablet")} {
     text-align: center;
-  }
+  } */
 `;
 
 const CustomOverTitle = styled(OverTitle)`
@@ -78,15 +78,9 @@ const CustomOverTitle = styled(OverTitle)`
 const ImageContainer = styled.div`
   /* flex: 1; */
   display: flex;
-  height: 80vh;
+  height: 60vh;
   width: 50%;
   position: relative;
-  &:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: calc((9 / 16) * 100%);
-  }
 
   & > div {
     position: absolute;
@@ -107,11 +101,12 @@ const ImageContainer = styled.div`
 const ContentContainer = styled.div`
   flex: 1;
   ${media("<tablet")} {
-    text-align: center;
+    text-align: left;
   }
 `;
 const ImageWrapper = styled.div`
-  width: 450px;
+  max-width: 450px;
+  max-height: 400px;
   margin: 0 auto;
 `;
 

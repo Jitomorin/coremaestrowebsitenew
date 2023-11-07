@@ -1,5 +1,5 @@
 import NextImage from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { A11y, Autoplay, Navigation } from "swiper/modules";
@@ -19,6 +19,22 @@ interface BlogPostProps {
 }
 
 export default function BlogPostSlider({ posts }: BlogPostProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Add event listener to check screen width on mount and resize
+    function handleResize() {
+      setIsMobile(window.innerWidth >= 768); // Adjust the breakpoint as needed
+    }
+
+    handleResize(); // Call the function initially
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <Wrapper>
       <TitleContent>
@@ -26,8 +42,8 @@ export default function BlogPostSlider({ posts }: BlogPostProps) {
       </TitleContent>
       <Swiper
         modules={[Navigation, Autoplay, A11y]}
-        slidesPerView={3}
-        navigation
+        slidesPerView={isMobile ? 3 : 1}
+        navigation={isMobile}
         loop
         style={{ padding: "2rem" }}
       >

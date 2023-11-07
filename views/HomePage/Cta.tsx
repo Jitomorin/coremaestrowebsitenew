@@ -42,8 +42,11 @@ const SectionTitle = styled.div`
   text-align: center;
   color: rgb(255, 255, 255);
 
-  ${media("<=tablet")} {
-    font-size: 4.6rem;
+  ${media("<=desktop")} {
+    font-size: 3.6rem;
+  }
+  ${media("<tablet")} {
+    font-size: 3rem;
   }
 `;
 

@@ -7,6 +7,7 @@ import SectionTitle from "components/SectionTitle";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { media } from "utils/media";
+import "./style.css";
 
 const TABS = [
   {
@@ -107,8 +108,8 @@ export default function ServicesGallery() {
   return (
     <ServicesGalleryWrapper>
       <SectionTitle className="mb-20">Our Approach</SectionTitle>
-      <Tabs>
-        <TabList className="text-3xl text-center mb-4 flex font-bold justify-center active:text-[#ffaf01] ">
+      <Tabs className="Tabs">
+        <TabList className="flex">
           {TABS.map((singleTab, idx) => {
             return <Tab key={idx}>{singleTab.title}</Tab>;
           })}
@@ -141,12 +142,24 @@ const ServicesGalleryWrapper = styled(Container)`
   // align-items: center;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 0 auto;
   border-radius: 5rem;
   ${media("<largeDesktop")} {
     max-width: 90%;
   }
 `;
 
+const TabListContainer = styled(TabList)`
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+
+  ${media("<=desktop")} {
+    flex-direction: column;
+  }
+`;
 const GalleryWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -190,7 +203,7 @@ const ImageContainer = styled.div`
   max-width: 100%;
   max-height: 100%;
   ${media("<=desktop")} {
-    max-height: 70%;
+    /* max-height: 70%; */
   }
 
   &:before {
@@ -240,12 +253,7 @@ const TabContent = styled.div`
 
   padding-left: calc(1rem + 1.5rem);
   padding-right: calc(4rem + 1.5rem);
-  p {
-    font-size: 3rem;
-    ${media("<largeDesktop")} {
-      font-size: 2.4rem;
-    }
-  }
+
   h2 {
     font-size: 4rem;
     margin-bottom: 3rem;
@@ -253,9 +261,7 @@ const TabContent = styled.div`
   ${media("<desktop")} {
     padding-left: calc(1rem + 1.25rem);
     padding-right: calc(3rem + 1.25rem);
-    p {
-      font-size: 2rem;
-    }
+
     h2 {
       font-size: 3rem;
       margin-bottom: 3rem;
@@ -266,6 +272,16 @@ const TabContent = styled.div`
     font-weight: normal;
     border-left: 2px solid rgb(255, 175, 1);
     padding-left: 1rem;
+    font-size: 2rem;
+    ${media("<largeDesktop")} {
+      font-size: 2.4rem;
+    }
+    ${media("<=tablet")} {
+      font-size: 1.2rem;
+    }
+    ${media("<=phone")} {
+      font-size: 0.6rem;
+    }
   }
 `;
 
