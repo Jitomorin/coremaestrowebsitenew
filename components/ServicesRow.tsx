@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AutofitGrid from "components/AutofitGrid";
 import { media } from "utils/media";
@@ -77,13 +77,94 @@ const SERVICES = [
     secondColor: "21,35,62",
   },
 ];
+const SHORTSERVICES = [
+  {
+    title: "Payroll Management",
+    slug: generateSlug("Payroll Management Including Payroll Software"),
+    description:
+      "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
+    imageUrl: "/payroll.png",
+    href: "/services/",
+    icon: faMoneyBillWave,
+    baseColor: "21,35,62",
+    secondColor: "21,35,62",
+  },
+  {
+    title: "HR Policies Development",
+    slug: generateSlug("HR Policy and Procedure Development"),
+    description:
+      "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
+    imageUrl: "/payroll.png",
+    href: "/services/",
+    icon: faFileSignature,
+    baseColor: "21,35,62",
+    secondColor: "21,35,62",
+  },
+];
 
 export default function ServicesRow() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Add event listener to check screen width on mount and resize
+    function handleResize() {
+      setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as needed
+    }
+
+    handleResize(); // Call the function initially
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const router = useRouter();
   return (
     <Wrapper>
       <MainContainer>
-        {SERVICES.map((singleFeature, idx) => (
+        {isMobile ? (
+          <>
+            {SHORTSERVICES.map((singleFeature, idx) => (
+              <Card
+                onClick={() => {
+                  router.push(singleFeature.href + singleFeature.slug);
+                }}
+              >
+                <FontAwesomeIcon
+                  className="text-white"
+                  icon={singleFeature.icon}
+                  width={media("<largeDesktop") ? 40 : 60}
+                  height={media("<largeDesktop") ? 40 : 60}
+                />
+                <Link href={singleFeature.href + singleFeature.slug}>
+                  <Title>{singleFeature.title}</Title>
+                </Link>
+              </Card>
+            ))}
+          </>
+        ) : (
+          <>
+            {SERVICES.map((singleFeature, idx) => (
+              <Card
+                onClick={() => {
+                  router.push(singleFeature.href + singleFeature.slug);
+                }}
+              >
+                <FontAwesomeIcon
+                  className="text-white"
+                  icon={singleFeature.icon}
+                  width={media("<largeDesktop") ? 40 : 60}
+                  height={media("<largeDesktop") ? 40 : 60}
+                />
+                <Link href={singleFeature.href + singleFeature.slug}>
+                  <Title>{singleFeature.title}</Title>
+                </Link>
+              </Card>
+            ))}
+          </>
+        )}
+        {/* {SERVICES.map((singleFeature, idx) => (
           <Card
             onClick={() => {
               router.push(singleFeature.href + singleFeature.slug);
@@ -100,6 +181,23 @@ export default function ServicesRow() {
             </Link>
           </Card>
         ))}
+        {SHORTSERVICES.map((singleFeature, idx) => (
+          <Card
+            onClick={() => {
+              router.push(singleFeature.href + singleFeature.slug);
+            }}
+          >
+            <FontAwesomeIcon
+              className="text-white"
+              icon={singleFeature.icon}
+              width={media("<largeDesktop") ? 40 : 60}
+              height={media("<largeDesktop") ? 40 : 60}
+            />
+            <Link href={singleFeature.href + singleFeature.slug}>
+              <Title>{singleFeature.title}</Title>
+            </Link>
+          </Card>
+        ))} */}
         <Card
           onClick={() => {
             router.push("/services");
@@ -129,9 +227,9 @@ const Wrapper = styled.div`
   width: 100%;
   justify-content: flex-end;
   margin-bottom: 2rem;
-  ${media("<tablet")} {
+  /* ${media("<tablet")} {
     display: none;
-  }
+  } */
 `;
 const Row = styled(AutofitGrid)`
   display: flex;

@@ -1,5 +1,3 @@
-import { useState } from "react";
-import NextImage from "next/image";
 import styled from "styled-components";
 import ServicesRow from "./ServicesRow";
 import { media } from "@/utils/media";
