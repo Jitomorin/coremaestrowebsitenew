@@ -85,6 +85,21 @@ export default function Footer() {
                 <FacebookIcon size={50} round={true} />
               </Link>
             </SocialmediaLink>
+            <SocialmediaLink>
+              <Link
+                target="_blank"
+                href="https://wa.me/message/ODRQQDIW57LEN1"
+                passHref
+              >
+                {/* <TwitterIcon size={50} round={true} /> */}
+                <NextImage
+                  src="/whatsapp_logo.png"
+                  alt="Whatsapp Link"
+                  width={60}
+                  height={60}
+                />
+              </Link>
+            </SocialmediaLink>
           </ShareBar>
           <div>
             {/* <Copyright>&copy; Copyright 2023 MoCapital</Copyright> */}
