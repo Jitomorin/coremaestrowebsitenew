@@ -278,15 +278,16 @@ const TabContent = styled.div`
     border-left: 2px solid rgb(255, 175, 1);
     padding-left: 1rem;
     font-size: 2rem;
-    ${media("<largeDesktop")} {
-      font-size: 2.4rem;
+    ${media("<=desktop")} {
+      font-size: 2rem;
     }
     ${media("=tablet")} {
       font-size: 1.6rem;
     }
-    ${media("<=desktop")} {
+    ${media("<tablet")} {
       font-size: 1rem;
     }
+
     ${media("<=phone")} {
       font-size: 0.6rem;
     }

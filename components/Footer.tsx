@@ -223,8 +223,6 @@ const ListWrapper = styled.div`
   flex-direction: column;
   margin: 0 1.5rem;
   max-width: 30%;
-  justify-content: center;
-  align-items: center;
 
   & > *:not(:first-child) {
     margin-top: 1rem;

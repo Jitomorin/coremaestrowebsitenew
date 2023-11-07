@@ -8,6 +8,11 @@ export default function Slider() {
   const ImageWrapper = styled.div`
     background: url("/stock-image-1.jpg");
     background-size: cover;
+    ${media("<=desktop")} {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   `;
 
   const Container = styled.div`
