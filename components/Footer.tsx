@@ -161,6 +161,9 @@ const FooterContainer = styled(Container)`
   ${media("<=largeDesktop")} {
     max-width: 90%;
   }
+  ${media("<=phone")} {
+    max-width: 100%;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -174,6 +177,7 @@ const LogoContainer = styled.div`
 const ListContainer = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
 
@@ -202,9 +206,10 @@ const ListDescription = styled.p`
 const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 0rem;
-  margin-right: 0rem;
+  margin: 0 1.5rem;
   max-width: 30%;
+  justify-content: center;
+  align-items: center;
 
   & > *:not(:first-child) {
     margin-top: 1rem;
