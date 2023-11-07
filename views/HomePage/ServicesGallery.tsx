@@ -107,7 +107,7 @@ export default function ServicesGallery() {
 
   return (
     <ServicesGalleryWrapper>
-      <SectionTitle className="mb-20">Our Approach</SectionTitle>
+      <ServiceGalleryTitle className="mb-20">Our Approach</ServiceGalleryTitle>
       <Tabs className="Tabs">
         <TabList className="flex">
           {TABS.map((singleTab, idx) => {
@@ -148,6 +148,11 @@ const ServicesGalleryWrapper = styled(Container)`
   border-radius: 5rem;
   ${media("<largeDesktop")} {
     max-width: 90%;
+  }
+`;
+const ServiceGalleryTitle = styled(SectionTitle)`
+  ${media("<tablet")} {
+    font-size: 3rem;
   }
 `;
 

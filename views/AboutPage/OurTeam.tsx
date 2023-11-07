@@ -152,6 +152,7 @@ export default function OurTeam({ employees }: OurteamProps) {
 const OurteamWrapper = styled(Container)`
   position: relative;
   margin-bottom: 3rem;
+  margin-top: 9rem;
   width: 90vw;
 
   .swiper-button-prev,

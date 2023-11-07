@@ -106,8 +106,11 @@ const ContentContainer = styled.div`
 `;
 const ImageWrapper = styled.div`
   max-width: 450px;
-  max-height: 400px;
+
   margin: 0 auto;
+  ${media("<tablet")} {
+    max-height: 400px;
+  }
 `;
 
 type Props = Pick<BasicSectionProps, "reversed">;
