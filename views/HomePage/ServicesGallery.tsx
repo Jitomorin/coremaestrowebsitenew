@@ -276,8 +276,11 @@ const TabContent = styled.div`
     ${media("<largeDesktop")} {
       font-size: 2.4rem;
     }
-    ${media("<=tablet")} {
-      font-size: 1.2rem;
+    ${media("=tablet")} {
+      font-size: 1.6rem;
+    }
+    ${media("<tablet")} {
+      font-size: 1rem;
     }
     ${media("<=phone")} {
       font-size: 0.6rem;

@@ -43,6 +43,7 @@
 @media (max-width: 375px) {
   .react-tabs__tab {
     font-size: 0.6rem;
+    padding: 1px;
   }
 }
 @media (max-width: 320px) {
