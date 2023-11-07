@@ -106,7 +106,7 @@ const ContentContainer = styled.div`
 `;
 const ImageWrapper = styled.div`
   max-width: 450px;
-
+  height: 500px;
   margin: 0 auto;
   ${media("<tablet")} {
     max-height: 400px;
