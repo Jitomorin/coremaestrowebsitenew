@@ -1,7 +1,8 @@
 export const EnvVars = {
   SITE_NAME: "Core Maestro Management",
-  OG_IMAGES_URL: "https://next-saas-starter-ashy.vercel.app/og-images/",
-  URL: "https://next-saas-starter-ashy.vercel.app/",
+  OG_IMAGES_URL: "",
+  URL: "https://coremaestro.co.ke",
   MAILCHIMP_SUBSCRIBE_URL:
-    "https://bstefanski.us5.list-manage.com/subscribe/post?u=66b4c22d5c726ae22da1dcb2e&id=679fb0eec9",
+    process.env.NEXT_MAILCHIMP_SUBSCRIBE_URL ||
+    "https://coremaestro.us12.list-manage.com/subscribe/post?u=13c8d4dd0f3ea6151d80107ac&amp;id=02ca188462&amp;f_id=00b94be0f0",
 };
