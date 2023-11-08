@@ -72,6 +72,22 @@ function MyApp({ Component, pageProps }: AppProps) {
           crossOrigin=""
         />
         <link rel="icon" type="image/png" href="/favicon.png" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-6WCSKJXF5T"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag() {
+                dataLayer.push(arguments);
+              }
+              gtag('js', new Date());
+              gtag('config', 'G-6WCSKJXF5T');
+            `,
+          }}
+        />
         {/* <link rel="alternate" type="application/rss+xml" href={EnvVars.URL + 'rss'} title="RSS 2.0" /> */}
         {/* <script
           dangerouslySetInnerHTML={{

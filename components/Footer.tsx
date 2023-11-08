@@ -18,10 +18,10 @@ const footerItems: FooterItems = [
   {
     title: "Useful Links",
     items: [
-      { title: "Something", href: "/Something" },
-      { title: "Footer", href: "/Something" },
-      { title: "Something else2", href: "/Something" },
-      { title: "Something", href: "/Something" },
+      { title: "Performance Management System", href: "/services" },
+      { title: "Payroll Management System", href: "/services" },
+      { title: "Learning Management System", href: "/services" },
+      { title: "ATS Job Board", href: "/services" },
     ],
   },
   {
