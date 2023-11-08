@@ -3,7 +3,6 @@ import PreviewPostPage from "components/PreviewPostPage";
 import { readToken } from "@/sanity/env";
 import {
   getAllCategories,
-  getAllPostsSlugs,
   getClient,
   getPostAndMoreStories,
   getSettings,

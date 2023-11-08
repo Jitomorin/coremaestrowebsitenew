@@ -22,7 +22,7 @@ const footerItems: FooterItems = [
       { title: "Payroll Management System", href: "/services" },
       { title: "Learning Management System", href: "/services" },
       { title: "ATS Job Board", href: "/services" },
-      { title: "Privacy Policy", href: "/services" },
+      { title: "Privacy Policy", href: "/privacy-policy" },
     ],
   },
   {

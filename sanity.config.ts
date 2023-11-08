@@ -18,6 +18,7 @@ import partnerType from "./sanity/schemas/partner";
 import categorytype from "./sanity/schemas/category";
 import { settingsStructure } from "./plugins/settings";
 import { previewDocumentNode } from "./plugins/previewPane";
+import privacyPolicyType from "./sanity/schemas/privacy-policy";
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || "Core Maestro Management";
@@ -37,6 +38,7 @@ export default defineConfig({
       serviceType,
       categorytype,
       partnerType,
+      privacyPolicyType,
     ],
   },
   plugins: [
