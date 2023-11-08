@@ -4,28 +4,13 @@ import styled from "styled-components";
 import BasicSection from "components/BasicSection";
 // import Link from "components/Link";
 import { EnvVars } from "env";
-// import { getAllPosts } from "utils/postsFetcher";
 import Cta from "views/HomePage/Cta";
 import ServicesGallery from "views/HomePage/ServicesGallery";
-import Hero from "views/HomePage/Hero";
 import Partners from "views/HomePage/Partners";
-import ScrollableBlogPosts from "views/HomePage/ScrollableBlogPosts";
 import Divider from "components/Divider";
-// import WordCycle from "components/WordCycle";
 import Slider from "components/Slider";
-import BasicSectionNoImage from "components/BasicSectionNoImage";
-import StyledTabs from "@/views/HomePage/StyledTabs";
-import { useEffect, useState } from "react";
-// import { getBlogs } from "@/sanity/lib/client";
 import BlogPostSlider from "@/views/HomePage/BlogPostSlider";
-import {
-  getAllPartners,
-  getAllPosts,
-  getClient,
-  getPostByCategory,
-} from "@/sanity/lib/client";
-import post from "@/sanity/schemas/post";
-import Button from "@/components/Button";
+import { getAllPartners, getAllPosts, getClient } from "@/sanity/lib/client";
 import HomeBasicSection from "@/components/HomeBasicSection";
 
 const client = getClient();
@@ -62,7 +47,7 @@ export default function Homepage({
           <Slider />
           <HomeBasicSection
             styledImage={false}
-            imageUrl="/why-choose-us.jpg"
+            imageUrl="/why-choose-us.webp"
             title="Why Choose Us:"
             reversed
           >

@@ -46,7 +46,7 @@ export default function ServiceSlugRoute(props: ServiceProps) {
     <Page
       title={"Services"}
       description={service.description}
-      imgURL="/services_stock.jpg"
+      imgURL="/services_stock.webp"
     >
       <ServicePage service={service} />
     </Page>

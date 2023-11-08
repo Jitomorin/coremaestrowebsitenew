@@ -14,7 +14,7 @@ const TABS = [
     title: "In-Depth Discovery",
     description:
       "We kick off our journey by engaging in an in-depth discovery process. We take the time to understand your organization's history, culture, challenges, and aspirations. Your story becomes our story.",
-    imageUrl: "/discovery.jpg",
+    imageUrl: "/discovery.webp",
     baseColor: "21,35,62",
     secondColor: "21,35,62",
   },
@@ -22,7 +22,7 @@ const TABS = [
     title: "Open Dialogue",
     description:
       "Communication is at the core of our approach. We believe in open and honest conversations. We actively listen to your concerns, ideas, and goals, ensuring that every decision we make aligns with your vision",
-    imageUrl: "/dialog.jpg",
+    imageUrl: "/dialog.webp",
     baseColor: "21,35,62",
     secondColor: "21,35,62",
   },
@@ -30,7 +30,7 @@ const TABS = [
     title: "Trust and Transparency",
     description:
       "Trust is the bedrock of any relationship. We foster trust through transparent interactions, ensuring that you have a clear understanding of our strategies, processes, and outcomes.",
-    imageUrl: "/recruitment_image.jpg",
+    imageUrl: "/recruitment_image.webp",
     baseColor: "21,35,62",
     secondColor: "21,35,62",
   },
@@ -38,7 +38,7 @@ const TABS = [
     title: "Collaboration, Not Dictation",
     description:
       "We don't come with preconceived notions or one-size-fits-all solutions. Instead, we collaborate with you, valuing your insights and expertise, and together, we co-create tailored HR solutions.",
-    imageUrl: "/collaboration.jpg",
+    imageUrl: "/collaboration.webp",
     baseColor: "21,35,62",
     secondColor: "21,35,62",
   },
@@ -46,7 +46,7 @@ const TABS = [
     title: "Your Success is Our Success",
     description:
       "At Core Maestro Management, your success is our driving force. We celebrate your achievements and share in your challenges, demonstrating our commitment to your organization's growth.",
-    imageUrl: "/success.jpg",
+    imageUrl: "/success.webp",
     baseColor: "21,35,62",
     secondColor: "21,35,62",
   },
@@ -54,7 +54,7 @@ const TABS = [
     title: "Long-Term Commitment",
     description:
       " We don't view our work as short-term transactions. Our goal is to establish long-term partnerships. We'll be by your side, supporting your HR journey year after year.",
-    imageUrl: "/commitment.jpg",
+    imageUrl: "/commitment.webp",
     baseColor: "21,35,62",
     secondColor: "21,35,62",
   },

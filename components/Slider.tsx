@@ -4,7 +4,7 @@ import { media } from "@/utils/media";
 
 export default function Slider() {
   const ImageWrapper = styled.div`
-    background: url("/stock-image-1.jpg");
+    background: url("/stock-image-1.webp");
     background-size: cover;
     background-position: center;
     ${media("<=desktop")} {

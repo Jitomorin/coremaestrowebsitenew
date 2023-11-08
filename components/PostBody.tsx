@@ -37,7 +37,7 @@ export default function PostBody({ content }: any) {
 }
 const Wrapper = styled.div`
   margin: 0 18rem;
-  ${media("<=desktop")} {
+  ${media("<=largeDesktop")} {
     margin: 0 5rem;
   }
   ${media("<tablet")} {

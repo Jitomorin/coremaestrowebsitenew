@@ -40,7 +40,7 @@ export default function AboutPage() {
   return (
     <Page
       title="About Us"
-      imgURL="/job-interview_image.jpg"
+      imgURL="/job-interview_image.webp"
       description="Minim sint aliquip nostrud excepteur cupidatat amet do laborum exercitation cupidatat ea proident."
     >
       <AboutContainer>
@@ -60,7 +60,7 @@ export default function AboutPage() {
           We are the architects of thriving workplaces.
         </AboutSection>
 
-        <BasicSection styledImage imageUrl="/mission.jpg" title="Our Mission">
+        <BasicSection styledImage imageUrl="/mission.webp" title="Our Mission">
           <p>
             At <strong>Core Maestro Management</strong>, our mission is crystal
             clear: We empower organizations within Kenya and beyond through
@@ -72,7 +72,7 @@ export default function AboutPage() {
         </BasicSection>
         <BasicSection
           styledImage
-          imageUrl="/vision.jpg"
+          imageUrl="/vision.webp"
           title="Our Vision"
           reversed
         >

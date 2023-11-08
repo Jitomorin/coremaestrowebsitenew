@@ -69,7 +69,7 @@ export default function Footer() {
               >
                 {/* <TwitterIcon size={50} round={true} /> */}
                 <NextImage
-                  src="/instagram_logo.png"
+                  src="/instagram_logo.webp"
                   alt="instagram_link"
                   width={65}
                   height={65}
@@ -93,7 +93,7 @@ export default function Footer() {
               >
                 {/* <TwitterIcon size={50} round={true} /> */}
                 <NextImage
-                  src="/whatsapp_logo.png"
+                  src="/whatsapp_logo.webp"
                   alt="Whatsapp Link"
                   width={60}
                   height={60}

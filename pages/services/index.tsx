@@ -18,7 +18,7 @@ export default function ServicesPage(props: ServiceProps) {
 
   return (
     <Page
-      imgURL="/services_stock.jpg"
+      imgURL="/services_stock.webp"
       title="Services"
       description="Elit aute do nisi Lorem id ea culpa sint duis eu tempor dolore elit."
     >

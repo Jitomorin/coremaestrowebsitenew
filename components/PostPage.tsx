@@ -1,5 +1,4 @@
 import { media } from "@/utils/media";
-import Container from "components/BlogContainer";
 import Layout from "components/BlogLayout";
 import MoreBlogs from "components/MoreBlogs";
 import PostBody from "components/PostBody";
@@ -100,7 +99,6 @@ export default function PostPage(props: PostPageProps) {
 
                 <CategorySidebar categories={props.categories} />
               </ArticleWrapper>
-              {/* <BackButton size={100} text="Back to blogs" href="/posts" /> */}
               <SectionSeparator />
               {morePosts?.length > 0 && <MoreBlogs posts={morePosts} />}
             </Wrapper>

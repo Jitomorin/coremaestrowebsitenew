@@ -9,7 +9,7 @@ import Divider from "components/Divider";
 export default function ContactPage() {
   return (
     <Page
-      imgURL="/contact.jpg"
+      imgURL="/contact.webp"
       title="Contact Us"
       description="Minim sint aliquip nostrud excepteur cupidatat amet do laborum exercitation cupidatat ea proident."
     >
