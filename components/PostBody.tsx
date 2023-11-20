@@ -25,6 +25,10 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
     span: ({ value }: any) => {
       return <span className={"text-5xl"}>{value}</span>;
     },
+    h1: ({ value }: any) => {
+      return <h1 className={"text-9xl"}>{value}</h1>;
+    },
+    // for bullet lists
   },
 };
 

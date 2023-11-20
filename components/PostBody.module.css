@@ -3,21 +3,28 @@
 }
 
 .portableText p,
-.portableText ul,
-.portableText ol,
 .portableText blockquote {
   @apply my-6 text-3xl leading-loose;
 }
 
-/* .portableText h1 {
-  @apply mb-4 mt-12 text-6xl font-bold leading-loose;
-} */
+.portableText ul {
+  @apply list-disc ml-[1.5em] pl-[1.5em] my-6 text-3xl leading-loose;
+}
+.portableText ol {
+  @apply list-decimal ml-[1.5em] pl-[1.5em] my-6 text-3xl leading-loose;
+}
+.portableText h1 {
+  @apply mb-4 mt-12 text-7xl font-bold leading-loose;
+}
 .portableText h2 {
   @apply mb-4 mt-12 text-6xl font-bold leading-loose;
 }
 
 .portableText h3 {
-  @apply mb-4 mt-8 text-3xl font-semibold leading-snug;
+  @apply mb-4 mt-8 text-5xl font-semibold leading-snug;
+}
+.portableText h4 {
+  @apply mb-4 mt-8 text-4xl font-semibold leading-snug;
 }
 
 .portableText a {
