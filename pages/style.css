@@ -14,12 +14,6 @@ a {
   height: 100vh;
   max-height: 100vh;
 }
-.keen-slider {
-  transition-duration: 4000ms;
-}
-
-.navigation-wrapper {
-}
 
 .navigation-wrapper {
   position: relative;

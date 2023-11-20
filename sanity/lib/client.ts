@@ -19,6 +19,8 @@ import {
   serviceSlugsQuery,
   partnersQuery,
   Partner,
+  privacyPolicyQuery,
+  PrivacyPolicy,
 } from "./queries";
 import { createClient, type SanityClient } from "next-sanity";
 
@@ -68,6 +70,11 @@ export async function getAllEmployees(
   client: SanityClient
 ): Promise<Employee[]> {
   return (await client.fetch(employeesQuery)) || [];
+}
+export async function getPrivacyPolicy(
+  client: SanityClient
+): Promise<PrivacyPolicy[]> {
+  return (await client.fetch(privacyPolicyQuery)) || [];
 }
 
 export async function getAllPostsSlugs(): Promise<Pick<Post, "slug">[]> {

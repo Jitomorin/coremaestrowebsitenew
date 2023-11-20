@@ -11,6 +11,7 @@ import styled from "styled-components";
 import ServiceHeader from "./ServiceHeader";
 import Link from "next/link";
 import { BackIcon } from "./BackIcon";
+import { useEffect, useState } from "react";
 
 export interface PostPageProps {
   preview?: boolean;
@@ -30,6 +31,22 @@ const Wrapper = styled.div`
 export default function ServicePage(props: PostPageProps) {
   const { preview, loading, service, settings } = props;
   const { title = demo.title } = settings || {};
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Add event listener to check screen width on mount and resize
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 1024); // Adjust the breakpoint as needed
+    }
+
+    handleResize(); // Call the function initially
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const slug = service?.slug;
   if (!slug && !preview) {
@@ -51,9 +68,12 @@ export default function ServicePage(props: PostPageProps) {
               <PostTitle>Loading…</PostTitle>
             ) : (
               <Wrapper>
-                <Link href="/services" className="mr-auto">
-                  <BackIcon width={30} height={30} />
-                </Link>
+                <BackLink href="/services" className="mr-auto">
+                  <BackIcon
+                    width={isMobile ? 30 : 50}
+                    height={isMobile ? 30 : 50}
+                  />
+                </BackLink>
                 <ArticleWrapper>
                   <ServiceContainer>
                     {/* <SectionTitle>{service.title}</SectionTitle> */}
@@ -81,6 +101,15 @@ const ArticleWrapper = styled.article`
   align-items: flex-start;
   ${media("<tablet")} {
     flex-direction: column;
+  }
+`;
+const BackLink = styled(Link)`
+  padding: 0 18rem;
+  ${media("<=largeDesktop")} {
+    padding: 0 5rem;
+  }
+  ${media("<tablet")} {
+    padding: 0 0;
   }
 `;
 const ServiceContainer = styled.div`

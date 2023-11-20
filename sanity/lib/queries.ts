@@ -38,6 +38,8 @@ export const partnersQuery = groq`
 *[_type == "partners"]`;
 export const employeesQuery = groq`
 *[_type == "employee"]`;
+export const privacyPolicyQuery = groq`
+*[_type == "privacy-policy"]`;
 export const servicesQuery = groq`
 *[_type == "service"]`;
 export const categoriesQuery = groq`
@@ -88,6 +90,11 @@ interface Slug {
 export interface Author {
   name?: string;
   picture?: any;
+}
+export interface PrivacyPolicy {
+  title?: string;
+  date?: string;
+  content?: any;
 }
 
 export interface Category {

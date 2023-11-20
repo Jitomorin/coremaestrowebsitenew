@@ -1,13 +1,16 @@
-import { useState } from "react";
-import NextImage from "next/image";
 import styled from "styled-components";
 import ServicesRow from "./ServicesRow";
 import { media } from "@/utils/media";
 
 export default function Slider() {
   const ImageWrapper = styled.div`
-    background: url("/stock-image-1.jpg");
+    background: url("/stock-image-1.webp");
     background-size: cover;
+    background-position: center;
+    ${media("<=desktop")} {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   `;
 
   const Container = styled.div`

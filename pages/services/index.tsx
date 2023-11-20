@@ -18,7 +18,7 @@ export default function ServicesPage(props: ServiceProps) {
 
   return (
     <Page
-      imgURL="/services_stock.jpg"
+      imgURL="/services_stock.webp"
       title="Services"
       description="Elit aute do nisi Lorem id ea culpa sint duis eu tempor dolore elit."
     >
@@ -32,7 +32,7 @@ export default function ServicesPage(props: ServiceProps) {
           customization, and a dedication to continuous improvement. Your HR
           challenges are our opportunities for success.
         </ServicesSection>
-        <div className="mb-32 grid grid-cols-1 gap-y-20 md:grid-cols-3 md:gap-x-16 md:gap-y-32 lg:gap-x-32">
+        <div className="mb-32 grid grid-cols-1 gap-y-20 md:grid-cols-3 md:gap-x-16 md:gap-y-32 lg:gap-x-32 max-w-[90%]">
           {services.map((singleFeature, idx) => (
             <ServiceCard
               key={singleFeature.slug?.current!}

@@ -26,11 +26,6 @@ export default function CategoryIndexPage(props: IndexPageProps) {
         <IndexPageHead settings={settings} />
 
         <Layout preview={preview} loading={loading}>
-          {/* <Page
-            imgURL="/resume_image.jpg"
-            title="HR News"
-            description="Culpa duis reprehenderit in ex amet cillum nulla do in enim commodo. Sunt ut excepteur et est aliqua anim ea excepteur fugiat voluptate. Fugiat exercitation dolore laboris do quis consectetur eiusmod tempor consequat."
-          > */}
           <Container>
             {/* <BlogHeader title={title} description={description} level={1} /> */}
             {/* {heroPost && (

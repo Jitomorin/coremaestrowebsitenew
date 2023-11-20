@@ -11,24 +11,8 @@ export default function CategorySidebar({
 }: {
   categories: Category[];
 }) {
-  const [isSticky, setIsSticky] = useState(false);
-
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    // Adjust the scroll threshold as needed
-    const scrollThreshold = 200; // Adjust this value as needed
-    setIsSticky(scrollY > scrollThreshold);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <Wrapper isSticky={isSticky}>
+    <Wrapper>
       <Heading>Categories</Heading>
       <CategoryBar>
         {categories.map((category) => (
@@ -43,9 +27,7 @@ export default function CategorySidebar({
     </Wrapper>
   );
 }
-const Wrapper = styled.div<{
-  isSticky: boolean;
-}>`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;

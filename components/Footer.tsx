@@ -18,10 +18,11 @@ const footerItems: FooterItems = [
   {
     title: "Useful Links",
     items: [
-      { title: "Something", href: "/Something" },
-      { title: "Footer", href: "/Something" },
-      { title: "Something else2", href: "/Something" },
-      { title: "Something", href: "/Something" },
+      { title: "Performance Management System", href: "/services" },
+      { title: "Payroll Management System", href: "/services" },
+      { title: "Learning Management System", href: "/services" },
+      { title: "ATS Job Board", href: "/services" },
+      { title: "Privacy Policy", href: "/privacy-policy" },
     ],
   },
   {
@@ -69,7 +70,7 @@ export default function Footer() {
               >
                 {/* <TwitterIcon size={50} round={true} /> */}
                 <NextImage
-                  src="/instagram_logo.png"
+                  src="/instagram_logo.webp"
                   alt="instagram_link"
                   width={65}
                   height={65}
@@ -83,6 +84,21 @@ export default function Footer() {
                 target="_blank"
               >
                 <FacebookIcon size={50} round={true} />
+              </Link>
+            </SocialmediaLink>
+            <SocialmediaLink>
+              <Link
+                target="_blank"
+                href="https://wa.me/message/ODRQQDIW57LEN1"
+                passHref
+              >
+                {/* <TwitterIcon size={50} round={true} /> */}
+                <NextImage
+                  src="/whatsapp_logo.webp"
+                  alt="Whatsapp Link"
+                  width={60}
+                  height={60}
+                />
               </Link>
             </SocialmediaLink>
           </ShareBar>
@@ -161,6 +177,9 @@ const FooterContainer = styled(Container)`
   ${media("<=largeDesktop")} {
     max-width: 90%;
   }
+  ${media("<=phone")} {
+    max-width: 100%;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -174,6 +193,7 @@ const LogoContainer = styled.div`
 const ListContainer = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
 
@@ -202,8 +222,7 @@ const ListDescription = styled.p`
 const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 0rem;
-  margin-right: 0rem;
+  margin: 0 1.5rem;
   max-width: 30%;
 
   & > *:not(:first-child) {

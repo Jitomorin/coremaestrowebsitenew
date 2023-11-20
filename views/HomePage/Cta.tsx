@@ -42,8 +42,11 @@ const SectionTitle = styled.div`
   text-align: center;
   color: rgb(255, 255, 255);
 
-  ${media("<=tablet")} {
-    font-size: 4.6rem;
+  ${media("<=desktop")} {
+    font-size: 3.6rem;
+  }
+  ${media("<tablet")} {
+    font-size: 3rem;
   }
 `;
 
@@ -114,7 +117,7 @@ const Stack = styled.div`
 // `;
 
 const CtaWrapper = styled.div`
-  background: url("/pexels-pixabay-416405.jpg") no-repeat center center;
+  background: url("/pexels-pixabay-416405.webp") no-repeat center center;
   height: 50vh;
   min-height: 40rem;
   display: flex;

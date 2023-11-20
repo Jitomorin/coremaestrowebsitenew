@@ -33,7 +33,9 @@ export default function BasicSection({
         {styledImage ? (
           <StyledImage imageURL={imageUrl} />
         ) : (
-          <NextImage src={imageUrl} alt={title} layout="fill" />
+          <ImageWrapper>
+            <NextImage src={imageUrl} alt={title} layout="fill" />
+          </ImageWrapper>
         )}
       </ImageContainer>
 
@@ -75,6 +77,7 @@ const CustomOverTitle = styled(OverTitle)`
 
 const ImageContainer = styled.div`
   /* flex: 1; */
+  display: flex;
   height: 80vh;
   width: 50%;
   position: relative;
@@ -106,6 +109,10 @@ const ContentContainer = styled.div`
   ${media("<tablet")} {
     text-align: center;
   }
+`;
+const ImageWrapper = styled.div`
+  width: 450px;
+  margin: 0 auto;
 `;
 
 type Props = Pick<BasicSectionProps, "reversed">;

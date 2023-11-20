@@ -1,5 +1,4 @@
 import { media } from "@/utils/media";
-import Container from "components/BlogContainer";
 import Layout from "components/BlogLayout";
 import MoreBlogs from "components/MoreBlogs";
 import PostBody from "components/PostBody";
@@ -46,13 +45,12 @@ const Wrapper = styled.div`
 
 export default function PostPage(props: PostPageProps) {
   const { preview, loading, morePosts = NO_POSTS, post, settings } = props;
-  const { title = demo.title } = settings || {};
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // Add event listener to check screen width on mount and resize
     function handleResize() {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth <= 1024); // Adjust the breakpoint as needed
     }
 
     handleResize(); // Call the function initially
@@ -80,12 +78,12 @@ export default function PostPage(props: PostPageProps) {
             <PostTitle>Loading…</PostTitle>
           ) : (
             <Wrapper className="mx-auto">
-              <Link href="/posts" className="hover:text-[#f3bb2a] mr-auto">
+              <BackLink href="/posts" className="hover:text-[#f3bb2a] mr-auto">
                 <BackIcon
                   width={isMobile ? 30 : 50}
                   height={isMobile ? 30 : 50}
                 />
-              </Link>
+              </BackLink>
               <ArticleWrapper className="">
                 <PostContainer>
                   <PostHeader
@@ -100,7 +98,6 @@ export default function PostPage(props: PostPageProps) {
 
                 <CategorySidebar categories={props.categories} />
               </ArticleWrapper>
-              {/* <BackButton size={100} text="Back to blogs" href="/posts" /> */}
               <SectionSeparator />
               {morePosts?.length > 0 && <MoreBlogs posts={morePosts} />}
             </Wrapper>
@@ -130,5 +127,14 @@ const PostContainer = styled.div`
   ${media("<=tablet")} {
     justify-content: center;
     align-items: center;
+  }
+`;
+const BackLink = styled(Link)`
+  padding: 0 18rem;
+  ${media("<=largeDesktop")} {
+    padding: 0 5rem;
+  }
+  ${media("<tablet")} {
+    padding: 0 0;
   }
 `;

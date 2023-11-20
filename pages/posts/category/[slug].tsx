@@ -47,7 +47,7 @@ export default function CategorySlugRoute(props: PageProps) {
     return <div>Loading...</div>;
   }
   return (
-    <Page imgURL="/resume_image.jpg" title="HR News">
+    <Page imgURL="/resume_image.webp" title="HR News">
       <CategoryIndexPage posts={posts} settings={settings!} />
     </Page>
   );

@@ -43,7 +43,7 @@ export default function StickySocialMediaBar() {
           >
             {/* <TwitterIcon size={50} round={true} /> */}
             <NextImage
-              src="/instagram_logo.png"
+              src="/instagram_logo.webp"
               alt="Instagram Link"
               width={isMobile ? 65 : 50}
               height={isMobile ? 65 : 50}
@@ -67,7 +67,7 @@ export default function StickySocialMediaBar() {
           >
             {/* <TwitterIcon size={50} round={true} /> */}
             <NextImage
-              src="/whatsapp_logo.png"
+              src="/whatsapp_logo.webp"
               alt="Whatsapp Link"
               width={isMobile ? 60 : 45}
               height={isMobile ? 60 : 45}

@@ -3,7 +3,6 @@ import PreviewPostPage from "components/PreviewPostPage";
 import { readToken } from "@/sanity/env";
 import {
   getAllCategories,
-  getAllPostsSlugs,
   getClient,
   getPostAndMoreStories,
   getSettings,
@@ -43,7 +42,7 @@ export default function ProjectSlugRoute(props: PageProps) {
     );
   }
   return (
-    <Page imgURL="/resume_image.jpg" title="HR News">
+    <Page imgURL="/resume_image.webp" title="HR News">
       <PostPage
         post={post}
         morePosts={morePosts}
