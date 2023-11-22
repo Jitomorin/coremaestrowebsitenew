@@ -31,7 +31,7 @@ const footerItems: FooterItems = [
       { title: "Home", href: "/" },
       { title: "About Us", href: "/about" },
       { title: "Our Services", href: "/services" },
-      { title: "HR News", href: "/blog" },
+      { title: "HR News", href: "/posts" },
       { title: "Contact", href: "/contact" },
     ],
   },

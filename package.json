@@ -31,6 +31,7 @@
     "css-in-js-media": "^2.0.1",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "intl-segmenter-polyfill": "^0.4.4",
     "next": "13.4.19",
@@ -52,7 +53,8 @@
     "swr": "^2.2.4",
     "typescript": "5.2.2",
     "url-loader": "^4.1.1",
-    "use-resize-observer": "^9.1.0"
+    "use-resize-observer": "^9.1.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@types/react-mailchimp-subscribe": "^2.1.2",

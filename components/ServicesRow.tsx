@@ -67,7 +67,7 @@ const SERVICES = [
   },
   {
     title: "HR Policies Development",
-    slug: generateSlug("HR Policy and Procedure Development"),
+    slug: generateSlug("HR Policies and Procedures Development"),
     description:
       "Core Maestro Management streamlines payroll processes, ensuring accuracy and compliance. Trust us to handle your payroll needs efficiently and hassle-free.",
     imageUrl: "/payroll.png",
