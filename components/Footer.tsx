@@ -105,7 +105,7 @@ export default function Footer() {
           <div>
             {/* <Copyright>&copy; Copyright 2023 MoCapital</Copyright> */}
             <Copyright>
-              &copy; 2023 Copyright Core Maestro Management | Powered by{" "}
+              &copy; 2024 Copyright Core Maestro Management | Powered by{" "}
               <Link
                 target="_blank"
                 className="hover:text-[#ffaf01]"
